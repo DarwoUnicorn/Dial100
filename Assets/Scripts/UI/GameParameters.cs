@@ -9,9 +9,9 @@ public class GameParameters : MonoBehaviour
 
     [SerializeField]
     private GameMode _mode;
-    [SerializeField] [Range(2, 100)]
+    [SerializeField] [Range(2, 10)]
     private int _height = 2;
-    [SerializeField] [Range(2, 100)]
+    [SerializeField] [Range(2, 10)]
     private int _width = 2;
     [SerializeField] [Range(0, 100)]
     private float _maxTime;
