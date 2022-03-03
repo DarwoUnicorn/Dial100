@@ -13,19 +13,20 @@ public class FieldGenerator : MonoBehaviour
 
     public void Generate()
     {
-        if(_fieldCells.Count > _gameParameters.Width * _gameParameters.Height)
+        if(_fieldCells.Count < _gameParameters.Width * _gameParameters.Height)
         {
-            ClearField();
+            for(int i = _fieldCells.Count; i < _gameParameters.Width * _gameParameters.Height; i++)
+            {
+                _fieldCells.Add(Instantiate(_cell, gameObject.transform));
+            }
         }
-        
-    }
-
-    private void ClearField()
-    {
-        foreach(var item in _fieldCells)
+        else if(_fieldCells.Count > _gameParameters.Width * _gameParameters.Height)
         {
-            Destroy(item);
+            for(int i = _fieldCells.Count - 1; i >= _gameParameters.Width * _gameParameters.Height; i--)
+            {
+                Destroy(_fieldCells[i]);
+                _fieldCells.RemoveAt(i);
+            }
         }
-        _fieldCells.Clear();
     }
 }
