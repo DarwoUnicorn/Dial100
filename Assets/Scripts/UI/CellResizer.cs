@@ -25,6 +25,8 @@ public class CellResizer : MonoBehaviour
         if(_previousSize.x != _field.rect.width || _previousSize.y != _field.rect.height)
         {
             ChangeCellSize();
+            _previousSize.x = _field.rect.width;
+            _previousSize.y = _field.rect.height;
         }
     }
 
