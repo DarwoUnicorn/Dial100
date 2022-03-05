@@ -1,0 +1,59 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Field
+{
+    public Field(GameParameters gameParameters)
+    {
+        for(int i = 0; i < gameParameters.Width; i++)
+        {
+            _gameField.Add(new FieldColumn(gameParameters.Height));
+        }
+    }
+
+    private List<FieldColumn> _gameField = new List<FieldColumn>();
+
+    public IEnumerable<FieldColumn> GameField => _gameField;
+
+    public FieldColumn this[int index]
+    {
+        get
+        {
+            return _gameField[index];
+        }
+        private set
+        {
+            _gameField[index] = value;
+        }
+    }
+
+    public Cell this[Vector2Int index]
+    {
+        get
+        {
+            return _gameField[index.x][index.y];
+        }
+        private set
+        {
+            _gameField[index.x].SetCell(value, index.y);
+        }
+    }
+
+    public void SetCell(Cell newCell, Vector2Int index)
+    {
+        _gameField[index.x].SetCell(newCell, index.y);
+    }
+
+    public void DeleteCell(Vector2Int index)
+    {
+        _gameField[index.x].DeleteCell(index.y);
+    }
+
+    public void DeleteColumn(int index)
+    {
+        int size = _gameField[index].Size;
+        _gameField.RemoveAt(index);
+        _gameField.Insert(index, new FieldColumn(size));
+    }
+}
