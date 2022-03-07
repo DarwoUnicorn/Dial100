@@ -22,10 +22,6 @@ public class Field
         {
             return _gameField[index];
         }
-        private set
-        {
-            _gameField[index] = value;
-        }
     }
 
     public Cell this[Vector2Int index]
@@ -34,15 +30,6 @@ public class Field
         {
             return _gameField[index.x][index.y];
         }
-        private set
-        {
-            _gameField[index.x].SetCell(value, index.y);
-        }
-    }
-
-    public void SetCell(Cell newCell, Vector2Int index)
-    {
-        _gameField[index.x].SetCell(newCell, index.y);
     }
 
     public void DeleteCell(Vector2Int index)

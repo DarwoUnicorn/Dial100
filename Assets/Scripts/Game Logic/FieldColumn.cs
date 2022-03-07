@@ -25,7 +25,7 @@ public class FieldColumn
             {
                 for(int i = Size; i < value; i++)
                 {
-                    _cells.Add(new Cell(Random.Range(1, 21)));
+                    _cells.Add(new Cell(Random.Range(1, 21), true));
                 }
             }
             else if(Size > value)
@@ -44,20 +44,11 @@ public class FieldColumn
         {
             return _cells[index];
         }
-        private set
-        {
-            _cells[index] = value;
-        }
-    }
-
-    public void SetCell(Cell newCell, int index)
-    {
-        _cells[index] = newCell;
     }
 
     public void DeleteCell(int index)
     {
         _cells.RemoveAt(index);
-        _cells.Add(new Cell(Random.Range(1, 21)));
+        _cells.Add(new Cell(Random.Range(1, 21), true));
     }
 }
