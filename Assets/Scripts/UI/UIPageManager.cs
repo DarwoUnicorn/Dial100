@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UIPageManager : MonoBehaviour
 {
@@ -9,6 +7,13 @@ public class UIPageManager : MonoBehaviour
     private CanvasGroup _startedGroup;
     
     private CanvasGroup _currentGroup;
+
+    public void SetCurrentGroup(CanvasGroup newCanvasGroup)
+    {
+        DisableGroup(_currentGroup);
+        _currentGroup = newCanvasGroup;
+        EnableGroup(_currentGroup);
+    }
 
     private void Start()
     {
@@ -27,19 +32,12 @@ public class UIPageManager : MonoBehaviour
 
     private void DisableAllGroup()
     {
-        List<CanvasGroup> _disabledGroup = new List<CanvasGroup>();
-        gameObject.GetComponentsInChildren<CanvasGroup>(_disabledGroup);
-        foreach(CanvasGroup item in _disabledGroup)
+        List<CanvasGroup> disabledGroups = new List<CanvasGroup>();
+        gameObject.GetComponentsInChildren<CanvasGroup>(disabledGroups);
+        foreach(CanvasGroup item in disabledGroups)
         {
             DisableGroup(item);
         }
-    }
-
-    public void SetCurrentGroup(CanvasGroup newCanvasGroup)
-    {
-        DisableGroup(_currentGroup);
-        _currentGroup = newCanvasGroup;
-        EnableGroup(_currentGroup);
     }
 
     private void DisableGroup(CanvasGroup group)

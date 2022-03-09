@@ -1,9 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Field
 {
+    private List<FieldColumn> _gameField = new List<FieldColumn>();
+
     public Field(GameParameters gameParameters)
     {
         for(int i = 0; i < gameParameters.Width; i++)
@@ -11,8 +12,6 @@ public class Field
             _gameField.Add(new FieldColumn(gameParameters.Height));
         }
     }
-
-    private List<FieldColumn> _gameField = new List<FieldColumn>();
 
     public IEnumerable<FieldColumn> GameField => _gameField;
 

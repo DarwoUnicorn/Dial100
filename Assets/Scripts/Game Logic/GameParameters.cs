@@ -1,12 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameParameters : MonoBehaviour
 {
-    private float _previousMaxTime;
-    private float _previousMinTime;
-
     [SerializeField]
     private GameMode _mode;
     [SerializeField] [Range(2, 10)]
@@ -20,6 +15,9 @@ public class GameParameters : MonoBehaviour
     [SerializeField]
     private bool _allowBonuses;
 
+    private float _previousMaxTime;
+    private float _previousMinTime;
+
     public GameMode Mode => _mode;
     public int Height => _height;
     public int Width => _width;
@@ -27,6 +25,16 @@ public class GameParameters : MonoBehaviour
     public float MinTime => _minTime;
     public bool AllowBonuses => _allowBonuses;
 
+    public void SetGameParameters(GameParameters gameParameters)
+    {
+        _mode = gameParameters.Mode;
+        _height = gameParameters.Height;
+        _width = gameParameters.Width;
+        _maxTime = gameParameters.MaxTime;
+        _minTime = gameParameters.MinTime;
+        _allowBonuses = gameParameters.AllowBonuses;
+    }
+    
     private void Start()
     {
         _previousMaxTime = _maxTime;
@@ -54,15 +62,5 @@ public class GameParameters : MonoBehaviour
         {
             _previousMinTime = _minTime;
         }
-    }
-
-    public void SetGameParameters(GameParameters gameParameters)
-    {
-        _mode = gameParameters.Mode;
-        _height = gameParameters.Height;
-        _width = gameParameters.Width;
-        _maxTime = gameParameters.MaxTime;
-        _minTime = gameParameters.MinTime;
-        _allowBonuses = gameParameters.AllowBonuses;
     }
 }

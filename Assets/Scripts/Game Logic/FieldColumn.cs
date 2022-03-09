@@ -1,15 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FieldColumn
 {
+    private List<Cell> _cells = new List<Cell>();
+
     public FieldColumn(int size)
     {
         Size = size;
     }
-
-    private List<Cell> _cells = new List<Cell>();
 
     public IEnumerable<Cell> Cells => _cells;
 
