@@ -12,34 +12,27 @@ public class GameParameters : MonoBehaviour
     private float _maxTime;
     [SerializeField] [Range(0, 100)]
     private float _minTime;
+    [SerializeField] [Range(1, 100)]
+    private int _maxStartCellValue = 1;
+    [SerializeField] [Range(1, 100)]
+    private int _minStartCellValue = 1;
     [SerializeField]
     private bool _allowBonuses;
+    [SerializeField]
+    private bool[,] _fieldMap;
 
     private float _previousMaxTime;
     private float _previousMinTime;
 
     public GameMode Mode => _mode;
+    public int MaxStartCellValue => _maxStartCellValue;
+    public int MinStartCellValue => _minStartCellValue;
     public int Height => _height;
     public int Width => _width;
     public float MaxTime => _maxTime;
     public float MinTime => _minTime;
     public bool AllowBonuses => _allowBonuses;
-
-    public void SetGameParameters(GameParameters gameParameters)
-    {
-        _mode = gameParameters.Mode;
-        _height = gameParameters.Height;
-        _width = gameParameters.Width;
-        _maxTime = gameParameters.MaxTime;
-        _minTime = gameParameters.MinTime;
-        _allowBonuses = gameParameters.AllowBonuses;
-    }
-    
-    private void Start()
-    {
-        _previousMaxTime = _maxTime;
-        _previousMinTime = _minTime;
-    }
+    public bool[,] FieldMap => _fieldMap;
 
     private void OnValidate()
     {
@@ -61,6 +54,25 @@ public class GameParameters : MonoBehaviour
         if(_previousMinTime != _minTime)
         {
             _previousMinTime = _minTime;
+        }
+        if(_fieldMap?.GetLength(0) != Width || _fieldMap?.GetLength(1) != Height)
+        {
+            bool[,] temp = new bool[Width, Height];
+            for(int i = 0; i < temp.GetLength(0); i++)
+            {
+                for(int j = 0; j < temp.GetLength(1); j++)
+                {
+                    if(i < _fieldMap?.GetLength(0) && j < _fieldMap?.GetLength(1))
+                    {
+                        temp[i, j] = _fieldMap[i, j];
+                    }
+                    else
+                    {
+                        temp[i, j] = true;
+                    }
+                }
+            }
+            _fieldMap = temp;
         }
     }
 }

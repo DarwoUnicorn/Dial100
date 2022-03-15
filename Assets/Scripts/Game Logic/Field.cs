@@ -1,45 +1,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Field
+public class Field : MonoBehaviour
 {
-    private List<FieldColumn> _gameField = new List<FieldColumn>();
+    private List<List<Cell>> _cells;
 
-    public Field(GameParameters gameParameters)
+    public void SetCells(List<Cell> cells, GameParameters gameParameters)
     {
+        _cells = new List<List<Cell>>();
+        int k = 0;
         for(int i = 0; i < gameParameters.Width; i++)
         {
-            _gameField.Add(new FieldColumn(gameParameters.Height));
+            _cells.Add(new List<Cell>());
+            for(int j = 0; j < gameParameters.Height; j++)
+            {
+                if(gameParameters.FieldMap[i, j] == true)
+                {
+                    _cells[i].Add(cells[k]);
+                    k++;
+                }
+            }
         }
-    }
-
-    public IEnumerable<FieldColumn> GameField => _gameField;
-
-    public FieldColumn this[int index]
-    {
-        get
-        {
-            return _gameField[index];
-        }
-    }
-
-    public Cell this[Vector2Int index]
-    {
-        get
-        {
-            return _gameField[index.x][index.y];
-        }
-    }
-
-    public void DeleteCell(Vector2Int index)
-    {
-        _gameField[index.x].DeleteCell(index.y);
-    }
-
-    public void DeleteColumn(int index)
-    {
-        int size = _gameField[index].Size;
-        _gameField.RemoveAt(index);
-        _gameField.Insert(index, new FieldColumn(size));
     }
 }

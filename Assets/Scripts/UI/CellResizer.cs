@@ -7,14 +7,15 @@ public class CellResizer : MonoBehaviour
     private GridLayoutGroup _gridLayoutGroup;
     [SerializeField]
     private RectTransform _field;
-    [SerializeField]
+
     private GameParameters _gameParameters;
 
     private Vector2 _previousSize;
     private int _space = 25;
 
-    public void ChangeCellSize()
+    public void ChangeCellSize(GameParameters gameParameters)
     {
+        _gameParameters = gameParameters;
         float maxVerticalSize = (_field.rect.height - _space * (_gameParameters.Height + 1)) / _gameParameters.Height;
         float maxHorizontalSize = (_field.rect.width - _space * (_gameParameters.Width + 1)) / _gameParameters.Width;
         float cellSize = Mathf.Min(maxHorizontalSize, maxVerticalSize);
@@ -29,9 +30,13 @@ public class CellResizer : MonoBehaviour
 
     private void Update()
     {
+        if(_gameParameters == null)
+        {
+            return;
+        }
         if(_previousSize.x != _field.rect.width || _previousSize.y != _field.rect.height)
         {
-            ChangeCellSize();
+            ChangeCellSize(_gameParameters);
             _previousSize.x = _field.rect.width;
             _previousSize.y = _field.rect.height;
         }
