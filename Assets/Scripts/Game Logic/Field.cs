@@ -3,23 +3,18 @@ using UnityEngine;
 
 public class Field : MonoBehaviour
 {
-    private List<List<Cell>> _cells;
+    private List<List<CellData>> _cellsData;
+    private List<List<GameObject>> _cells;
+    private GameParameters _parameters;
 
-    public void SetCells(List<Cell> cells, GameParameters gameParameters)
+    public IReadOnlyList<IReadOnlyList<CellData>> CellsData => _cellsData;
+    public IReadOnlyList<IReadOnlyList<GameObject>> Cells => _cells;
+    public GameParameters Parameters => _parameters;
+
+    public void SetField(List<List<CellData>> cellsData, List<List<GameObject>> cells, GameParameters parameters)
     {
-        _cells = new List<List<Cell>>();
-        int k = 0;
-        for(int i = 0; i < gameParameters.Width; i++)
-        {
-            _cells.Add(new List<Cell>());
-            for(int j = 0; j < gameParameters.Height; j++)
-            {
-                if(gameParameters.FieldMap[i, j] == true)
-                {
-                    _cells[i].Add(cells[k]);
-                    k++;
-                }
-            }
-        }
+        _cells = cells;
+        _cellsData = cellsData;
+        _parameters = parameters;
     }
 }
