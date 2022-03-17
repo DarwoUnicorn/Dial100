@@ -8,6 +8,10 @@ public class GameParameters : MonoBehaviour
     private int _height = 2;
     [SerializeField] [Range(2, 10)]
     private int _width = 2;
+    [SerializeField]
+    private int _fullInRow;
+    [SerializeField]
+    private int _fullInColumn;
     [SerializeField] [Range(0, 100)]
     private float _maxTime;
     [SerializeField] [Range(0, 100)]
@@ -25,12 +29,14 @@ public class GameParameters : MonoBehaviour
     private float _previousMinTime;
 
     public GameMode Mode => _mode;
-    public int MaxStartCellValue => _maxStartCellValue;
-    public int MinStartCellValue => _minStartCellValue;
     public int Height => _height;
     public int Width => _width;
+    public int FullInRow => _fullInRow;
+    public int FullInColumn => _fullInColumn;
     public float MaxTime => _maxTime;
     public float MinTime => _minTime;
+    public int MaxStartCellValue => _maxStartCellValue;
+    public int MinStartCellValue => _minStartCellValue;
     public bool AllowBonuses => _allowBonuses;
     public bool[,] FieldMap => _fieldMap;
 

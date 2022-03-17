@@ -5,8 +5,8 @@ using UnityEngine.Events;
 public class FieldGenerator : MonoBehaviour
 {
     [SerializeField]
-    private UnityEvent<List<List<CellData>>, List<List<GameObject>>, GameParameters> FieldCreated = 
-        new UnityEvent<List<List<CellData>>, List<List<GameObject>>, GameParameters>();
+    private UnityEvent<List<List<Cell>>, GameParameters> FieldCreated = 
+        new UnityEvent<List<List<Cell>>, GameParameters>();
 
     [SerializeField]
     private GameObject _cell;
@@ -18,30 +18,28 @@ public class FieldGenerator : MonoBehaviour
     public void Generate(GameParameters gameParameters)
     {
         ClearField();
-        List<List<CellData>> cellsData = new List<List<CellData>>();
+        List<List<Cell>> cells = new List<List<Cell>>();
         for(int i = 0; i < gameParameters.Width; i++)
         {
-            cellsData[i] = new List<CellData>();
+            cells[i] = new List<Cell>();
             for(int j = 0; j < gameParameters.Height; j++)
             {
-                CreateCell(cellsData[i], gameParameters, i, j);
+                CreateCell(cells[i], gameParameters.FieldMap[i, j]);
+                _field[i].Add(cells[i][cells.Count - 1].Parent);
             }
         }
-        FieldCreated?.Invoke(cellsData, _field, gameParameters);
+        FieldCreated?.Invoke(cells, gameParameters);
     }
 
-    private void CreateCell(List<CellData> cellsData, GameParameters gameParameters, int xCoord, int yCoord)
+    private void CreateCell(List<Cell> cells, bool IsDataCell)
     {
-        if(gameParameters.FieldMap[xCoord, yCoord] == true)
+        if(IsDataCell == true)
         {
-            _field[xCoord].Add(Instantiate(_cell, gameObject.transform));
-            cellsData.Add(_field[xCoord][_field.Count - 1].GetComponentInChildren<CellData>());
-            cellsData[cellsData.Count - 1].GenerateValue(gameParameters.MinStartCellValue, gameParameters.MaxStartCellValue);
-            cellsData[cellsData.Count - 1].SetCoordinates(xCoord, yCoord);
+            cells.Add(new Cell(Instantiate(_cell)));
         }
         else
         {
-            _field[xCoord].Add(Instantiate(_emptyCell, gameObject.transform));
+            cells.Add(new Cell(Instantiate(_emptyCell)));
         }
     }
 

@@ -16,9 +16,9 @@ public class CellResizer : MonoBehaviour
     public void ChangeCellSize(GameParameters gameParameters)
     {
         _gameParameters = gameParameters;
-        float maxVerticalSize = (_field.rect.height - _space * (_gameParameters.Height + 1)) / _gameParameters.Height;
-        float maxHorizontalSize = (_field.rect.width - _space * (_gameParameters.Width + 1)) / _gameParameters.Width;
-        float cellSize = Mathf.Min(maxHorizontalSize, maxVerticalSize);
+        float verticalSize = (_field.rect.height - _space * (_gameParameters.Height + 1)) / _gameParameters.Height;
+        float horizontalSize = (_field.rect.width - _space * (_gameParameters.Width + 1)) / _gameParameters.Width;
+        float cellSize = Mathf.Min(horizontalSize, verticalSize);
         _gridLayoutGroup.constraintCount = _gameParameters.Width;
         _gridLayoutGroup.cellSize = new Vector2(cellSize, cellSize);
     }

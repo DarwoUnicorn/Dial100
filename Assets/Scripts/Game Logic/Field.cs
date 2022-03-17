@@ -3,18 +3,15 @@ using UnityEngine;
 
 public class Field : MonoBehaviour
 {
-    private List<List<CellData>> _cellsData;
-    private List<List<GameObject>> _cells;
+    private List<List<Cell>> _cells;
     private GameParameters _parameters;
 
-    public IReadOnlyList<IReadOnlyList<CellData>> CellsData => _cellsData;
-    public IReadOnlyList<IReadOnlyList<GameObject>> Cells => _cells;
+    public IReadOnlyList<IReadOnlyList<Cell>> CellsData => _cells;
     public GameParameters Parameters => _parameters;
 
-    public void SetField(List<List<CellData>> cellsData, List<List<GameObject>> cells, GameParameters parameters)
+    public void SetField(List<List<Cell>> cellsData, GameParameters parameters)
     {
-        _cells = cells;
-        _cellsData = cellsData;
+        _cells = cellsData;
         _parameters = parameters;
     }
 }
