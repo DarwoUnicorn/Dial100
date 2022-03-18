@@ -9,7 +9,6 @@ public class CellResizer : MonoBehaviour
     private RectTransform _field;
 
     private GameParameters _gameParameters;
-
     private Vector2 _previousSize;
     private int _space = 25;
 

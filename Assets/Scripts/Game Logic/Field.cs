@@ -14,4 +14,6 @@ public class Field : MonoBehaviour
         _cells = cellsData;
         _parameters = parameters;
     }
+
+    public void TryMove(Vector2Int coordinate)
 }
