@@ -9,7 +9,7 @@ public class FieldGenerator : MonoBehaviour
         new UnityEvent<List<List<Cell>>, GameParameters>();
 
     [SerializeField]
-    private Transform _fieldParent;
+    private Transform _cellsParent;
     [SerializeField]
     private GameObject _cell;
     [SerializeField]
@@ -41,12 +41,12 @@ public class FieldGenerator : MonoBehaviour
     {
         if(IsActive)
         {
-            field.Add(Instantiate(_cell, _fieldParent));
+            field.Add(Instantiate(_cell, _cellsParent));
             cells.Add(field[field.Count - 1].GetComponent<Cell>());
         }
         else
         {
-            field.Add(Instantiate(_emptyCell, _fieldParent));
+            field.Add(Instantiate(_emptyCell, _cellsParent));
             cells.Add(null);
         }
     }

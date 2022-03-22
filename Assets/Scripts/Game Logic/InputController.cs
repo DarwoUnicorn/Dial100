@@ -17,7 +17,7 @@ public class InputController : MonoBehaviour
     private float _swipeThreshold;
 
     private List<Vector2> _startSwipePosition = new List<Vector2>();
-    private List<Cell> _cells;
+    private List<Cell> _cells = new List<Cell>();
 
     private void Update()
     {

@@ -20,7 +20,7 @@ public class Cell : MonoBehaviour
 
     public void Generate(int minValue, int maxValue)
     {
-        Data.GenerateValue(minValue, maxValue);
+        Data.SetValue(Random.Range(minValue, maxValue + 1));
         State = MotionState.Created;
     }
 

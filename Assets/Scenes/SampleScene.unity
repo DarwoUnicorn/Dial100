@@ -532,7 +532,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  field: {fileID: 195011214}
+  _cellsParent: {fileID: 195011214}
   _cell: {fileID: 4573933328566878869, guid: a98e648152672e44e9b9b66cbe755651, type: 3}
   _emptyCell: {fileID: 9201061110368428279, guid: c4149182bb2d37e4fb66bca2aef394ef, type: 3}
 --- !u!114 &195011219
@@ -547,8 +547,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82780ae421225414089570c7e24f3f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveStep: 0
-  _field: {fileID: 0}
+  _moveStep: 5
+  _field: {fileID: 195011220}
 --- !u!114 &195011220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1640,8 +1640,8 @@ MonoBehaviour:
   _mode: 0
   _height: 3
   _width: 3
-  _fullInRow: 0
-  _fullInColumn: 0
+  _fullInRow: 3
+  _fullInColumn: 3
   _maxTime: 30
   _minTime: 15
   _maxStartCellValue: 20
@@ -4366,7 +4366,7 @@ MonoBehaviour:
         m_CallState: 2
   _graphicRaycaster: {fileID: 1624154056}
   _eventSystem: {fileID: 468190065}
-  _swipeThreshold: 0
+  _swipeThreshold: 100
 --- !u!4 &1123362253
 Transform:
   m_ObjectHideFlags: 0
@@ -7361,8 +7361,8 @@ MonoBehaviour:
   _mode: 0
   _height: 3
   _width: 3
-  _fullInRow: 0
-  _fullInColumn: 0
+  _fullInRow: 3
+  _fullInColumn: 3
   _maxTime: 30
   _minTime: 15
   _maxStartCellValue: 1
@@ -7588,8 +7588,8 @@ MonoBehaviour:
   _mode: 0
   _height: 4
   _width: 4
-  _fullInRow: 0
-  _fullInColumn: 0
+  _fullInRow: 4
+  _fullInColumn: 4
   _maxTime: 30
   _minTime: 15
   _maxStartCellValue: 1
@@ -7967,8 +7967,8 @@ MonoBehaviour:
   _mode: 0
   _height: 4
   _width: 4
-  _fullInRow: 0
-  _fullInColumn: 0
+  _fullInRow: 4
+  _fullInColumn: 4
   _maxTime: 30
   _minTime: 15
   _maxStartCellValue: 1
