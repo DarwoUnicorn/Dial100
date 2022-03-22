@@ -16,70 +16,62 @@ public class InputController : MonoBehaviour
     [SerializeField]
     private float _swipeThreshold;
 
-    private List<Vector2> _startSwipePosition = new List<Vector2>();
-    private List<Cell> _cells = new List<Cell>();
+    private Vector2 _startSwipePosition;
+    private Cell _cell;
 
     private void Update()
     {
         if(Input.touchCount != 0)
         {
-            Touch touch;
-            for(int i = 0; i < Input.touchCount; i++)
+            Touch touch = Input.GetTouch(0);
+            if(touch.phase == TouchPhase.Began)
             {
-                touch = Input.GetTouch(i);
-                if(touch.phase == TouchPhase.Began)
-                {
-                    TouchBegan(touch);
-                }
-                else if(touch.phase == TouchPhase.Moved)
-                {
-                    CheckSwipe(touch, i);
-                }
-                else if(touch.phase == TouchPhase.Canceled || touch.phase == TouchPhase.Ended)
-                {
-                    TouchEnded(touch, i);
-                }
+                TouchBegan(touch);
+            }
+            else if(touch.phase == TouchPhase.Moved)
+            {
+                CheckSwipe(touch);
+            }
+            else if(touch.phase == TouchPhase.Canceled || touch.phase == TouchPhase.Ended)
+            {
+                TouchEnded(touch);
             }
         }
     }
 
     private void TouchBegan(Touch touch)
     {
-        _startSwipePosition.Add(touch.position);
+        _startSwipePosition = touch.position;
         List<RaycastResult> result = new List<RaycastResult>();
         _graphicRaycaster.Raycast(new PointerEventData(_eventSystem), result);
-        Cell temp;
         foreach(var item in result)
         {
-            temp = item.gameObject.GetComponent<Cell>();
-            if(temp != null)
+            _cell = item.gameObject.GetComponent<Cell>();
+            if(_cell != null)
             {
-                _cells.Add(temp);
                 return;
             }
         }
-        _cells.Add(null);
     }
 
-    private void TouchEnded(Touch touch, int index)
+    private void TouchEnded(Touch touch)
     {
-        _startSwipePosition.RemoveAt(index);
-        _cells.RemoveAt(index);
+        _cell = null;
     }
 
-    private void CheckSwipe(Touch touch, int index)
+    private void CheckSwipe(Touch touch)
     {
-        if(_cells[index] == null)
+        if(_cell == null)
         {
             return;
         }
-        Vector2 swipeDirection = touch.position - _startSwipePosition[index];
+        Vector2 swipeDirection = touch.position - _startSwipePosition;
         if(swipeDirection.sqrMagnitude < _swipeThreshold * _swipeThreshold)
         {
             return;
         }
-        HasSwipe?.Invoke(_cells[index], GetDirection(swipeDirection));
-        _cells[index] = null;
+        HasSwipe?.Invoke(_cell, GetDirection(swipeDirection));
+        _cell = null;
     }
 
     private Vector2Int GetDirection(Vector2 vector)
