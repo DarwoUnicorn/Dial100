@@ -1,35 +1,44 @@
 using UnityEngine;
 using TMPro;
 
-public class Cell
+public class Cell : MonoBehaviour
 {
-    public enum ChangeState
+    public enum MotionState
     {
         Idle,
         Created,
-        Fall,
+        Falls,
     }
 
-    public ChangeState State;
+    [SerializeField]
+    private TextMeshProUGUI _text;
 
+    public TextMeshProUGUI Text => _text;
+    public Transform Parent => transform.parent;
     public CellData Data { get; private set; }
-    public TextMeshProUGUI Text { get; private set; }
-    public bool IsActive { get; private set; }
-    public GameObject Parent => Data.transform.parent.gameObject;
+    public MotionState State { get; private set; }
 
-    public Cell(GameObject cell)
+    public void Generate(int minValue, int maxValue)
     {
-        Data = cell.GetComponent<CellData>();
-        Text = cell.GetComponent<TextMeshProUGUI>();
-        if(Data != null)
-        {
-            SetParent(cell);
-            IsActive = true;
-        }
+        Data.GenerateValue(minValue, maxValue);
+        State = MotionState.Created;
     }
 
-    public void SetParent(GameObject parent)
+    public void Swap(Cell other)
     {
-        Data.transform.SetParent(parent.transform);
+        if(other == null)
+        {
+            throw new System.ArgumentNullException(other.ToString());
+        }
+        Transform tempParent = Parent;
+        transform.SetParent(other.Parent);
+        other.transform.SetParent(tempParent);
+        State = State != MotionState.Created ? MotionState.Falls : MotionState.Created;
+        other.State = other.State != MotionState.Created ? MotionState.Falls : MotionState.Created;
+    }
+
+    private void Start()
+    {
+        Data = new CellData();
     }
 }

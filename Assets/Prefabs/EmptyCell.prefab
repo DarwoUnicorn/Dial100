@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 9201061110368428278}
   - component: {fileID: 9201061110368428280}
   - component: {fileID: 9201061110368428281}
+  - component: {fileID: 5107973763542196460}
+  - component: {fileID: 7466081385319252871}
   m_Layer: 5
   m_Name: EmptyCell
   m_TagString: Untagged
@@ -76,3 +78,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5107973763542196460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201061110368428279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab18eaf41008f640a9c418d4e136926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7466081385319252871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201061110368428279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cea1a839b468ca341b39e53c3c3f38d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Coordinate: {x: 0, y: 0}

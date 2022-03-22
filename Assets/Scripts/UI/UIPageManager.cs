@@ -10,6 +10,10 @@ public class UIPageManager : MonoBehaviour
 
     public void SetCurrentGroup(CanvasGroup newCanvasGroup)
     {
+        if(newCanvasGroup == null)
+        {
+            throw new System.ArgumentNullException(newCanvasGroup.ToString());
+        }
         DisableGroup(_currentGroup);
         _currentGroup = newCanvasGroup;
         EnableGroup(_currentGroup);
@@ -20,13 +24,12 @@ public class UIPageManager : MonoBehaviour
         DisableAllGroup();
         if(_startedGroup == null)
         {
-            Debug.LogWarning("UIPageManager: StartedGroup not set.");
+            throw new System.NullReferenceException(_startedGroup.ToString());
         }
         else
         {
             _currentGroup = _startedGroup;
-            _currentGroup.alpha = 1;
-            _currentGroup.blocksRaycasts = true;
+            EnableGroup(_currentGroup);
         }
     }
 
@@ -42,19 +45,13 @@ public class UIPageManager : MonoBehaviour
 
     private void DisableGroup(CanvasGroup group)
     {
-        if(group != null)
-        {
-            group.alpha = 0;
-            group.blocksRaycasts = false;
-        }
+        group.alpha = 0;
+        group.blocksRaycasts = false;
     }
 
     private void EnableGroup(CanvasGroup group)
     {
-        if(group != null)
-        {
-            group.alpha = 1;
-            group.blocksRaycasts = true;
-        }
+        group.alpha = 1;
+        group.blocksRaycasts = true;
     }
 }

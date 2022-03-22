@@ -14,6 +14,10 @@ public class CellResizer : MonoBehaviour
 
     public void ChangeCellSize(GameParameters gameParameters)
     {
+        if(gameParameters == null)
+        {
+            throw new System.ArgumentNullException(gameParameters.ToString());
+        }
         _gameParameters = gameParameters;
         float verticalSize = (_field.rect.height - _space * (_gameParameters.Height + 1)) / _gameParameters.Height;
         float horizontalSize = (_field.rect.width - _space * (_gameParameters.Width + 1)) / _gameParameters.Width;

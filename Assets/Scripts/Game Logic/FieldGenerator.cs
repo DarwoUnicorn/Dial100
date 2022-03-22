@@ -9,6 +9,8 @@ public class FieldGenerator : MonoBehaviour
         new UnityEvent<List<List<Cell>>, GameParameters>();
 
     [SerializeField]
+    private Transform _fieldParent;
+    [SerializeField]
     private GameObject _cell;
     [SerializeField]
     private GameObject _emptyCell;
@@ -17,39 +19,48 @@ public class FieldGenerator : MonoBehaviour
 
     public void Generate(GameParameters gameParameters)
     {
+        if(gameParameters == null)
+        {
+            throw new System.ArgumentNullException(gameParameters.ToString());
+        }
         ClearField();
         List<List<Cell>> cells = new List<List<Cell>>();
         for(int i = 0; i < gameParameters.Width; i++)
         {
-            cells[i] = new List<Cell>();
+            cells.Add(new List<Cell>());
+            _field.Add(new List<GameObject>());
             for(int j = 0; j < gameParameters.Height; j++)
             {
-                CreateCell(cells[i], gameParameters.FieldMap[i, j]);
-                _field[i].Add(cells[i][cells.Count - 1].Parent);
+                CreateCell(cells[i], _field[i], gameParameters.FieldMap[i, j]);
             }
         }
         FieldCreated?.Invoke(cells, gameParameters);
     }
 
-    private void CreateCell(List<Cell> cells, bool IsDataCell)
+    private void CreateCell(List<Cell> cells, List<GameObject> field, bool IsActive)
     {
-        if(IsDataCell == true)
+        if(IsActive)
         {
-            cells.Add(new Cell(Instantiate(_cell)));
+            field.Add(Instantiate(_cell, _fieldParent));
+            cells.Add(field[field.Count - 1].GetComponent<Cell>());
         }
         else
         {
-            cells.Add(new Cell(Instantiate(_emptyCell)));
+            field.Add(Instantiate(_emptyCell, _fieldParent));
+            cells.Add(null);
         }
     }
 
     private void ClearField()
     {
-        for(int i = 0; i < _field.Count; i++)
+        foreach(var column in _field)
         {
-            for(int j = 0; j < _field[i].Count; j++)
+            foreach(var item in column)
             {
-                Destroy(_field[i][j]);
+                if(item != null)
+                {
+                    Destroy(item);
+                }
             }
         }
         _field.Clear();
