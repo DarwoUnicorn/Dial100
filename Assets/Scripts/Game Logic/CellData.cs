@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class CellData
 {
     public int Value { get; private set; }

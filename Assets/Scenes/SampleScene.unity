@@ -440,6 +440,7 @@ GameObject:
   - component: {fileID: 195011217}
   - component: {fileID: 195011220}
   - component: {fileID: 195011219}
+  - component: {fileID: 195011221}
   m_Layer: 5
   m_Name: Field
   m_TagString: Untagged
@@ -499,7 +500,7 @@ MonoBehaviour:
     m_Top: 25
     m_Bottom: 25
   m_ChildAlignment: 4
-  m_StartCorner: 2
+  m_StartCorner: 0
   m_StartAxis: 1
   m_CellSize: {x: 80, y: 80}
   m_Spacing: {x: 25, y: 25}
@@ -522,8 +523,20 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 195011220}
         m_TargetAssemblyTypeName: Field, Assembly-CSharp
-        m_MethodName: SetField
+        m_MethodName: OnFieldCreated
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 195011219}
+        m_TargetAssemblyTypeName: FieldViewer, Assembly-CSharp
+        m_MethodName: OnFieldChanged
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -547,7 +560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82780ae421225414089570c7e24f3f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveStep: 5
+  _moveStep: 50
   _field: {fileID: 195011220}
 --- !u!114 &195011220
 MonoBehaviour:
@@ -561,6 +574,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 542530948bd44f0479419d581e1aa7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &195011221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195011213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00021d76d868c9d479b9cd1fd5fb1f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FieldChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 195011219}
+        m_TargetAssemblyTypeName: FieldViewer, Assembly-CSharp
+        m_MethodName: OnFieldChanged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _field: {fileID: 195011220}
 --- !u!1 &239067327
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,7 +1678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa75629b4e96fd942a5dde9df25a0c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mode: 0
+  _mode: 2
   _height: 3
   _width: 3
   _fullInRow: 3
@@ -4320,68 +4361,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e9e2641e38048643ad2055ff24df750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1123362251
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1123362253}
-  - component: {fileID: 1123362252}
-  m_Layer: 0
-  m_Name: Input Controller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1123362252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1123362251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a69d4249e826cc47a790537ea61fbcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HasSwipe:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 195011220}
-        m_TargetAssemblyTypeName: Field, Assembly-CSharp
-        m_MethodName: OnSwipe
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _graphicRaycaster: {fileID: 1624154056}
-  _eventSystem: {fileID: 468190065}
-  _swipeThreshold: 100
---- !u!4 &1123362253
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1123362251}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1324789357
 GameObject:
   m_ObjectHideFlags: 0
@@ -5573,6 +5552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1642429521}
   - component: {fileID: 1642429522}
+  - component: {fileID: 1642429523}
   m_Layer: 5
   m_Name: PlayField
   m_TagString: Untagged
@@ -5616,6 +5596,36 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &1642429523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642429520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a69d4249e826cc47a790537ea61fbcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HasSwipe:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 195011221}
+        m_TargetAssemblyTypeName: GameLogic, Assembly-CSharp
+        m_MethodName: OnSwipe
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _graphicRaycaster: {fileID: 1624154056}
+  _eventSystem: {fileID: 468190065}
+  _swipeThreshold: 100
 --- !u!1 &1673658445
 GameObject:
   m_ObjectHideFlags: 0
@@ -7964,7 +7974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa75629b4e96fd942a5dde9df25a0c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mode: 0
+  _mode: 2
   _height: 4
   _width: 4
   _fullInRow: 4

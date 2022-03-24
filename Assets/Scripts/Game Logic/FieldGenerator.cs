@@ -29,10 +29,13 @@ public class FieldGenerator : MonoBehaviour
         {
             cells.Add(new List<Cell>());
             _field.Add(new List<GameObject>());
-            for(int j = 0; j < gameParameters.Height; j++)
+            for(int j = gameParameters.Height - 1; j >= 0; j--)
             {
                 CreateCell(cells[i], _field[i], gameParameters.FieldMap[i, j]);
+                cells[i][cells[i].Count - 1]?.Generate(gameParameters.MinStartCellValue,
+                                                      gameParameters.MaxStartCellValue);
             }
+            cells[i].Reverse();
         }
         FieldCreated?.Invoke(cells, gameParameters);
     }
@@ -42,7 +45,7 @@ public class FieldGenerator : MonoBehaviour
         if(IsActive)
         {
             field.Add(Instantiate(_cell, _cellsParent));
-            cells.Add(field[field.Count - 1].GetComponent<Cell>());
+            cells.Add(field[field.Count - 1].GetComponentInChildren<Cell>());
         }
         else
         {

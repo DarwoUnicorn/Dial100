@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class InputController : MonoBehaviour
+public class InputController : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [SerializeField]
     private UnityEvent<Cell, Vector2Int> HasSwipe = new UnityEvent<Cell, Vector2Int>();
@@ -19,58 +19,37 @@ public class InputController : MonoBehaviour
     private Vector2 _startSwipePosition;
     private Cell _cell;
 
-    private void Update()
+    public void OnBeginDrag(PointerEventData eventData)
     {
-        if(Input.touchCount != 0)
-        {
-            Touch touch = Input.GetTouch(0);
-            if(touch.phase == TouchPhase.Began)
-            {
-                TouchBegan(touch);
-            }
-            else if(touch.phase == TouchPhase.Moved)
-            {
-                CheckSwipe(touch);
-            }
-            else if(touch.phase == TouchPhase.Canceled || touch.phase == TouchPhase.Ended)
-            {
-                TouchEnded(touch);
-            }
-        }
-    }
-
-    private void TouchBegan(Touch touch)
-    {
-        _startSwipePosition = touch.position;
+        _startSwipePosition = eventData.position;
         List<RaycastResult> result = new List<RaycastResult>();
-        _graphicRaycaster.Raycast(new PointerEventData(_eventSystem), result);
+        _graphicRaycaster.Raycast(eventData, result);
         foreach(var item in result)
         {
-            _cell = item.gameObject.GetComponent<Cell>();
+            _cell = item.gameObject.GetComponentInChildren<Cell>();
             if(_cell != null)
             {
                 return;
             }
         }
     }
-
-    private void TouchEnded(Touch touch)
-    {
-        _cell = null;
-    }
-
-    private void CheckSwipe(Touch touch)
+    public void OnDrag(PointerEventData eventData)
     {
         if(_cell == null)
         {
             return;
         }
-        Vector2 swipeDirection = touch.position - _startSwipePosition;
+        Vector2 swipeDirection = eventData.position - _startSwipePosition;
         if(swipeDirection.sqrMagnitude < _swipeThreshold * _swipeThreshold)
         {
             return;
         }
         HasSwipe?.Invoke(_cell, GetDirection(swipeDirection));
+        _cell = null;
+    }
+
+    void IEndDragHandler.OnEndDrag(PointerEventData eventData)
+    {
         _cell = null;
     }
 

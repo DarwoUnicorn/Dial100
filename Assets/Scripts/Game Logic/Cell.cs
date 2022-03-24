@@ -20,6 +20,10 @@ public class Cell : MonoBehaviour
 
     public void Generate(int minValue, int maxValue)
     {
+        if(Data == null)
+        {
+            Data = new CellData();
+        }
         Data.SetValue(Random.Range(minValue, maxValue + 1));
         State = MotionState.Created;
     }
@@ -37,8 +41,8 @@ public class Cell : MonoBehaviour
         other.State = other.State != MotionState.Created ? MotionState.Falls : MotionState.Created;
     }
 
-    private void Start()
+    public void SetIdle()
     {
-        Data = new CellData();
+        State = MotionState.Idle;
     }
 }

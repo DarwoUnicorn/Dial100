@@ -9,7 +9,7 @@ public class Field : MonoBehaviour
     public IReadOnlyList<IReadOnlyList<Cell>> Cells => _cells;
     public GameParameters Parameters => _parameters;
 
-    public void SetField(List<List<Cell>> cells, GameParameters parameters)
+    public void OnFieldCreated(List<List<Cell>> cells, GameParameters parameters)
     {
         _cells = cells;
         _parameters = parameters;
@@ -61,7 +61,7 @@ public class Field : MonoBehaviour
     {
         for(int i = deleteMap.GetLength(0) - 1; i >= 0; i--)
         {
-            for(int j = deleteMap.GetLength(1); j >= 0; j--)
+            for(int j = deleteMap.GetLength(1) - 1; j >= 0; j--)
             {
                 if(deleteMap[i, j] == true)
                 {
@@ -87,7 +87,6 @@ public class Field : MonoBehaviour
     private void MoveCellUp(Vector2Int coordinate)
     {
         Cell rising = _cells[coordinate.x][coordinate.y];
-        Cell temp;
         for(int i = coordinate.y + 1; i < _cells[coordinate.x].Count; i++)
         {
             if(_cells[coordinate.x][i] == null)
@@ -95,9 +94,8 @@ public class Field : MonoBehaviour
                 continue;
             }
             rising.Swap(_cells[coordinate.x][i]);
-            temp = rising;
-            rising = _cells[coordinate.x][i];
-            _cells[coordinate.x][i] = temp;
+            _cells[coordinate.x][i - 1] = _cells[coordinate.x][i];
+            _cells[coordinate.x][i] = rising;
         }
     }
 }

@@ -1,9 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameLogic : MonoBehaviour
 {
+    [SerializeField]
+    private UnityEvent FieldChange = new UnityEvent();
+
     [SerializeField]
     private Field _field;
 
@@ -20,17 +22,18 @@ public class GameLogic : MonoBehaviour
         if(_field.TryMove(elementOut, elementIn) == false)
         {
             return;
-        }     
+        }
         DeleteCell(elementOut);
     }
 
-    private void DeleteCell(Vector2Int coordinate)
+    public void DeleteCell(Vector2Int coordinate)
     {
         _field.DeleteCell(coordinate);
         if(Parameters.Mode == GameMode.Infinity || Parameters.Mode == GameMode.Level)
         {
             _field.DeleteCells(GetDeleteMap());
         }
+        FieldChange?.Invoke();
     }
 
     private bool[,] GetDeleteMap()
