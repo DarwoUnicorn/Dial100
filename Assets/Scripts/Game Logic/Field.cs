@@ -15,6 +15,21 @@ public class Field : MonoBehaviour
         _parameters = parameters;
     }
 
+    public bool HasMove()
+    {
+        for(int i = 0; i < _cells.Count; i++)
+        {
+            for(int j = 0; j < _cells[i].Count; j++)
+            {
+                if(IsValideCoordinate(i, j) && CheckAround(i, j))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     public Vector2Int GetCoordinates(Cell cell)
     {
         if(cell == null)
@@ -34,12 +49,17 @@ public class Field : MonoBehaviour
 
     public bool IsValideCoordinate(Vector2Int coordinate)
     {
-        if(coordinate.x < 0 || coordinate.x >= _parameters.Width ||
-           coordinate.y < 0 || coordinate.y >= _parameters.Height)
+        return IsValideCoordinate(coordinate.x, coordinate.y);
+    }
+
+    public bool IsValideCoordinate(int x, int y)
+    {
+        if(x < 0 || x >= _parameters.Width ||
+           y < 0 || y >= _parameters.Height)
         {
             return false;
         }
-        if(_cells[coordinate.x][coordinate.y] == null)
+        if(_cells[x][y] == null)
         {
             return false;
         }
@@ -82,6 +102,27 @@ public class Field : MonoBehaviour
             return false;
         }
         return true;
+    }
+
+    private bool CheckAround(int x, int y)
+    {
+        if(IsValideCoordinate(x - 1, y) && _cells[x][y].Data.Value + _cells[x - 1][y].Data.Value <= 100)
+        {
+            return true;
+        }
+        if(IsValideCoordinate(x + 1, y) && _cells[x][y].Data.Value + _cells[x + 1][y].Data.Value <= 100)
+        {
+            return true;
+        }
+        if(IsValideCoordinate(x, y - 1) && _cells[x][y].Data.Value + _cells[x][y - 1].Data.Value <= 100)
+        {
+            return true;
+        }
+        if(IsValideCoordinate(x, y + 1) && _cells[x][y].Data.Value + _cells[x][y + 1].Data.Value <= 100)
+        {
+            return true;
+        }
+        return false;
     }
 
     private void MoveCellUp(Vector2Int coordinate)

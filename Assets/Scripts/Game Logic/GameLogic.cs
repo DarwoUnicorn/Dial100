@@ -5,6 +5,8 @@ public class GameLogic : MonoBehaviour
 {
     [SerializeField]
     private UnityEvent FieldChange = new UnityEvent();
+    [SerializeField]
+    private UnityEvent MovesOver = new UnityEvent();
 
     [SerializeField]
     private Field _field;
@@ -34,6 +36,10 @@ public class GameLogic : MonoBehaviour
             _field.DeleteCells(GetDeleteMap());
         }
         FieldChange?.Invoke();
+        if(_field.HasMove() == false)
+        {
+            MovesOver?.Invoke();
+        }
     }
 
     private bool[,] GetDeleteMap()
