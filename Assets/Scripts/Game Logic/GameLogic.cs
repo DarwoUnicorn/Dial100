@@ -13,6 +13,18 @@ public class GameLogic : MonoBehaviour
 
     public GameParameters Parameters => _field.Parameters;
 
+    public void Restart()
+    {
+        foreach(var column in _field.Cells)
+        {
+            foreach(var cell in column)
+            {
+                cell.Generate(Parameters.MinStartCellValue, Parameters.MaxStartCellValue);
+            }
+        }
+        FieldChange?.Invoke();
+    }
+
     public void OnSwipe(Cell cell, Vector2Int direction)
     {
         Vector2Int elementOut = _field.GetCoordinates(cell);

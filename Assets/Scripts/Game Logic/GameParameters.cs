@@ -12,10 +12,10 @@ public class GameParameters : MonoBehaviour
     private int _fullInRow;
     [SerializeField]
     private int _fullInColumn;
-    [SerializeField] [Range(0, 100)]
-    private float _maxTime;
-    [SerializeField] [Range(0, 100)]
-    private float _minTime;
+    [SerializeField] [Range(1, 100)]
+    private float _maxTime = 1;
+    [SerializeField] [Range(1, 100)]
+    private float _minTime = 1;
     [SerializeField] [Range(1, 100)]
     private int _maxStartCellValue = 1;
     [SerializeField] [Range(1, 100)]

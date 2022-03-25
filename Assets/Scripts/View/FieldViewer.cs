@@ -20,20 +20,17 @@ public class FieldViewer : MonoBehaviour
             foreach(var cell in _field.Cells[i])
             {
                 cell.Text.text = cell.Data.Value.ToString();
-                if(cell.State == Cell.MotionState.Idle)
+                if(cell.State == Cell.MotionState.Idle || _objectsForMove.Contains(cell))
                 {
                     continue;
                 }
-                if(cell.State == Cell.MotionState.Created)
+                else if(cell.State == Cell.MotionState.Created)
                 {
                     newCellsCount++;
                     cell.transform.position = _field.Cells[i][_field.Cells[i].Count - 1].Parent.position + 
                         Vector3.up * (distance * newCellsCount);
                 }
-                if(_objectsForMove.Contains(cell) == false)
-                {
-                    _objectsForMove.Add(cell);
-                }
+                _objectsForMove.Add(cell);
             }
         }
     }

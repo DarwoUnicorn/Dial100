@@ -9,7 +9,7 @@ public class TimerViewer : MonoBehaviour
 
     private void Update()
     {
-        if(_timer.IsPaused == true)
+        if(_timer.RemainingTime / _timer.MaxTime == _filler.localScale.x)
         {
             return;
         }
