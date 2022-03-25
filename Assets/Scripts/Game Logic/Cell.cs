@@ -41,6 +41,11 @@ public class Cell : MonoBehaviour
         other.State = other.State != MotionState.Created ? MotionState.Falls : MotionState.Created;
     }
 
+    public void SetFalls()
+    {
+        State = MotionState.Falls;
+    }
+
     public void SetIdle()
     {
         State = MotionState.Idle;

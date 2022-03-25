@@ -7,6 +7,10 @@ public class GameLogic : MonoBehaviour
     private UnityEvent FieldChange = new UnityEvent();
     [SerializeField]
     private UnityEvent MovesOver = new UnityEvent();
+    [SerializeField]
+    private UnityEvent<int> IncreasePoints = new UnityEvent<int>();
+    [SerializeField]
+    private UnityEvent Dial100 = new UnityEvent();
 
     [SerializeField]
     private Field _field;
@@ -37,6 +41,11 @@ public class GameLogic : MonoBehaviour
         {
             return;
         }
+        if(_field.Cells[elementIn.x][elementIn.y].Data.Value == 100)
+        {
+            Dial100?.Invoke();
+        }
+        IncreasePoints?.Invoke(_field.Cells[elementIn.x][elementIn.y].Data.Value);
         DeleteCell(elementOut);
     }
 
