@@ -504,7 +504,7 @@ MonoBehaviour:
   m_StartAxis: 1
   m_CellSize: {x: 80, y: 80}
   m_Spacing: {x: 25, y: 25}
-  m_Constraint: 2
+  m_Constraint: 1
   m_ConstraintCount: 10
 --- !u!114 &195011217
 MonoBehaviour:

@@ -13,10 +13,10 @@ public class TimerViewer : MonoBehaviour
         {
             return;
         }
-        OnTimeChanged(_timer.RemainingTime / _timer.MaxTime);
+        ChangeTimeView(_timer.RemainingTime / _timer.MaxTime);
     }
 
-    private void OnTimeChanged(float fill)
+    private void ChangeTimeView(float fill)
     {
         _filler.localScale = new Vector3(fill, 1, 1);
     }

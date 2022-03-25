@@ -12,8 +12,8 @@ public class FieldViewer : MonoBehaviour
 
     public void OnFieldChanged()
     {
-        float distance = Vector2.Distance(_field.Cells[0][_field.Cells.Count - 1].Parent.position,
-                                          _field.Cells[0][_field.Cells.Count - 2].Parent.position);
+        float distance = Vector2.Distance(_field.Cells[0][_field.Cells[0].Count - 1].Parent.position,
+                                          _field.Cells[0][_field.Cells[0].Count - 2].Parent.position);
         for(int i = 0; i < _field.Cells.Count; i++)
         {
             int newCellsCount = 0;
@@ -27,7 +27,7 @@ public class FieldViewer : MonoBehaviour
                 if(cell.State == Cell.MotionState.Created)
                 {
                     newCellsCount++;
-                    cell.transform.position = _field.Cells[i][_field.Cells.Count - 1].Parent.position + 
+                    cell.transform.position = _field.Cells[i][_field.Cells[i].Count - 1].Parent.position + 
                         Vector3.up * (distance * newCellsCount);
                 }
                 if(_objectsForMove.Contains(cell) == false)
