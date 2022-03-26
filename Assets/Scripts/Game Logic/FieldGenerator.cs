@@ -5,8 +5,11 @@ using UnityEngine.Events;
 public class FieldGenerator : MonoBehaviour
 {
     [SerializeField]
-    private UnityEvent<List<List<Cell>>, GameParameters> FieldCreated = 
+    private UnityEvent<List<List<Cell>>, GameParameters> CellsGenerated = 
         new UnityEvent<List<List<Cell>>, GameParameters>();
+    [SerializeField]
+    private UnityEvent<List<List<GameObject>>> FieldCreated =
+        new UnityEvent<List<List<GameObject>>>();
 
     [SerializeField]
     private Transform _cellsParent;
@@ -31,13 +34,15 @@ public class FieldGenerator : MonoBehaviour
             _field.Add(new List<GameObject>());
             for(int j = gameParameters.Height - 1; j >= 0; j--)
             {
-                CreateCell(cells[i], _field[i], gameParameters.FieldMap[i, j]);
+                CreateCell(cells[i], _field[i], gameParameters.FieldMap[i][j]);
                 cells[i][cells[i].Count - 1]?.Generate(gameParameters.MinStartCellValue,
                                                       gameParameters.MaxStartCellValue);
             }
             cells[i].Reverse();
+            _field[i].Reverse();
         }
-        FieldCreated?.Invoke(cells, gameParameters);
+        CellsGenerated?.Invoke(cells, gameParameters);
+        FieldCreated?.Invoke(_field);
     }
 
     private void CreateCell(List<Cell> cells, List<GameObject> field, bool IsActive)

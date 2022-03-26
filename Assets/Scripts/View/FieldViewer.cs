@@ -8,28 +8,38 @@ public class FieldViewer : MonoBehaviour
     [SerializeField]
     private Field _field;
 
+    private List<List<GameObject>> cellParents;
     private List<Cell> _objectsForMove = new List<Cell>();
+
+    public void SetCellParents(List<List<GameObject>> field)
+    {
+        cellParents = field;
+    }
 
     public void OnFieldChanged()
     {
-        float distance = Vector2.Distance(_field.Cells[0][_field.Cells[0].Count - 1].Parent.position,
-                                          _field.Cells[0][_field.Cells[0].Count - 2].Parent.position);
+        float distanceBetweenCells = Vector2.Distance(cellParents[0][0].transform.position,
+                                                      cellParents[0][1].transform.position);
         for(int i = 0; i < _field.Cells.Count; i++)
         {
             int newCellsCount = 0;
             foreach(var cell in _field.Cells[i])
             {
+                if(cell == null)
+                {
+                    continue;
+                }
                 cell.Text.text = cell.Data.Value.ToString();
                 if(cell.State == Cell.MotionState.Idle)
                 {
                     continue;
                 }
-                else if(cell.State == Cell.MotionState.Created)
+                if(cell.State == Cell.MotionState.Created)
                 {
                     newCellsCount++;
-                    cell.transform.position = _field.Cells[i][_field.Cells[i].Count - 1].Parent.position + 
-                        Vector3.up * (distance * newCellsCount);
-                        cell.SetFalls();
+                    cell.transform.position = cellParents[i][cellParents[i].Count - 1].transform.position + 
+                        Vector3.up * (distanceBetweenCells * newCellsCount);
+                    cell.SetFalls();
                 }
                 if(_objectsForMove.Contains(cell) == false)
                 {

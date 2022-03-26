@@ -2,6 +2,31 @@ using UnityEngine;
 
 public class GameParameters : MonoBehaviour
 {
+    [System.Serializable]
+    public class BoolMap
+    {
+        public bool[] _row;
+
+        public BoolMap(int size)
+        {
+            _row = new bool[size];
+        }
+
+        public int Length => _row.Length;
+
+        public bool this[int i]
+        {
+            get
+            {
+                return _row[i];
+            }
+            set
+            {
+                _row[i] = value;
+            }
+        }
+    }
+
     [SerializeField]
     private GameMode _mode;
     [SerializeField] [Range(2, 10)]
@@ -22,8 +47,8 @@ public class GameParameters : MonoBehaviour
     private int _minStartCellValue = 1;
     [SerializeField]
     private bool _allowBonuses;
-    [SerializeField]
-    private bool[,] _fieldMap;
+    [SerializeField] [HideInInspector]
+    private BoolMap[] _fieldMap;
 
     private float _previousMaxTime;
     private float _previousMinTime;
@@ -38,7 +63,7 @@ public class GameParameters : MonoBehaviour
     public int MaxStartCellValue => _maxStartCellValue;
     public int MinStartCellValue => _minStartCellValue;
     public bool AllowBonuses => _allowBonuses;
-    public bool[,] FieldMap => _fieldMap;
+    public BoolMap[] FieldMap => _fieldMap;
 
     private void OnValidate()
     {
@@ -61,20 +86,24 @@ public class GameParameters : MonoBehaviour
         {
             _previousMinTime = _minTime;
         }
-        if(_fieldMap?.GetLength(0) != Width || _fieldMap?.GetLength(1) != Height)
+        if(FieldMap?.Length != Width || FieldMap[0].Length != Height)
         {
-            bool[,] temp = new bool[Width, Height];
-            for(int i = 0; i < temp.GetLength(0); i++)
+            BoolMap[] temp = new BoolMap[Width];
+            for(int i = 0; i < Width; i++)
             {
-                for(int j = 0; j < temp.GetLength(1); j++)
+                temp[i] = new BoolMap(Height);
+            }
+            for(int i = 0; i < temp.Length; i++)
+            {
+                for(int j = 0; j < temp[i].Length; j++)
                 {
-                    if(i < _fieldMap?.GetLength(0) && j < _fieldMap?.GetLength(1))
+                    if(i < FieldMap?.Length && j < FieldMap[i]?.Length)
                     {
-                        temp[i, j] = _fieldMap[i, j];
+                        temp[i][j] = FieldMap[i][j];
                     }
                     else
                     {
-                        temp[i, j] = true;
+                        temp[i][j] = true;
                     }
                 }
             }

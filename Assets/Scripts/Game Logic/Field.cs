@@ -9,7 +9,7 @@ public class Field : MonoBehaviour
     public IReadOnlyList<IReadOnlyList<Cell>> Cells => _cells;
     public GameParameters Parameters => _parameters;
 
-    public void OnFieldCreated(List<List<Cell>> cells, GameParameters parameters)
+    public void OnCellsGenerated(List<List<Cell>> cells, GameParameters parameters)
     {
         _cells = cells;
         _parameters = parameters;
@@ -135,8 +135,9 @@ public class Field : MonoBehaviour
                 continue;
             }
             rising.Swap(_cells[coordinate.x][i]);
-            _cells[coordinate.x][i - 1] = _cells[coordinate.x][i];
+            _cells[coordinate.x][coordinate.y] = _cells[coordinate.x][i];
             _cells[coordinate.x][i] = rising;
+            coordinate.Set(coordinate.x, i);
         }
     }
 }

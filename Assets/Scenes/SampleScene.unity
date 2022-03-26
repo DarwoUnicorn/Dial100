@@ -653,12 +653,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6dbd36aa52cf34fb90b20f1e8e0197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FieldCreated:
+  CellsGenerated:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 195011220}
         m_TargetAssemblyTypeName: Field, Assembly-CSharp
-        m_MethodName: OnFieldCreated
+        m_MethodName: OnCellsGenerated
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  FieldCreated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 195011219}
+        m_TargetAssemblyTypeName: FieldViewer, Assembly-CSharp
+        m_MethodName: SetCellParents
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1964,7 +1979,7 @@ MonoBehaviour:
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
+    m_ColorMultiplier: 4.16
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
@@ -2048,10 +2063,14 @@ MonoBehaviour:
   _fullInRow: 3
   _fullInColumn: 3
   _maxTime: 30
-  _minTime: 15
+  _minTime: 3
   _maxStartCellValue: 20
   _minStartCellValue: 1
   _allowBonuses: 0
+  _fieldMap:
+  - _row: 010101
+  - _row: 010101
+  - _row: 010101
 --- !u!1 &468190063
 GameObject:
   m_ObjectHideFlags: 0
@@ -4466,7 +4485,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 911476074}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -4832,7 +4851,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974013299}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -6957,7 +6976,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1642429520}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -9023,6 +9042,10 @@ MonoBehaviour:
   _maxStartCellValue: 1
   _minStartCellValue: 20
   _allowBonuses: 1
+  _fieldMap:
+  - _row: 010101
+  - _row: 010101
+  - _row: 010101
 --- !u!1 &1915974148
 GameObject:
   m_ObjectHideFlags: 0
@@ -9303,6 +9326,11 @@ MonoBehaviour:
   _maxStartCellValue: 1
   _minStartCellValue: 20
   _allowBonuses: 1
+  _fieldMap:
+  - _row: 01010101
+  - _row: 01010101
+  - _row: 01010101
+  - _row: 01010101
 --- !u!1 &2039983950
 GameObject:
   m_ObjectHideFlags: 0
@@ -9694,6 +9722,11 @@ MonoBehaviour:
   _maxStartCellValue: 1
   _minStartCellValue: 20
   _allowBonuses: 0
+  _fieldMap:
+  - _row: 01010101
+  - _row: 01010101
+  - _row: 01010101
+  - _row: 01010101
 --- !u!1 &2120685025
 GameObject:
   m_ObjectHideFlags: 0

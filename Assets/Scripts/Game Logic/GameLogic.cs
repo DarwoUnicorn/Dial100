@@ -23,7 +23,7 @@ public class GameLogic : MonoBehaviour
         {
             foreach(var cell in column)
             {
-                cell.Generate(Parameters.MinStartCellValue, Parameters.MaxStartCellValue);
+                cell?.Generate(Parameters.MinStartCellValue, Parameters.MaxStartCellValue);
             }
         }
         FieldChange?.Invoke();
