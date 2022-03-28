@@ -5,7 +5,8 @@ public class GameParameters : MonoBehaviour
     [System.Serializable]
     public class BoolMap
     {
-        public bool[] _row;
+        [SerializeField]
+        private bool[] _row;
 
         public BoolMap(int size)
         {
@@ -89,12 +90,9 @@ public class GameParameters : MonoBehaviour
         if(FieldMap?.Length != Width || FieldMap[0].Length != Height)
         {
             BoolMap[] temp = new BoolMap[Width];
-            for(int i = 0; i < Width; i++)
-            {
-                temp[i] = new BoolMap(Height);
-            }
             for(int i = 0; i < temp.Length; i++)
             {
+                temp[i] = new BoolMap(Height);
                 for(int j = 0; j < temp[i].Length; j++)
                 {
                     if(i < FieldMap?.Length && j < FieldMap[i]?.Length)

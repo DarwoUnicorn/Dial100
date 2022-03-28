@@ -79,15 +79,21 @@ public class Field : MonoBehaviour
 
     public void DeleteCells(bool[,] deleteMap)
     {
+        bool HasDeleted = false;
         for(int i = deleteMap.GetLength(0) - 1; i >= 0; i--)
         {
             for(int j = deleteMap.GetLength(1) - 1; j >= 0; j--)
             {
                 if(deleteMap[i, j] == true)
                 {
+                    HasDeleted = true;
                     DeleteCell(new Vector2Int(i, j));
                 }
             }
+        }
+        if(HasDeleted)
+        {
+            DeleteCells(GetDeleteMap());
         }
     }
 
@@ -102,6 +108,68 @@ public class Field : MonoBehaviour
             return false;
         }
         return true;
+    }
+
+    public bool[,] GetDeleteMap()
+    {
+        bool[,] deleteMap = new bool[_parameters.Width, _parameters.Height];
+        for(int i = 0; i < _parameters.Height; i++)
+        {
+            CheckRow(deleteMap, i);
+        }
+        for(int i = 0; i < _parameters.Width; i++)
+        {
+            CheckColumn(deleteMap, i);
+        }
+        return deleteMap;
+    }
+
+    private void CheckRow(bool[,] deleteMap, int rowNumber)
+    {
+        int counter = 0;
+        for(int i = 0; i < _parameters.Width; i++)
+        {
+            if(_cells[i][rowNumber] != null && _cells[i][rowNumber].Data.IsComplete)
+            {
+                counter++;
+                if(i < _parameters.Width - 1)
+                {
+                    continue;
+                }
+            }
+            if(counter >= _parameters.FullInRow)
+            {
+                for(int k = 0; k < counter; k++)
+                {
+                    deleteMap[i - k, rowNumber] = true;
+                }
+            }
+            counter = 0;
+        }
+    }
+
+    private void CheckColumn(bool[,] deleteMap, int columnNumber)
+    {
+        int counter = 0;
+        for(int i = 0; i < _parameters.Height; i++)
+        {
+            if(_cells[columnNumber][i] != null && _cells[columnNumber][i].Data.IsComplete)
+            {
+                counter++;
+                if(i < _parameters.Height - 1)
+                {
+                    continue;
+                }
+            }
+            if(counter >= _parameters.FullInColumn)
+            {
+                for(int k = 0; k < counter; k++)
+                {
+                    deleteMap[columnNumber, i - k] = true;
+                }
+            }
+            counter = 0;
+        }
     }
 
     private bool CheckAround(int x, int y)

@@ -29,17 +29,19 @@ public class FieldViewer : MonoBehaviour
                 {
                     continue;
                 }
-                cell.Text.text = cell.Data.Value.ToString();
-                if(cell.State == Cell.MotionState.Idle)
+                if(cell.Text.text != cell.Data.Value.ToString())
                 {
-                    continue;
+                    cell.Text.text = cell.Data.Value.ToString();
                 }
-                if(cell.State == Cell.MotionState.Created)
+                if(cell.IsCreated == true)
                 {
                     newCellsCount++;
                     cell.transform.position = cellParents[i][cellParents[i].Count - 1].transform.position + 
                         Vector3.up * (distanceBetweenCells * newCellsCount);
-                    cell.SetFalls();
+                }
+                if(cell.transform.localPosition == Vector3.zero)
+                {
+                    continue;
                 }
                 if(_objectsForMove.Contains(cell) == false)
                 {
@@ -57,7 +59,6 @@ public class FieldViewer : MonoBehaviour
                 Vector3.MoveTowards(_objectsForMove[i].transform.localPosition, Vector3.zero, _moveStep);
             if(_objectsForMove[i].transform.localPosition == Vector3.zero)
             {
-                _objectsForMove[i].SetIdle();
                 _objectsForMove.RemoveAt(i);
             } 
         }

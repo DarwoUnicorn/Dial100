@@ -20,29 +20,35 @@ public class FieldGenerator : MonoBehaviour
 
     private List<List<GameObject>> _field = new List<List<GameObject>>();
 
-    public void Generate(GameParameters gameParameters)
+    public void Generate(GameParameters parameters)
     {
-        if(gameParameters == null)
+        if(parameters == null)
         {
-            throw new System.ArgumentNullException(gameParameters.ToString());
+            throw new System.ArgumentNullException(parameters.ToString());
         }
         ClearField();
+        List<List<Cell>> cells = GenerateField(parameters);
+        CellsGenerated?.Invoke(cells, parameters);
+        FieldCreated?.Invoke(_field);
+    }
+
+    private List<List<Cell>> GenerateField(GameParameters parameters)
+    {
         List<List<Cell>> cells = new List<List<Cell>>();
-        for(int i = 0; i < gameParameters.Width; i++)
+        for(int i = 0; i < parameters.Width; i++)
         {
             cells.Add(new List<Cell>());
             _field.Add(new List<GameObject>());
-            for(int j = gameParameters.Height - 1; j >= 0; j--)
+            for(int j = parameters.Height - 1; j >= 0; j--)
             {
-                CreateCell(cells[i], _field[i], gameParameters.FieldMap[i][j]);
-                cells[i][cells[i].Count - 1]?.Generate(gameParameters.MinStartCellValue,
-                                                      gameParameters.MaxStartCellValue);
+                CreateCell(cells[i], _field[i], parameters.FieldMap[i][j]);
+                cells[i][cells[i].Count - 1]?.Generate(parameters.MinStartCellValue,
+                                                       parameters.MaxStartCellValue);
             }
             cells[i].Reverse();
             _field[i].Reverse();
         }
-        CellsGenerated?.Invoke(cells, gameParameters);
-        FieldCreated?.Invoke(_field);
+        return cells;
     }
 
     private void CreateCell(List<Cell> cells, List<GameObject> field, bool IsActive)

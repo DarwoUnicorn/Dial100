@@ -1,6 +1,6 @@
 public enum GameMode
 {
     Infinity,
-    Level,
+    Clear,
     Final
 }

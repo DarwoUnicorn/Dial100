@@ -3,20 +3,13 @@ using TMPro;
 
 public class Cell : MonoBehaviour
 {
-    public enum MotionState
-    {
-        Idle,
-        Created,
-        Falls,
-    }
-
     [SerializeField]
     private TextMeshProUGUI _text;
 
     public TextMeshProUGUI Text => _text;
     public Transform Parent => transform.parent;
     public CellData Data { get; private set; }
-    public MotionState State { get; private set; }
+    public bool IsCreated { get; private set; }
 
     public void Generate(int minValue, int maxValue)
     {
@@ -25,7 +18,7 @@ public class Cell : MonoBehaviour
             Data = new CellData();
         }
         Data.SetValue(Random.Range(minValue, maxValue + 1));
-        State = MotionState.Created;
+        IsCreated = true;
     }
 
     public void Swap(Cell other)
@@ -37,17 +30,13 @@ public class Cell : MonoBehaviour
         Transform tempParent = Parent;
         transform.SetParent(other.Parent);
         other.transform.SetParent(tempParent);
-        State = State != MotionState.Created ? MotionState.Falls : MotionState.Created;
-        other.State = other.State != MotionState.Created ? MotionState.Falls : MotionState.Created;
     }
 
-    public void SetFalls()
+    private void LateUpdate()
     {
-        State = MotionState.Falls;
-    }
-
-    public void SetIdle()
-    {
-        State = MotionState.Idle;
+        if(IsCreated == true)
+        {
+            IsCreated = false;
+        }
     }
 }

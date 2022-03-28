@@ -710,7 +710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82780ae421225414089570c7e24f3f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveStep: 50
+  _moveStep: 125
   _field: {fileID: 195011220}
 --- !u!114 &195011220
 MonoBehaviour:
@@ -736,7 +736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00021d76d868c9d479b9cd1fd5fb1f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FieldChange:
+  FieldChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 195011219}
