@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FieldViewer : MonoBehaviour
+public class FieldView : MonoBehaviour
 {
     [SerializeField]
     private float _moveStep;

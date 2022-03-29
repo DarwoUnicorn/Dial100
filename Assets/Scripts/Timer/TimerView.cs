@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TimerViewer : MonoBehaviour
+public class TimerView : MonoBehaviour
 {
     [SerializeField]
     private Transform _filler;
