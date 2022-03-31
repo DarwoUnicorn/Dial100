@@ -1,18 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Abillity : MonoBehaviour
+public abstract class Abillity : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private int _count;
+
+    public int Count => _count;
+
+    public virtual void Use()
     {
-        
+        if(_count <= 0)
+        {
+            throw new System.InvalidOperationException("Cannot use the ability, as their count is 0");
+        }
+        _count--;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void IncreaseAbillityCount(int count)
     {
-        
+        if(count < 1)
+        {
+            throw new System.ArgumentException("Count must be greater than 0");
+        }
+        _count += count;
     }
 }

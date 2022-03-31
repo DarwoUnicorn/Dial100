@@ -6934,7 +6934,9 @@ GameObject:
   - component: {fileID: 1642429521}
   - component: {fileID: 1642429522}
   - component: {fileID: 1642429524}
+  - component: {fileID: 1642429526}
   - component: {fileID: 1642429523}
+  - component: {fileID: 1642429525}
   m_Layer: 5
   m_Name: PlayField
   m_TagString: Untagged
@@ -6992,6 +6994,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a69d4249e826cc47a790537ea61fbcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _graphicRaycaster: {fileID: 1624154056}
+  _eventSystem: {fileID: 468190065}
   HasSwipe:
     m_PersistentCalls:
       m_Calls:
@@ -7007,8 +7011,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _graphicRaycaster: {fileID: 1624154056}
-  _eventSystem: {fileID: 468190065}
   _swipeThreshold: 100
 --- !u!114 &1642429524
 MonoBehaviour:
@@ -7022,6 +7024,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89ed9c7c58545154b88beda50ad05fe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1642429525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642429520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12996ae7aa5b4944b92793142ccfedc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startInputInterpreter: {fileID: 1642429523}
+--- !u!114 &1642429526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642429520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26db26f24f29b394485a17db79390a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _graphicRaycaster: {fileID: 1624154056}
+  _eventSystem: {fileID: 468190065}
+  UsingHammer:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 195011213}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1673658445
 GameObject:
   m_ObjectHideFlags: 0

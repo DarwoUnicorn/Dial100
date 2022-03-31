@@ -47,11 +47,11 @@ public class UIGroupSelector : MonoBehaviour
 
     private void Start()
     {
-        DisableAllGroup();
         if(_startedPage == null)
         {
             throw new System.NullReferenceException(_startedPage.ToString());
         }
+        DisableAllGroup();
         _activePage = _startedPage;
         EnableGroup(_activePage.Group);
     }

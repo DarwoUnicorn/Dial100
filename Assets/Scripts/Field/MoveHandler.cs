@@ -49,6 +49,11 @@ public class MoveHandler : MonoBehaviour
         DeleteCell(elementOut);
     }
 
+    public void DeleteCell(Cell cell)
+    {
+        DeleteCell(_field.GetCoordinates(cell));
+    }
+
     public void DeleteCell(Vector2Int coordinate)
     {
         _field.DeleteCell(coordinate);

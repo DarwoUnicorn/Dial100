@@ -1,18 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class InputInterpreter : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class InputSwipeInterpreter : InputInterpreter, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [SerializeField]
     private UnityEvent<Cell, Vector2Int> HasSwipe = new UnityEvent<Cell, Vector2Int>();
 
-    [SerializeField]
-    private GraphicRaycaster _graphicRaycaster;
-    [SerializeField]
-    private EventSystem _eventSystem;
     [SerializeField]
     private float _swipeThreshold;
 
