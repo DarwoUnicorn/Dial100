@@ -16,9 +16,13 @@ public class InputSwipeInterpreter : InputInterpreter, IBeginDragHandler, IDragH
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if(IsActive == false)
+        {
+            return;
+        }
         _startSwipePosition = eventData.position;
         List<RaycastResult> result = new List<RaycastResult>();
-        _graphicRaycaster.Raycast(eventData, result);
+        Raycaster.Raycast(eventData, result);
         foreach(var item in result)
         {
             _cell = item.gameObject.GetComponentInChildren<Cell>();
@@ -30,7 +34,7 @@ public class InputSwipeInterpreter : InputInterpreter, IBeginDragHandler, IDragH
     }
     public void OnDrag(PointerEventData eventData)
     {
-        if(_cell == null)
+        if(IsActive == false || _cell == null)
         {
             return;
         }
@@ -45,7 +49,23 @@ public class InputSwipeInterpreter : InputInterpreter, IBeginDragHandler, IDragH
 
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
     {
+        if(IsActive == false)
+        {
+            return;
+        }
         _cell = null;
+    }
+
+    private void OnDisable()
+    {
+        _startSwipePosition = Vector2.zero;
+        _cell = null;
+        IsActive = false;
+    }
+    
+    private void OnEnable()
+    {
+        IsActive = true;
     }
 
     private Vector2Int GetDirection(Vector2 vector)

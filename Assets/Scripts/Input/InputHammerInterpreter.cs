@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
@@ -8,10 +7,13 @@ public class InputHammerInterpreter : InputInterpreter
 {
     [SerializeField]
     private UnityEvent<Cell> UsingHammer = new UnityEvent<Cell>();
+    
+    [SerializeField]
+    protected EventSystem _eventSystem;
 
     private void Update()
     {
-        if(Input.touchCount == 0)
+        if(IsActive == false || Input.touchCount == 0)
         {
             return;
         }
@@ -22,12 +24,22 @@ public class InputHammerInterpreter : InputInterpreter
         }
     }
 
+    private void OnDisable()
+    {
+        IsActive = false;
+    }
+
+    private void OnEnable()
+    {
+        IsActive = true;
+    }
+
     private void CheckTouch(Touch touch)
     {
         PointerEventData eventData = new PointerEventData(_eventSystem);
-        eventData.position = Camera.current.WorldToScreenPoint(touch.position);
+        eventData.position = touch.position;
         List<RaycastResult> result = new List<RaycastResult>();
-        _graphicRaycaster.Raycast(eventData, result);
+        Raycaster.Raycast(eventData, result);
         Cell cell;
         foreach(var item in result)
         {

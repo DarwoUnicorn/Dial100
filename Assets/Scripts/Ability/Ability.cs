@@ -1,7 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
-public abstract class Abillity : MonoBehaviour
+public abstract class Ability : MonoBehaviour
 {
+    [SerializeField]
+    protected UnityEvent AbilityUsed = new UnityEvent();
+
     [SerializeField]
     private int _count;
 
@@ -16,7 +20,7 @@ public abstract class Abillity : MonoBehaviour
         _count--;
     }
 
-    public void IncreaseAbillityCount(int count)
+    public void IncreaseAbilityCount(int count)
     {
         if(count < 1)
         {
