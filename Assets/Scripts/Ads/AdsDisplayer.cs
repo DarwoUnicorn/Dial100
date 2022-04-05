@@ -16,7 +16,6 @@ public class AdsDisplayer : MonoBehaviour
     {
         Advertisement.Show(AdUnit._rewarded, listener);
         _adsLoader.LoadUnit(AdUnit._rewarded);
-    
     }
 
     public void ShowBanner(IUnityAdsShowListener listener)

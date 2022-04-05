@@ -50,6 +50,21 @@ public class MoveHandler : MonoBehaviour
         DeleteCell(elementOut);
     }
 
+    public void ClearBottom()
+    {
+        bool[,] deleteMap = new bool[Parameters.Width, Parameters.Height];
+        int rowCount = Parameters.Height < 4 ? 1 : 2;
+        for(int i = 0; i < Parameters.Width; i++)
+        {
+            for(int j = 0; j < rowCount; j++)
+            {
+                deleteMap[i, j] = true;
+            }
+        }
+        _field.DeleteCells(deleteMap);
+        FieldChanged?.Invoke();
+    }
+
     public void DeleteCell(Cell cell)
     {
         DeleteCell(_field.GetCoordinates(cell));
