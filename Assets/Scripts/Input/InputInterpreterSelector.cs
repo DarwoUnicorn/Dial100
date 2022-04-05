@@ -34,12 +34,12 @@ public class InputInterpreterSelector : MonoBehaviour
 
     private void EnableInterpreter(InputInterpreter interpreter)
     {
-        interpreter.gameObject.SetActive(true);
+        interpreter.enabled = true;
     }
 
     private void DisableInterpreter(InputInterpreter interpreter)
     {
-        interpreter.gameObject.SetActive(false);
+        interpreter.enabled = false;
     }
 
     private void DisableAllInterpreter()

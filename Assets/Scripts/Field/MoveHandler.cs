@@ -26,6 +26,7 @@ public class MoveHandler : MonoBehaviour
                 cell?.Generate(Parameters.MinStartCellValue, Parameters.MaxStartCellValue);
             }
         }
+        _field.ResetMaxStartValue();
         FieldChanged?.Invoke();
     }
 

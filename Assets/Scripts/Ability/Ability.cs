@@ -5,19 +5,25 @@ public abstract class Ability : MonoBehaviour
 {
     [SerializeField]
     protected UnityEvent AbilityUsed = new UnityEvent();
-
     [SerializeField]
+    protected UnityEvent AbilityOver = new UnityEvent();
+    [SerializeField]
+    protected UnityEvent<int> AbilitiCountChanged = new UnityEvent<int>();
+
+    [SerializeField] [Min(0)]
     private int _count;
 
     public int Count => _count;
 
-    public virtual void Use()
+    public virtual void Activate()
     {
-        if(_count <= 0)
+        if(_count == 0)
         {
-            throw new System.InvalidOperationException("Cannot use the ability, as their count is 0");
+            AbilityOver?.Invoke();
+            return;
         }
-        _count--;
+        AbilityUsed?.Invoke();
+        AbilitiCountChanged?.Invoke(--_count);
     }
 
     public void IncreaseAbilityCount(int count)
@@ -27,5 +33,11 @@ public abstract class Ability : MonoBehaviour
             throw new System.ArgumentException("Count must be greater than 0");
         }
         _count += count;
+        AbilitiCountChanged?.Invoke(_count);
+    }
+
+    private void Start()
+    {
+        AbilitiCountChanged?.Invoke(_count);
     }
 }

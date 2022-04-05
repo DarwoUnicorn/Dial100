@@ -1,10 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Field : MonoBehaviour
 {
+    [SerializeField]
+    private UnityEvent ResetMaxStartCellValue = new UnityEvent();
+
     private List<List<Cell>> _cells;
     private GameParameters _parameters;
+    private int _maxStartValue;
+    private int _movesBeforeResetMaxStartValue = -1;
 
     public IReadOnlyList<IReadOnlyList<Cell>> Cells => _cells;
     public GameParameters Parameters => _parameters;
@@ -13,6 +19,18 @@ public class Field : MonoBehaviour
     {
         _cells = cells;
         _parameters = parameters;
+        _maxStartValue = parameters.MaxStartCellValue;
+
+    }
+
+    public void ResetMaxStartValue()
+    {
+        if(_movesBeforeResetMaxStartValue != 0)
+        {
+            _maxStartValue = _parameters.MaxStartCellValue;
+            _movesBeforeResetMaxStartValue = 0;
+            ResetMaxStartCellValue?.Invoke();
+        }
     }
 
     public bool HasMove()
@@ -73,8 +91,18 @@ public class Field : MonoBehaviour
             throw new System.ArgumentException("Invalid coordinates");
         }
         _cells[coordinate.x][coordinate.y].
-            Generate(_parameters.MinStartCellValue, _parameters.MaxStartCellValue);
+            Generate(_parameters.MinStartCellValue, _maxStartValue);
         MoveCellUp(coordinate);
+        if(_movesBeforeResetMaxStartValue == 0)
+        {
+            return;
+        }
+        _movesBeforeResetMaxStartValue--;
+        if(_movesBeforeResetMaxStartValue == 0)
+        {
+            _maxStartValue = _parameters.MaxStartCellValue;
+            ResetMaxStartCellValue?.Invoke();
+        }
     }
 
     public void DeleteCells(bool[,] deleteMap)
@@ -108,6 +136,12 @@ public class Field : MonoBehaviour
             return false;
         }
         return true;
+    }
+
+    public void DescreaseMaxStartValue()
+    {
+        _maxStartValue = _parameters.MaxStartCellValue - 10;
+        _movesBeforeResetMaxStartValue = 10;
     }
 
     public bool[,] GetDeleteMap()
