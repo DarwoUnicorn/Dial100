@@ -6,6 +6,8 @@ public class AdsDisplayer : MonoBehaviour
     [SerializeField]
     private AdsLoader _adsLoader;
 
+    #region "UnityAds"
+
     public void ShowInterstitial(IUnityAdsShowListener listener)
     {
         Advertisement.Show(AdUnit._interstitial, listener);
@@ -23,4 +25,6 @@ public class AdsDisplayer : MonoBehaviour
         Advertisement.Show(AdUnit._banner, listener);
         _adsLoader.LoadUnit(AdUnit._banner);
     }
+
+    #endregion
 }

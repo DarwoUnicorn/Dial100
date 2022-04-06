@@ -11,16 +11,18 @@ public class AdsLoader : MonoBehaviour, IUnityAdsLoadListener
         LoadUnit(AdUnit._banner);
     }
 
+    public void LoadUnit(string adUnit)
+    {
+        Advertisement.Load(adUnit);
+    }
+
     private IEnumerator RetryInitialization(string adUnit)
     {
         yield return new WaitForSeconds(30);
         LoadUnit(adUnit);
     }
 
-    public void LoadUnit(string adUnit)
-    {
-        Advertisement.Load(adUnit);
-    }
+    #region "UnityAds"
 
     public void OnUnityAdsAdLoaded(string adUnit)
     {
@@ -32,4 +34,6 @@ public class AdsLoader : MonoBehaviour, IUnityAdsLoadListener
         Debug.Log($"UnityAds. Load failed: { adUnit }, { error.ToString() }, { message }");
         RetryInitialization(adUnit);
     }
+
+    #endregion
 }

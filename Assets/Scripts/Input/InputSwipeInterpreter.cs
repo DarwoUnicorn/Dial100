@@ -14,6 +14,24 @@ public class InputSwipeInterpreter : InputInterpreter, IBeginDragHandler, IDragH
     private Vector2 _startSwipePosition;
     private Cell _cell;
 
+    private Vector2Int GetDirection(Vector2 vector)
+    {
+        if(vector == Vector2.zero)
+        {
+            return Vector2Int.zero;
+        }
+        if(Mathf.Abs(vector.x) >= Mathf.Abs(vector.y))
+        {
+            return vector.x < 0 ? Vector2Int.left : Vector2Int.right;
+        }
+        else
+        {
+            return vector.y < 0 ? Vector2Int.down : Vector2Int.up;
+        }
+    }
+
+    #region "EventSystems"
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         if(IsActive == false)
@@ -56,6 +74,10 @@ public class InputSwipeInterpreter : InputInterpreter, IBeginDragHandler, IDragH
         _cell = null;
     }
 
+    #endregion
+
+    #region "MonoBehaviour"
+
     private void OnDisable()
     {
         _startSwipePosition = Vector2.zero;
@@ -68,19 +90,5 @@ public class InputSwipeInterpreter : InputInterpreter, IBeginDragHandler, IDragH
         IsActive = true;
     }
 
-    private Vector2Int GetDirection(Vector2 vector)
-    {
-        if(vector == Vector2.zero)
-        {
-            return Vector2Int.zero;
-        }
-        if(Mathf.Abs(vector.x) >= Mathf.Abs(vector.y))
-        {
-            return vector.x < 0 ? Vector2Int.left : Vector2Int.right;
-        }
-        else
-        {
-            return vector.y < 0 ? Vector2Int.down : Vector2Int.up;
-        }
-    }
+    #endregion
 }

@@ -1705,7 +1705,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 378819568}
         m_TargetAssemblyTypeName: Ability, Assembly-CSharp
-        m_MethodName: Activate
+        m_MethodName: Use
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7549,7 +7549,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1542031469}
         m_TargetAssemblyTypeName: HammerAbility, Assembly-CSharp
-        m_MethodName: Activate
+        m_MethodName: Use
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10629,7 +10629,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1977325641}
         m_TargetAssemblyTypeName: Ability, Assembly-CSharp
-        m_MethodName: Activate
+        m_MethodName: Use
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

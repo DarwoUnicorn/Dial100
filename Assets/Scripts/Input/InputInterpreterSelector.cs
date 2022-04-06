@@ -21,17 +21,6 @@ public class InputInterpreterSelector : MonoBehaviour
         EnableInterpreter(activeInputInterpreter);
     }
 
-    private void Start()
-    {
-        if(startInputInterpreter == null)
-        {
-            throw new System.NullReferenceException(startInputInterpreter.ToString());
-        }
-        DisableAllInterpreter();
-        activeInputInterpreter = startInputInterpreter;
-        EnableInterpreter(activeInputInterpreter);
-    }
-
     private void EnableInterpreter(InputInterpreter interpreter)
     {
         interpreter.enabled = true;
@@ -51,4 +40,19 @@ public class InputInterpreterSelector : MonoBehaviour
             DisableInterpreter(item);
         }
     }
+    
+    #region "MonoBehaviour"
+
+    private void Start()
+    {
+        if(startInputInterpreter == null)
+        {
+            throw new System.NullReferenceException(startInputInterpreter.ToString());
+        }
+        DisableAllInterpreter();
+        activeInputInterpreter = startInputInterpreter;
+        EnableInterpreter(activeInputInterpreter);
+    }
+
+    #endregion
 }

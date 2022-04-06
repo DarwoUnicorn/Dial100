@@ -8,16 +8,11 @@ public class HammerAbility : Ability
 
     private bool IsUsed;
 
-    public override void Activate()
+    public override void Use()
     {
         if(IsUsed == false)
         {
-            if(Count == 0)
-            {
-                return;
-            }
-            base.Activate();
-            IsUsed = true;
+            Activate();
             return;
         }
         Deactivate();
@@ -36,5 +31,15 @@ public class HammerAbility : Ability
     public void OnUsingHammer()
     {
         IsUsed = false;
+    }
+
+    private void Activate()
+    {
+        if(Count == 0)
+        {
+            return;
+        }
+        base.Use();
+        IsUsed = true;
     }
 }

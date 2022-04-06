@@ -55,6 +55,8 @@ public class Timer : MonoBehaviour
         IsPaused = false;
     }
 
+    #region "MonoBehaviour"
+
     private void Start()
     {
         IsPaused = true;
@@ -79,4 +81,6 @@ public class Timer : MonoBehaviour
         }
         _timeBeforeDecrease -= Time.deltaTime;
     }
+
+    #endregion
 }

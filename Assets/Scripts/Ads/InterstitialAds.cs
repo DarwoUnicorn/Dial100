@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.Advertisements;
 
 public class InterstitialAds : Ads
@@ -19,10 +18,14 @@ public class InterstitialAds : Ads
         }
     }
     
+    #region "UnityAds"
+
     public override void OnUnityAdsShowComplete(string adUnit, UnityAdsShowCompletionState showCompletionState)
     {
         base.OnUnityAdsShowComplete(adUnit, showCompletionState);
         _timer.ResetTimer();
         AdsOver?.Invoke();
     }
+
+    #endregion
 }

@@ -19,6 +19,8 @@ public class ContinueAds : Ads
         Displayer.ShowInterstitial(this);
     }
 
+    #region "UnityAds"
+
     public override void OnUnityAdsShowComplete(string adUnit, UnityAdsShowCompletionState showCompletionState)
     {
         base.OnUnityAdsShowComplete(adUnit, showCompletionState);
@@ -28,4 +30,6 @@ public class ContinueAds : Ads
         }
         AdsOver?.Invoke();
     }
+
+    #endregion
 }

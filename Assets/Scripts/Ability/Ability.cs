@@ -15,7 +15,7 @@ public abstract class Ability : MonoBehaviour
 
     public int Count => _count;
 
-    public virtual void Activate()
+    public virtual void Use()
     {
         if(_count == 0)
         {
@@ -36,8 +36,12 @@ public abstract class Ability : MonoBehaviour
         AbilitiCountChanged?.Invoke(_count);
     }
 
+    #region "MonoBehaviour"
+
     private void Start()
     {
         AbilitiCountChanged?.Invoke(_count);
     }
+
+    #endregion
 }

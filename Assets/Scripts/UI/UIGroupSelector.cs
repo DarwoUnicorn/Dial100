@@ -45,17 +45,6 @@ public class UIGroupSelector : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        if(_startedPage == null)
-        {
-            throw new System.NullReferenceException(_startedPage.ToString());
-        }
-        DisableAllGroup();
-        _activePage = _startedPage;
-        EnableGroup(_activePage.Group);
-    }
-
     private void DisableAllGroup()
     {
         List<CanvasGroup> disabledGroup = new List<CanvasGroup>();
@@ -77,4 +66,19 @@ public class UIGroupSelector : MonoBehaviour
         group.alpha = 1;
         group.blocksRaycasts = true;
     }
+
+    #region "MonoBehaviour"
+
+    private void Start()
+    {
+        if(_startedPage == null)
+        {
+            throw new System.NullReferenceException(_startedPage.ToString());
+        }
+        DisableAllGroup();
+        _activePage = _startedPage;
+        EnableGroup(_activePage.Group);
+    }
+
+    #endregion
 }

@@ -15,7 +15,7 @@ public class CellResizer : GridResizer
     {
         if(_parameters == null)
         {
-            throw new System.ArgumentNullException(_parameters.ToString());
+            throw new System.NullReferenceException("Parameters can't be null");
         }
         float verticalSize = (Panel.rect.height - _space * (_parameters.Height + 1)) / _parameters.Height;
         float horizontalSize = (Panel.rect.width - _space * (_parameters.Width + 1)) / _parameters.Width;
@@ -23,6 +23,8 @@ public class CellResizer : GridResizer
         GridGroup.constraintCount = _parameters.Width;
         GridGroup.cellSize = new Vector2(cellSize, cellSize);
     }
+
+    #region "MonoBehaviour"
 
     protected override void Update()
     {
@@ -32,4 +34,6 @@ public class CellResizer : GridResizer
         }
         base.Update();
     }
+
+    #endregion
 }

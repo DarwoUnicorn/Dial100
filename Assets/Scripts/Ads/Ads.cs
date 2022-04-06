@@ -12,6 +12,8 @@ public abstract class Ads : MonoBehaviour, IUnityAdsShowListener
 
     public abstract void ShowAds();
 
+    #region "UnityAds"
+
     public virtual void OnUnityAdsShowFailure(string adUnit, UnityAdsShowError error, string message)
     {
         Debug.Log($"UnityAds. Show failed: { adUnit }, { error.ToString() }, { message }");
@@ -31,4 +33,6 @@ public abstract class Ads : MonoBehaviour, IUnityAdsShowListener
     {
         Debug.Log($"UnityAds. Show completed: { adUnit }");
     }
+
+    #endregion
 }

@@ -9,7 +9,26 @@ public class InputHammerInterpreter : InputInterpreter
     private UnityEvent<Cell> UsingHammer = new UnityEvent<Cell>();
     
     [SerializeField]
-    protected EventSystem _eventSystem;
+    private EventSystem _eventSystem;
+
+    private void CheckTouch(Touch touch)
+    {
+        PointerEventData eventData = new PointerEventData(_eventSystem);
+        eventData.position = touch.position;
+        List<RaycastResult> result = new List<RaycastResult>();
+        Raycaster.Raycast(eventData, result);
+        Cell cell;
+        foreach(var item in result)
+        {
+            cell = item.gameObject.GetComponentInChildren<Cell>();
+            if(cell != null)
+            {
+                UsingHammer?.Invoke(cell);
+            }
+        }
+    }
+
+    #region "MonoBehaviour"
 
     private void Update()
     {
@@ -34,20 +53,5 @@ public class InputHammerInterpreter : InputInterpreter
         IsActive = true;
     }
 
-    private void CheckTouch(Touch touch)
-    {
-        PointerEventData eventData = new PointerEventData(_eventSystem);
-        eventData.position = touch.position;
-        List<RaycastResult> result = new List<RaycastResult>();
-        Raycaster.Raycast(eventData, result);
-        Cell cell;
-        foreach(var item in result)
-        {
-            cell = item.gameObject.GetComponentInChildren<Cell>();
-            if(cell != null)
-            {
-                UsingHammer?.Invoke(cell);
-            }
-        }
-    }
+    #endregion
 }

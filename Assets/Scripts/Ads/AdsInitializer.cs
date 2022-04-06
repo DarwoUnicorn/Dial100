@@ -14,16 +14,13 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
     private string _gameId = "4570003";
     private bool _isInitialized;
 
-    private void Start()
-    {
-        Initialize();
-    }
-
     private IEnumerator RetryInitialization()
     {
         yield return new WaitForSeconds(30);
         Initialize();
     } 
+
+    #region "UnityAds" 
 
     public void Initialize()
     {
@@ -40,4 +37,15 @@ public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
         Debug.Log($"UnityAds. Initialization failed: { error.ToString() }");
         StartCoroutine(RetryInitialization());
     }
+
+    #endregion
+
+    #region "MonoBehaviour"
+    
+    private void Start()
+    {
+        Initialize();
+    }
+
+    #endregion
 }

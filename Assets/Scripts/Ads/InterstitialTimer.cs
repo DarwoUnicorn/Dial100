@@ -9,6 +9,13 @@ public class InterstitialTimer : MonoBehaviour
 
     public bool IsReady { get { return _remainingTime <= 0; } }
 
+    public void ResetTimer()
+    {
+        _remainingTime = _timeBetweenAd;
+    }
+
+    #region MonoBehaviour
+
     private void Update()
     {
         if(_remainingTime > 0)
@@ -17,8 +24,5 @@ public class InterstitialTimer : MonoBehaviour
         }
     }
 
-    public void ResetTimer()
-    {
-        _remainingTime = _timeBetweenAd;
-    }
+    #endregion
 }

@@ -8,9 +8,11 @@ public abstract class GridResizer : MonoBehaviour
     [SerializeField]
     protected RectTransform Panel;
 
-    protected Vector2 _previousSize = new Vector2();
+    private Vector2 _previousSize = new Vector2();
 
     protected abstract void ChangeCellSize();
+
+    #region "MonoBehaviour"
 
     protected virtual void Update()
     {
@@ -20,4 +22,6 @@ public abstract class GridResizer : MonoBehaviour
             _previousSize = Panel.rect.size;
         }
     }
+
+    #endregion
 }

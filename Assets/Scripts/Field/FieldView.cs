@@ -51,6 +51,8 @@ public class FieldView : MonoBehaviour
         }
     }
 
+    #region "MonoBehaviour"
+
     private void Update()
     {
         for(int i = _objectsForMove.Count - 1; i >= 0; i--)
@@ -63,4 +65,6 @@ public class FieldView : MonoBehaviour
             } 
         }
     }
+
+    #endregion
 }

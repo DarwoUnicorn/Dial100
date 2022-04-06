@@ -60,6 +60,8 @@ public class GameParameters : MonoBehaviour
     public bool AllowBonuses => _allowBonuses;
     public BoolMap[] FieldMap => _fieldMap;
 
+    #region "MonoBehaviour"
+
     private void OnValidate()
     {
         if(_maxTime < _minTime)
@@ -102,4 +104,6 @@ public class GameParameters : MonoBehaviour
             _fieldMap = temp;
         }
     }
+
+    #endregion
 }

@@ -32,6 +32,8 @@ public class Cell : MonoBehaviour
         other.transform.SetParent(tempParent);
     }
 
+    #region "MonoBehaviour"
+
     private void LateUpdate()
     {
         if(IsCreated == true)
@@ -39,4 +41,6 @@ public class Cell : MonoBehaviour
             IsCreated = false;
         }
     }
+
+    #endregion
 }

@@ -12,19 +12,6 @@ public class CellGenerator : MonoBehaviour
     private int _maxStartCellValue = 20;
     private int _generationsBeforeReset;
 
-    private void Start()
-    {
-        if(_instance == null)
-        {
-            _instance = this;   
-            return;
-        }
-        if(_instance != this)
-        {
-            throw new SingletonException("There should only be one CellGenerator");
-        }
-    }
-
     public static int Generate()
     { 
         if(_instance == null)
@@ -54,4 +41,21 @@ public class CellGenerator : MonoBehaviour
         _instance._maxStartCellValue = 20;
         _instance.MaxStartCellValueReset?.Invoke();
     }
+    
+    #region "MonoBehaviour"
+
+    private void Start()
+    {
+        if(_instance == null)
+        {
+            _instance = this;   
+            return;
+        }
+        if(_instance != this)
+        {
+            throw new SingletonException("There should only be one CellGenerator");
+        }
+    }
+
+    #endregion
 }
