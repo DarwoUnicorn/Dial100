@@ -23,10 +23,9 @@ public class MoveHandler : MonoBehaviour
         {
             foreach(var cell in column)
             {
-                cell?.Generate(Parameters.MinStartCellValue, Parameters.MaxStartCellValue);
+                cell?.Generate();
             }
         }
-        _field.ResetMaxStartValue();
         FieldChanged?.Invoke();
     }
 

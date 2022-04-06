@@ -11,13 +11,13 @@ public class Cell : MonoBehaviour
     public CellData Data { get; private set; }
     public bool IsCreated { get; private set; }
 
-    public void Generate(int minValue, int maxValue)
+    public void Generate()
     {
         if(Data == null)
         {
             Data = new CellData();
         }
-        Data.SetValue(Random.Range(minValue, maxValue + 1));
+        Data.Generate();
         IsCreated = true;
     }
 

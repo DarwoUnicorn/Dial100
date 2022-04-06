@@ -576,6 +576,7 @@ GameObject:
   - component: {fileID: 195011220}
   - component: {fileID: 195011219}
   - component: {fileID: 195011221}
+  - component: {fileID: 195011222}
   m_Layer: 5
   m_Name: Field
   m_TagString: Untagged
@@ -724,21 +725,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 542530948bd44f0479419d581e1aa7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ResetMaxStartCellValue:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 378819567}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!114 &195011221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -836,6 +822,33 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _field: {fileID: 195011220}
+--- !u!114 &195011222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195011213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df48ffaeef4ef424c8f6cd24e4613e4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxStartCellValueReset:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 378819567}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &228716120
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,8 +1730,8 @@ MonoBehaviour:
   AbilityUsed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 195011220}
-        m_TargetAssemblyTypeName: Field, Assembly-CSharp
+      - m_Target: {fileID: 195011222}
+        m_TargetAssemblyTypeName: CellGenerator, Assembly-CSharp
         m_MethodName: DescreaseMaxStartValue
         m_Mode: 1
         m_Arguments:
@@ -2382,8 +2395,6 @@ MonoBehaviour:
   _fullInColumn: 3
   _maxTime: 30
   _minTime: 3
-  _maxStartCellValue: 20
-  _minStartCellValue: 1
   _allowBonuses: 0
   _fieldMap:
   - _row: 010101
@@ -5809,6 +5820,7 @@ GameObject:
   - component: {fileID: 1115636368}
   - component: {fileID: 1115636367}
   - component: {fileID: 1115636366}
+  - component: {fileID: 1115636370}
   - component: {fileID: 1115636369}
   m_Layer: 5
   m_Name: Button
@@ -5947,6 +5959,18 @@ MonoBehaviour:
   AdsOver:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 195011222}
+        m_TargetAssemblyTypeName: CellGenerator, Assembly-CSharp
+        m_MethodName: ResetMaxStartCellValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 195011221}
         m_TargetAssemblyTypeName: GameLogic, Assembly-CSharp
         m_MethodName: Restart
@@ -5962,18 +5986,6 @@ MonoBehaviour:
       - m_Target: {fileID: 768079587}
         m_TargetAssemblyTypeName: Timer, Assembly-CSharp
         m_MethodName: Reset
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1624154060}
-        m_TargetAssemblyTypeName: UIGroupSelector, Assembly-CSharp
-        m_MethodName: DisableActiveWindow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6019,8 +6031,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1624154060}
+        m_TargetAssemblyTypeName: UIGroupSelector, Assembly-CSharp
+        m_MethodName: DisableActiveWindow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   Displayer: {fileID: 896813361}
   _timer: {fileID: 896813365}
+--- !u!114 &1115636370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1115636364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6410a8ce389cd984dae33c7ec327e268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1119768635
 GameObject:
   m_ObjectHideFlags: 0
@@ -6569,6 +6605,7 @@ GameObject:
   - component: {fileID: 1419808761}
   - component: {fileID: 1419808760}
   - component: {fileID: 1419808759}
+  - component: {fileID: 1419808764}
   - component: {fileID: 1419808762}
   - component: {fileID: 1419808763}
   m_Layer: 5
@@ -6798,6 +6835,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxContinueCount: 3
+--- !u!114 &1419808764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419808757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b39282dae59fdb04faf99cf2a0d5eea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1469968148
 GameObject:
   m_ObjectHideFlags: 0
@@ -10447,8 +10496,6 @@ MonoBehaviour:
   _fullInColumn: 3
   _maxTime: 30
   _minTime: 15
-  _maxStartCellValue: 1
-  _minStartCellValue: 20
   _allowBonuses: 1
   _fieldMap:
   - _row: 010101
@@ -10887,8 +10934,6 @@ MonoBehaviour:
   _fullInColumn: 4
   _maxTime: 30
   _minTime: 15
-  _maxStartCellValue: 1
-  _minStartCellValue: 20
   _allowBonuses: 1
   _fieldMap:
   - _row: 01010101
@@ -11283,8 +11328,6 @@ MonoBehaviour:
   _fullInColumn: 4
   _maxTime: 30
   _minTime: 15
-  _maxStartCellValue: 1
-  _minStartCellValue: 20
   _allowBonuses: 0
   _fieldMap:
   - _row: 01010101

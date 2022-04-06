@@ -3,13 +3,9 @@ public class CellData
     public int Value { get; private set; }
     public bool IsComplete { get { return Value == 100; } }
 
-    public void SetValue(int value)
+    public void Generate()
     {
-        if(value < 1 || value > 100)
-        {
-            throw new System.ArgumentException("Value must be between 1 and 100");
-        }
-        Value = value;
+        Value = CellGenerator.Generate();
     }
 
     public bool TryIncreaseValue(CellData other)

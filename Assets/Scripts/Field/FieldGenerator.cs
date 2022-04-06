@@ -42,8 +42,7 @@ public class FieldGenerator : MonoBehaviour
             for(int j = parameters.Height - 1; j >= 0; j--)
             {
                 CreateCell(cells[i], _field[i], parameters.FieldMap[i][j]);
-                cells[i][cells[i].Count - 1]?.Generate(parameters.MinStartCellValue,
-                                                       parameters.MaxStartCellValue);
+                cells[i][cells[i].Count - 1]?.Generate();
             }
             cells[i].Reverse();
             _field[i].Reverse();
