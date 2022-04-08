@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class CellResizer : GridResizer
 {
-    private GameParameters _parameters;
+    private FieldParameters _parameters;
     private int _space = 25;
 
-    public void SetParameters(GameParameters parameters)
+    public void SetParameters(LevelParameters parameters)
     {
-        _parameters = parameters;
+        _parameters = parameters.Field;
         ChangeCellSize();
     }
 

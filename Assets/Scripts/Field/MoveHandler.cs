@@ -15,7 +15,7 @@ public class MoveHandler : MonoBehaviour
     [SerializeField]
     private Field _field;
 
-    public GameParameters Parameters => _field.Parameters;
+    public LevelParameters Parameters => _field.Parameters;
 
     public void Restart()
     {
@@ -51,9 +51,9 @@ public class MoveHandler : MonoBehaviour
 
     public void ClearBottom()
     {
-        bool[,] deleteMap = new bool[Parameters.Width, Parameters.Height];
-        int rowCount = Parameters.Height < 4 ? 1 : 2;
-        for(int i = 0; i < Parameters.Width; i++)
+        bool[,] deleteMap = new bool[Parameters.Field.Width, Parameters.Field.Height];
+        int rowCount = Parameters.Field.Height < 4 ? 1 : 2;
+        for(int i = 0; i < Parameters.Field.Width; i++)
         {
             for(int j = 0; j < rowCount; j++)
             {

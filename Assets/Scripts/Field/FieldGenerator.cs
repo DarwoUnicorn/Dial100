@@ -5,8 +5,8 @@ using UnityEngine.Events;
 public class FieldGenerator : MonoBehaviour
 {
     [SerializeField]
-    private UnityEvent<List<List<Cell>>, GameParameters> CellsGenerated = 
-        new UnityEvent<List<List<Cell>>, GameParameters>();
+    private UnityEvent<List<List<Cell>>, LevelParameters> CellsGenerated = 
+        new UnityEvent<List<List<Cell>>, LevelParameters>();
     [SerializeField]
     private UnityEvent<List<List<GameObject>>> FieldCreated =
         new UnityEvent<List<List<GameObject>>>();
@@ -20,7 +20,7 @@ public class FieldGenerator : MonoBehaviour
 
     private List<List<GameObject>> _field = new List<List<GameObject>>();
 
-    public void Generate(GameParameters parameters)
+    public void Generate(LevelParameters parameters)
     {
         if(parameters == null)
         {
@@ -32,16 +32,16 @@ public class FieldGenerator : MonoBehaviour
         FieldCreated?.Invoke(_field);
     }
 
-    private List<List<Cell>> GenerateField(GameParameters parameters)
+    private List<List<Cell>> GenerateField(LevelParameters parameters)
     {
         List<List<Cell>> cells = new List<List<Cell>>();
-        for(int i = 0; i < parameters.Width; i++)
+        for(int i = 0; i < parameters.Field.Width; i++)
         {
             cells.Add(new List<Cell>());
             _field.Add(new List<GameObject>());
-            for(int j = parameters.Height - 1; j >= 0; j--)
+            for(int j = parameters.Field.Height - 1; j >= 0; j--)
             {
-                CreateCell(cells[i], _field[i], parameters.FieldMap[i][j]);
+                CreateCell(cells[i], _field[i], parameters.Field.Map[i][j]);
                 cells[i][cells[i].Count - 1]?.Generate();
             }
             cells[i].Reverse();

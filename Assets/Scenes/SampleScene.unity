@@ -2246,7 +2246,6 @@ GameObject:
   - component: {fileID: 467964827}
   - component: {fileID: 467964830}
   - component: {fileID: 467964828}
-  - component: {fileID: 467964831}
   m_Layer: 5
   m_Name: 3x3
   m_TagString: Untagged
@@ -2345,8 +2344,8 @@ MonoBehaviour:
         m_MethodName: Generate
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 467964831}
-          m_ObjectArgumentAssemblyTypeName: GameParameters, Assembly-CSharp
+          m_ObjectArgument: {fileID: 11400000, guid: f6e88882cd8127745ada3e0a81953735, type: 2}
+          m_ObjectArgumentAssemblyTypeName: LevelParameters, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2357,8 +2356,8 @@ MonoBehaviour:
         m_MethodName: SetParameters
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 467964831}
-          m_ObjectArgumentAssemblyTypeName: GameParameters, Assembly-CSharp
+          m_ObjectArgument: {fileID: 11400000, guid: f6e88882cd8127745ada3e0a81953735, type: 2}
+          m_ObjectArgumentAssemblyTypeName: LevelParameters, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2366,40 +2365,16 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 768079587}
         m_TargetAssemblyTypeName: Timer, Assembly-CSharp
-        m_MethodName: SetGameParameters
+        m_MethodName: SetParameters
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 467964831}
-          m_ObjectArgumentAssemblyTypeName: GameParameters, Assembly-CSharp
+          m_ObjectArgument: {fileID: 11400000, guid: f6e88882cd8127745ada3e0a81953735, type: 2}
+          m_ObjectArgumentAssemblyTypeName: LevelParameters, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &467964831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 467964826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa75629b4e96fd942a5dde9df25a0c65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mode: 2
-  _height: 3
-  _width: 3
-  _fullInRow: 3
-  _fullInColumn: 3
-  _maxTime: 30
-  _minTime: 3
-  _allowBonuses: 0
-  _fieldMap:
-  - _row: 010101
-  - _row: 010101
-  - _row: 010101
 --- !u!1 &468190063
 GameObject:
   m_ObjectHideFlags: 0
@@ -10346,7 +10321,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1897286391}
   - component: {fileID: 1897286394}
-  - component: {fileID: 1897286395}
   - component: {fileID: 1897286392}
   m_Layer: 5
   m_Name: 3x3 Infinity
@@ -10446,8 +10420,8 @@ MonoBehaviour:
         m_MethodName: Generate
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1897286395}
-          m_ObjectArgumentAssemblyTypeName: GameParameters, Assembly-CSharp
+          m_ObjectArgument: {fileID: 11400000, guid: d6c610942f402974d906bff464f5c1a2, type: 2}
+          m_ObjectArgumentAssemblyTypeName: LevelParameters, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -10458,8 +10432,8 @@ MonoBehaviour:
         m_MethodName: SetParameters
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1897286395}
-          m_ObjectArgumentAssemblyTypeName: GameParameters, Assembly-CSharp
+          m_ObjectArgument: {fileID: 11400000, guid: d6c610942f402974d906bff464f5c1a2, type: 2}
+          m_ObjectArgumentAssemblyTypeName: LevelParameters, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -10467,40 +10441,16 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 768079587}
         m_TargetAssemblyTypeName: Timer, Assembly-CSharp
-        m_MethodName: SetGameParameters
+        m_MethodName: SetParameters
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1897286395}
-          m_ObjectArgumentAssemblyTypeName: GameParameters, Assembly-CSharp
+          m_ObjectArgument: {fileID: 11400000, guid: d6c610942f402974d906bff464f5c1a2, type: 2}
+          m_ObjectArgumentAssemblyTypeName: LevelParameters, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1897286395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1897286390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa75629b4e96fd942a5dde9df25a0c65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mode: 0
-  _height: 3
-  _width: 3
-  _fullInRow: 3
-  _fullInColumn: 3
-  _maxTime: 30
-  _minTime: 15
-  _allowBonuses: 1
-  _fieldMap:
-  - _row: 010101
-  - _row: 010101
-  - _row: 010101
 --- !u!1 &1915974148
 GameObject:
   m_ObjectHideFlags: 0
@@ -10784,7 +10734,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1989000523}
   - component: {fileID: 1989000526}
-  - component: {fileID: 1989000527}
   - component: {fileID: 1989000524}
   m_Layer: 5
   m_Name: 4x4 Infinity
@@ -10884,8 +10833,8 @@ MonoBehaviour:
         m_MethodName: Generate
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1989000527}
-          m_ObjectArgumentAssemblyTypeName: GameParameters, Assembly-CSharp
+          m_ObjectArgument: {fileID: 11400000, guid: 27b2db4890f10194d808801a46a551c5, type: 2}
+          m_ObjectArgumentAssemblyTypeName: LevelParameters, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -10896,8 +10845,8 @@ MonoBehaviour:
         m_MethodName: SetParameters
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1989000527}
-          m_ObjectArgumentAssemblyTypeName: GameParameters, Assembly-CSharp
+          m_ObjectArgument: {fileID: 11400000, guid: 27b2db4890f10194d808801a46a551c5, type: 2}
+          m_ObjectArgumentAssemblyTypeName: LevelParameters, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -10905,41 +10854,16 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 768079587}
         m_TargetAssemblyTypeName: Timer, Assembly-CSharp
-        m_MethodName: SetGameParameters
+        m_MethodName: SetParameters
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1989000527}
-          m_ObjectArgumentAssemblyTypeName: GameParameters, Assembly-CSharp
+          m_ObjectArgument: {fileID: 11400000, guid: 27b2db4890f10194d808801a46a551c5, type: 2}
+          m_ObjectArgumentAssemblyTypeName: LevelParameters, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1989000527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1989000522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa75629b4e96fd942a5dde9df25a0c65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mode: 0
-  _height: 4
-  _width: 4
-  _fullInRow: 4
-  _fullInColumn: 4
-  _maxTime: 30
-  _minTime: 15
-  _allowBonuses: 1
-  _fieldMap:
-  - _row: 01010101
-  - _row: 01010101
-  - _row: 01010101
-  - _row: 01010101
 --- !u!1 &2039983950
 GameObject:
   m_ObjectHideFlags: 0
@@ -11178,7 +11102,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2105345640}
   - component: {fileID: 2105345643}
-  - component: {fileID: 2105345644}
   - component: {fileID: 2105345641}
   m_Layer: 5
   m_Name: 4x4
@@ -11278,8 +11201,8 @@ MonoBehaviour:
         m_MethodName: Generate
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2105345644}
-          m_ObjectArgumentAssemblyTypeName: GameParameters, Assembly-CSharp
+          m_ObjectArgument: {fileID: 11400000, guid: 4ff94d741fc963245bfacefa1c410b48, type: 2}
+          m_ObjectArgumentAssemblyTypeName: LevelParameters, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11290,8 +11213,8 @@ MonoBehaviour:
         m_MethodName: SetParameters
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2105345644}
-          m_ObjectArgumentAssemblyTypeName: GameParameters, Assembly-CSharp
+          m_ObjectArgument: {fileID: 11400000, guid: 4ff94d741fc963245bfacefa1c410b48, type: 2}
+          m_ObjectArgumentAssemblyTypeName: LevelParameters, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11299,41 +11222,16 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 768079587}
         m_TargetAssemblyTypeName: Timer, Assembly-CSharp
-        m_MethodName: SetGameParameters
+        m_MethodName: SetParameters
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2105345644}
-          m_ObjectArgumentAssemblyTypeName: GameParameters, Assembly-CSharp
+          m_ObjectArgument: {fileID: 11400000, guid: 4ff94d741fc963245bfacefa1c410b48, type: 2}
+          m_ObjectArgumentAssemblyTypeName: LevelParameters, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2105345644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2105345639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa75629b4e96fd942a5dde9df25a0c65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mode: 2
-  _height: 4
-  _width: 4
-  _fullInRow: 4
-  _fullInColumn: 4
-  _maxTime: 30
-  _minTime: 15
-  _allowBonuses: 0
-  _fieldMap:
-  - _row: 01010101
-  - _row: 01010101
-  - _row: 01010101
-  - _row: 01010101
 --- !u!1 &2120685025
 GameObject:
   m_ObjectHideFlags: 0

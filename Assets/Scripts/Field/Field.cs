@@ -4,14 +4,12 @@ using UnityEngine;
 public class Field : MonoBehaviour
 {
     private List<List<Cell>> _cells;
-    private GameParameters _parameters;
-    private int _maxStartValue;
-    private int _movesBeforeResetMaxStartValue = -1;
+    private LevelParameters _parameters;
 
     public IReadOnlyList<IReadOnlyList<Cell>> Cells => _cells;
-    public GameParameters Parameters => _parameters;
+    public LevelParameters Parameters => _parameters;
 
-    public void OnCellsGenerated(List<List<Cell>> cells, GameParameters parameters)
+    public void OnCellsGenerated(List<List<Cell>> cells, LevelParameters parameters)
     {
         _cells = cells;
         _parameters = parameters;
@@ -56,8 +54,8 @@ public class Field : MonoBehaviour
 
     public bool IsValideCoordinate(int x, int y)
     {
-        if(x < 0 || x >= _parameters.Width ||
-           y < 0 || y >= _parameters.Height)
+        if(x < 0 || x >= _parameters.Field.Width ||
+           y < 0 || y >= _parameters.Field.Height)
         {
             return false;
         }
@@ -113,12 +111,12 @@ public class Field : MonoBehaviour
 
     public bool[,] GetDeleteMap()
     {
-        bool[,] deleteMap = new bool[_parameters.Width, _parameters.Height];
-        for(int i = 0; i < _parameters.Height; i++)
+        bool[,] deleteMap = new bool[_parameters.Field.Width, _parameters.Field.Height];
+        for(int i = 0; i < _parameters.Field.Height; i++)
         {
             CheckRow(deleteMap, i);
         }
-        for(int i = 0; i < _parameters.Width; i++)
+        for(int i = 0; i < _parameters.Field.Width; i++)
         {
             CheckColumn(deleteMap, i);
         }
@@ -128,17 +126,17 @@ public class Field : MonoBehaviour
     private void CheckRow(bool[,] deleteMap, int rowNumber)
     {
         int counter = 0;
-        for(int i = 0; i < _parameters.Width; i++)
+        for(int i = 0; i < _parameters.Field.Width; i++)
         {
             if(_cells[i][rowNumber] != null && _cells[i][rowNumber].Data.IsComplete)
             {
                 counter++;
-                if(i < _parameters.Width - 1)
+                if(i < _parameters.Field.Width - 1)
                 {
                     continue;
                 }
             }
-            if(counter >= _parameters.FullInRow)
+            if(counter >= _parameters.Field.FullInRow)
             {
                 for(int k = 0; k < counter; k++)
                 {
@@ -152,17 +150,17 @@ public class Field : MonoBehaviour
     private void CheckColumn(bool[,] deleteMap, int columnNumber)
     {
         int counter = 0;
-        for(int i = 0; i < _parameters.Height; i++)
+        for(int i = 0; i < _parameters.Field.Height; i++)
         {
             if(_cells[columnNumber][i] != null && _cells[columnNumber][i].Data.IsComplete)
             {
                 counter++;
-                if(i < _parameters.Height - 1)
+                if(i < _parameters.Field.Height - 1)
                 {
                     continue;
                 }
             }
-            if(counter >= _parameters.FullInColumn)
+            if(counter >= _parameters.Field.FullInColumn)
             {
                 for(int k = 0; k < counter; k++)
                 {

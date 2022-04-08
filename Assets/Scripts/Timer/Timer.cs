@@ -6,7 +6,7 @@ public class Timer : MonoBehaviour
     [SerializeField]
     private UnityEvent TimeOver = new UnityEvent();
 
-    private GameParameters _parameters;
+    private TimerParameters _parameters;
     private float _timeBeforeDecrease;
     private float _minTime;
     private float _decreaseTime = 40;
@@ -16,10 +16,10 @@ public class Timer : MonoBehaviour
     public float RemainingTime { get; private set; }
     public bool IsPaused { get; private set; }
 
-    public void SetGameParameters(GameParameters parameters)
+    public void SetParameters(LevelParameters parameters)
     {
-        _parameters = parameters;
-        _minTime = parameters.MinTime;
+        _parameters = parameters.Timer;
+        _minTime = _parameters.MinTime;
         Reset();
     }
 
