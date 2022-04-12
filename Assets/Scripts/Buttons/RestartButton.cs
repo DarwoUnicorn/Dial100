@@ -1,6 +1,7 @@
-using UnityEngine;
-
-public class RestartButton : MonoBehaviour
+public class RestartButton : IButton
 {
+    public override void Action()
+    {
 
+    }
 }

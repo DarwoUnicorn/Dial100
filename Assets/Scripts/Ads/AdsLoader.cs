@@ -13,7 +13,7 @@ public class AdsLoader : MonoBehaviour, IUnityAdsLoadListener
 
     public void LoadUnit(string adUnit)
     {
-        Advertisement.Load(adUnit);
+        Advertisement.Load(adUnit, this);
     }
 
     private IEnumerator RetryInitialization(string adUnit)

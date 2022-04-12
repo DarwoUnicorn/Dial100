@@ -1,6 +1,7 @@
-using UnityEngine;
-
-public class ContinueButton : MonoBehaviour
+public class ContinueButton : IButton
 {
-    
+    public override void Action()
+    {
+        
+    }
 }

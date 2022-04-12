@@ -10,12 +10,32 @@ public class LevelParameters : ScriptableObject
     [SerializeField]
     private FieldParameters _field = new FieldParameters();
     [SerializeField]
+    private LevelLocker _levelLocker = new LevelLocker();
+    [SerializeField]
     private bool _allowBonuses;
+    [SerializeField] [HideInInspector]
+    private LevelHighScore _highScore = new LevelHighScore();
 
     public GameMode Mode => _mode;
     public TimerParameters Timer => _timer;
     public FieldParameters Field => _field;
     public bool AllowBonuses => _allowBonuses;
+    public LevelHighScore HighScore => _highScore;
+
+    public void SetHighScore(int score)
+    {
+        _highScore.SetHighScore(score);
+    }
+
+    public void OnLevelUp(int newLevel)
+    {
+        _levelLocker.OnLevelUp(newLevel);
+    }
+
+    public void OnPreviousLevelComplete()
+    {
+        _levelLocker.OnPreviousLevelComplete();
+    }
 
     #region "MonoBehaviour"
 

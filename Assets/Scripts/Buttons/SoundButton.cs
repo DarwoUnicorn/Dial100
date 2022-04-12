@@ -1,8 +1,6 @@
-using UnityEngine;
-
-public class SoundButton : MonoBehaviour
+public class SoundButton : IButton
 {
-    public void ChangeSoundState()
+    public override void Action()
     {
 
     }

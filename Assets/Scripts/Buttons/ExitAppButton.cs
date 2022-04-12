@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class ExitAppButton : MonoBehaviour
+public class ExitAppButton : IButton
 {
-    public void Quit()
+    public override void Action()
     {
         Application.Quit();
     }
