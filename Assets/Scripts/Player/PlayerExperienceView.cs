@@ -1,19 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class PlayerExperienceView : MonoBehaviour
 {
     [SerializeField]
-    private PlayerLevel _playerLevel;
+    private PlayerData _data;
     [SerializeField]
     private List<Transform> _fillers = new List<Transform>();
 
     public void OnExperienceChanged()
     {
-        float fill = (float)_playerLevel.Experience / _playerLevel.ExperienceToNextLevel;
-        Debug.Log(_playerLevel.Experience);
-        Debug.Log(_playerLevel.ExperienceToNextLevel);
-        Debug.Log(fill);
+        float fill = (float)(_data.Level.Experience) / _data.Level.ExperienceToNextLevel;
         for(int i = 0; i < _fillers.Count; i++)
         {
             _fillers[i].localScale = new Vector3(fill, 1, 1);

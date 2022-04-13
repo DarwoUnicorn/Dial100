@@ -5,7 +5,7 @@ using TMPro;
 public class PlayerNameView : MonoBehaviour
 {
     [SerializeField]
-    private PlayerName _playerName;
+    private PlayerData _data;
     [SerializeField]
     private List<TMP_Text> _texts = new List<TMP_Text>();
 
@@ -13,7 +13,7 @@ public class PlayerNameView : MonoBehaviour
     {
         foreach(var item in _texts)
         {
-            item.text = _playerName.Name;
+            item.text = _data.Name;
         }
     }
 

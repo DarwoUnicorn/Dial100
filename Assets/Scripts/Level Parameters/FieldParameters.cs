@@ -4,9 +4,9 @@ using UnityEngine;
 public class FieldParameters
 {
     [SerializeField] [Range(2, 10)]
-    private int _height = 2;
-    [SerializeField] [Range(2, 10)]
     private int _width = 2;
+    [SerializeField] [Range(2, 10)]
+    private int _height = 2;
     [SerializeField]
     private int _fullInRow;
     [SerializeField]

@@ -7,40 +7,33 @@ public abstract class Ability : MonoBehaviour
     protected UnityEvent AbilityUsed = new UnityEvent();
     [SerializeField]
     protected UnityEvent AbilityOver = new UnityEvent();
+
     [SerializeField]
-    protected UnityEvent<int> AbilitiCountChanged = new UnityEvent<int>();
+    protected AbilityCount _abilityCount = new AbilityCount();
 
-    [SerializeField] [Min(0)]
-    private int _count;
-
-    public int Count => _count;
+    public int Count => _abilityCount.Value;
 
     public virtual void Use()
     {
-        if(_count == 0)
+        if(Count == 0)
         {
             AbilityOver?.Invoke();
             return;
         }
         AbilityUsed?.Invoke();
-        AbilitiCountChanged?.Invoke(--_count);
+        _abilityCount.OnAbilityUsed();
     }
 
-    public void IncreaseAbilityCount(int count)
+    public void IncreaseAbilityCount(int value)
     {
-        if(count < 1)
-        {
-            throw new System.ArgumentException("Count must be greater than 0");
-        }
-        _count += count;
-        AbilitiCountChanged?.Invoke(_count);
+        _abilityCount.IncreaseAbilityCount(value);
     }
 
     #region "MonoBehaviour"
 
     private void Start()
     {
-        AbilitiCountChanged?.Invoke(_count);
+        _abilityCount.Load();
     }
 
     #endregion

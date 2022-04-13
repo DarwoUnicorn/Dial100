@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa75629b4e96fd942a5dde9df25a0c65, type: 3}
+  m_Name: 19)6x3 reverse pyramid
+  m_EditorClassIdentifier: 
+  _mode: 2
+  _timer:
+    _maxTime: 27
+    _minTime: 20
+  _field:
+    _width: 6
+    _height: 3
+    _fullInRow: 0
+    _fullInColumn: 0
+    _map:
+    - _row: 000001
+    - _row: 000101
+    - _row: 010101
+    - _row: 010101
+    - _row: 000101
+    - _row: 000001
+  _levelLocker:
+    LevelOpen:
+      m_PersistentCalls:
+        m_Calls: []
+    RequiredLevel: 0
+    IsRequiredLevelReached: 0
+  _allowBonuses: 0
+  _highScore:
+    _value: 0
+    _id: Level19

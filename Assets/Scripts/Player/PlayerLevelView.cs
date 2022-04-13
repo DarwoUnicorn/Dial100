@@ -5,7 +5,7 @@ using TMPro;
 public class PlayerLevelView : MonoBehaviour
 {
     [SerializeField]
-    private PlayerLevel _playerLevel;
+    private PlayerData _data;
     [SerializeField]
     private List<TMP_Text> _texts = new List<TMP_Text>();
 
@@ -13,7 +13,7 @@ public class PlayerLevelView : MonoBehaviour
     {
         foreach(var item in _texts)
         {
-            item.text = _playerLevel.Value.ToString();
+            item.text = _data.Level.Value.ToString();
         }
     }
 

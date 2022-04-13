@@ -13,7 +13,7 @@ public class LevelParameters : ScriptableObject
     private LevelLocker _levelLocker = new LevelLocker();
     [SerializeField]
     private bool _allowBonuses;
-    [SerializeField] [HideInInspector]
+    [SerializeField]
     private LevelHighScore _highScore = new LevelHighScore();
 
     public GameMode Mode => _mode;
@@ -30,11 +30,6 @@ public class LevelParameters : ScriptableObject
     public void OnLevelUp(int newLevel)
     {
         _levelLocker.OnLevelUp(newLevel);
-    }
-
-    public void OnPreviousLevelComplete()
-    {
-        _levelLocker.OnPreviousLevelComplete();
     }
 
     #region "MonoBehaviour"

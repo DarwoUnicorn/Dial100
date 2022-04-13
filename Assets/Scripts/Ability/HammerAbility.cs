@@ -24,7 +24,7 @@ public class HammerAbility : Ability
         {
             IsUsed = false;
             Deactivated?.Invoke();
-            IncreaseAbilityCount(1);
+            _abilityCount.IncreaseAbilityCount(1);
         }
     }
 

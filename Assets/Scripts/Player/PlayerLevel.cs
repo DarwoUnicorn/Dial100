@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerLevel : MonoBehaviour
+[System.Serializable]
+public class PlayerLevel : IPersistent
 {
     [SerializeField]
     private UnityEvent<int> LevelUp = new UnityEvent<int>();
@@ -12,7 +13,10 @@ public class PlayerLevel : MonoBehaviour
     private int _value;
     [SerializeField]
     private int _experience;
+    [SerializeField]
+    private string _id;
 
+    public string Id => _id;
     public int Value => _value;
     public int Experience => _experience;
     public int ExperienceToNextLevel
@@ -33,5 +37,17 @@ public class PlayerLevel : MonoBehaviour
             LevelUp?.Invoke(_value);
         }
         ExperienceChanged?.Invoke();
+    }
+
+    public void Save()
+    {
+        Saver.Save(this, _id);
+    }
+
+    public void Load()
+    {
+        Saver.Load(this, this.GetType(), _id);
+        ExperienceChanged?.Invoke();
+        LevelUp?.Invoke(_value);
     }
 }

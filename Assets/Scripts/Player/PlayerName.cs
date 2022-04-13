@@ -1,8 +1,8 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerName : MonoBehaviour
+[System.Serializable]
+public class PlayerName : IPersistent
 {
     public enum SetPlayerNameState
     {
@@ -12,14 +12,16 @@ public class PlayerName : MonoBehaviour
 
     [SerializeField]
     private UnityEvent NameChanged = new UnityEvent();
-
     [SerializeField]
     private UnityEvent NameIsEmpty = new UnityEvent();
 
     [SerializeField]
     private string _name;
+    [SerializeField]
+    private string _id;
 
     public string Name => _name;
+    public string Id => _id;
 
     public SetPlayerNameState SetName(string name)
     {
@@ -29,13 +31,11 @@ public class PlayerName : MonoBehaviour
         }
         _name = name;
         NameChanged?.Invoke();
+        Save();
         return SetPlayerNameState.CorrectName;
-
     }
 
-    #region "MonoBehaviour"
-
-    private void Start()
+    public void CheckName()
     {
         if(_name == "")
         {
@@ -43,5 +43,14 @@ public class PlayerName : MonoBehaviour
         }
     }
 
-    #endregion
+    public void Save()
+    {
+        Saver.Save(this, _id);
+    }
+
+    public void Load()
+    {
+        Saver.Load(this, this.GetType(), _id);
+        NameChanged?.Invoke();
+    }
 }

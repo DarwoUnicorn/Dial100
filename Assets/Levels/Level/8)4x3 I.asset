@@ -10,20 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa75629b4e96fd942a5dde9df25a0c65, type: 3}
-  m_Name: 4x4
+  m_Name: 8)4x3 I
   m_EditorClassIdentifier: 
   _mode: 2
   _timer:
     _maxTime: 25
-    _minTime: 15
+    _minTime: 20
   _field:
-    _height: 4
     _width: 4
-    _fullInRow: 4
-    _fullInColumn: 4
+    _height: 3
+    _fullInRow: 0
+    _fullInColumn: 0
     _map:
-    - _row: 01010101
-    - _row: 01010101
-    - _row: 01010101
-    - _row: 01010101
+    - _row: 010001
+    - _row: 010101
+    - _row: 010101
+    - _row: 010001
+  _levelLocker:
+    LevelOpen:
+      m_PersistentCalls:
+        m_Calls: []
+    RequiredLevel: 0
+    IsRequiredLevelReached: 0
   _allowBonuses: 0
+  _highScore:
+    _value: 0
+    _id: Level8
