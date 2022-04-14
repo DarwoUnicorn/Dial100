@@ -72,7 +72,7 @@ public class MoveHandler : MonoBehaviour
     public void DeleteCell(Vector2Int coordinate)
     {
         _field.DeleteCell(coordinate);
-        if(Parameters.Mode == GameMode.Infinity || Parameters.Mode == GameMode.Clear)
+        if(Parameters is InfinityModeLevelParameters || Parameters is ClearModeLevelParameters)
         {
             _field.DeleteCells(_field.GetDeleteMap());
         }

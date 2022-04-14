@@ -38,12 +38,12 @@ public class AbilityCount : IPersistent
 
     public void Save()
     {
-        Saver.Save(this, _id);
+        Saver.Save(this);
     }
 
     public void Load()
     {
-        Saver.Load(this, this.GetType(), _id);
+        Saver.Load(this);
         AbilityCountChanged?.Invoke(_value);
     }
 }

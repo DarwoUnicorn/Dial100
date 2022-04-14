@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [System.Serializable]
-public class PlayerName : IPersistent
+public class PlayerName
 {
     public enum SetPlayerNameState
     {
@@ -17,11 +17,8 @@ public class PlayerName : IPersistent
 
     [SerializeField]
     private string _name;
-    [SerializeField]
-    private string _id;
 
     public string Name => _name;
-    public string Id => _id;
 
     public SetPlayerNameState SetName(string name)
     {
@@ -31,7 +28,6 @@ public class PlayerName : IPersistent
         }
         _name = name;
         NameChanged?.Invoke();
-        Save();
         return SetPlayerNameState.CorrectName;
     }
 
@@ -41,16 +37,5 @@ public class PlayerName : IPersistent
         {
             NameIsEmpty?.Invoke();
         }
-    }
-
-    public void Save()
-    {
-        Saver.Save(this, _id);
-    }
-
-    public void Load()
-    {
-        Saver.Load(this, this.GetType(), _id);
-        NameChanged?.Invoke();
     }
 }

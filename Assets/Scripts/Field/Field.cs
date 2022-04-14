@@ -30,6 +30,22 @@ public class Field : MonoBehaviour
         return false;
     }
 
+    public int CountOfFullCell()
+    {
+        int fullCellCount = 0;
+        foreach(var column in _cells)
+        {
+            foreach(var cell in column)
+            {
+                if(cell?.Data.IsComplete == true)
+                {
+                    fullCellCount++;
+                }
+            }
+        }
+        return fullCellCount;
+    }
+
     public Vector2Int GetCoordinates(Cell cell)
     {
         if(cell == null)

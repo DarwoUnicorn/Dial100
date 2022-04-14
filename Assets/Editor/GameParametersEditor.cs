@@ -1,6 +1,6 @@
 using UnityEditor;
 
-[CustomEditor(typeof(LevelParameters))]
+[CustomEditor(typeof(LevelParameters), true)] [CanEditMultipleObjects()]
 public class GameParametersEditor : Editor
 {
     private LevelParameters _parameters;
@@ -15,7 +15,10 @@ public class GameParametersEditor : Editor
         serializedObject.Update();
         DrawDefaultInspector();
         EditorGUI.BeginChangeCheck();
-        DrawFieldMap();
+        if(targets.Length == 1)
+        {
+            DrawFieldMap();
+        }
         if(EditorGUI.EndChangeCheck())
         {
             serializedObject.ApplyModifiedProperties();
