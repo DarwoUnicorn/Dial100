@@ -23,6 +23,12 @@ public abstract class LevelParameters : MonoBehaviour, IPersistent
     public string Id => _id;
     public abstract LevelCompletionCondition CompletionCondition { get; }
 
+    public void CheckCondition(int value)
+    {
+        CompletionCondition.CheckCondition(value);
+        Save();
+    }
+
     public void SetHighScore(int score)
     {
         _highScore.SetHighScore(score);
@@ -31,8 +37,10 @@ public abstract class LevelParameters : MonoBehaviour, IPersistent
 
     public void OnLevelUp(int newLevel)
     {
-        _levelLocker.OnLevelUp(newLevel);
-        Save();
+        if(_levelLocker.OnLevelUp(newLevel))
+        {
+            Save();
+        }
     }
 
     public void OnPreviousLevelCompleted()

@@ -20,13 +20,15 @@ public class LevelLocker
         CheckCondition();
     }
 
-    public void OnLevelUp(int newLevel)
+    public bool OnLevelUp(int newLevel)
     {
         if(newLevel >= RequiredLevel)
         {
             IsRequiredLevelReached = true;
             CheckCondition();
+            return true;
         }
+        return false;
     }
 
     private void CheckCondition()
