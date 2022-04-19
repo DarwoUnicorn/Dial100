@@ -8,7 +8,6 @@ public class AbilityCountView : MonoBehaviour
 
     public void OnAbilityCountChanged(int count)
     {
-        Debug.Log(count);
         _text.text = count.ToString();
     }
 }

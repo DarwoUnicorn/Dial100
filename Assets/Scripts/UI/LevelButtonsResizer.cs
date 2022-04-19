@@ -9,8 +9,8 @@ public class LevelButtonsResizer : GridResizer
 
     protected override void ChangeCellSize()
     {
-        float cellSize = (Panel.rect.width - 2 * _space) / 3;
+        float cellSize = (Panel.rect.width - 2 * _space) / GridGroup.constraintCount;
         GridGroup.cellSize = new Vector2(cellSize, cellSize);
-        Panel.offsetMin = new Vector2(Panel.offsetMin.x, -(_levels.List.Count / 3 + 1) * (cellSize + _space));
+        Panel.offsetMin = new Vector2(Panel.offsetMin.x, -(_levels.List.Count / GridGroup.constraintCount + 1) * (cellSize + _space));
     }
 }

@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MenuButtonResizer : GridResizer
 {
+
     private float _space = 50;
 
     protected override void ChangeCellSize()

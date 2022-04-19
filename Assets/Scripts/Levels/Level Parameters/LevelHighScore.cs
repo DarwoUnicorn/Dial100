@@ -1,8 +1,12 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class LevelHighScore
 {
+    [SerializeField]
+    private UnityEvent<string> ScoreChanged = new UnityEvent<string>();
+
     [SerializeField]
     private int _value;
 
@@ -13,6 +17,12 @@ public class LevelHighScore
         if(score > _value)
         {
             _value = score;
+            UpdateScore();
         }
+    }
+
+    public void UpdateScore()
+    {   
+        ScoreChanged?.Invoke($"Score\n{_value}");
     }
 }

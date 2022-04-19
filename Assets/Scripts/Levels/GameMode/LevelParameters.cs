@@ -43,12 +43,6 @@ public abstract class LevelParameters : MonoBehaviour, IPersistent
         }
     }
 
-    public void OnPreviousLevelCompleted()
-    {
-        _levelLocker.OnPreviousLevelCompleted();
-        Save();
-    }
-
     public void Save()
     {
         Saver.Save(this);
@@ -64,6 +58,9 @@ public abstract class LevelParameters : MonoBehaviour, IPersistent
     private void Awake()
     {
         Load();
+        CompletionCondition.Load();
+        _levelLocker.CheckCondition();
+        _highScore.UpdateScore();
         OnValidate();
     }
 

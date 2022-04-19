@@ -11,14 +11,6 @@ public class LevelLocker
     private int RequiredLevel;
     [SerializeField]
     private bool IsRequiredLevelReached;
-    [SerializeField]
-    private bool IsPreviousLevelComplete;
-
-    public void OnPreviousLevelCompleted()
-    {
-        IsPreviousLevelComplete = true;
-        CheckCondition();
-    }
 
     public bool OnLevelUp(int newLevel)
     {
@@ -31,9 +23,9 @@ public class LevelLocker
         return false;
     }
 
-    private void CheckCondition()
+    public void CheckCondition()
     {
-        if(IsRequiredLevelReached && IsPreviousLevelComplete)
+        if(IsRequiredLevelReached)
         {
             LevelOpen?.Invoke();
         }
