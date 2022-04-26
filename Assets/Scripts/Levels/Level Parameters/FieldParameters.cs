@@ -1,26 +1,19 @@
 using UnityEngine;
 
-[System.Serializable]
-public class FieldParameters
+public class FieldParameters : MonoBehaviour
 {
     [SerializeField] [Range(2, 10)]
     private int _width = 2;
     [SerializeField] [Range(2, 10)]
     private int _height = 2;
-    [SerializeField]
-    private int _fullInRow;
-    [SerializeField]
-    private int _fullInColumn;
     [SerializeField] [HideInInspector]
     private BoolMap[] _map;
 
     public int Height => _height;
     public int Width => _width;
-    public int FullInRow => _fullInRow;
-    public int FullInColumn => _fullInColumn;
     public BoolMap[] Map => _map;
 
-    public void OnValidate()
+    private void OnValidate()
     {
         if(_map?.Length != Width || _map[0].Length != Height)
         {

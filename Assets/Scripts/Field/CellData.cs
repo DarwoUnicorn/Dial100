@@ -5,7 +5,7 @@ public class CellData
 
     public void Generate()
     {
-        Value = CellGenerator.Generate();
+        Value = CellGenerator.Instance.Generate();
     }
 
     public bool TryIncreaseValue(CellData other)

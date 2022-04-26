@@ -1,14 +1,9 @@
 using UnityEditor;
 
-[CustomEditor(typeof(LevelParameters), true)] [CanEditMultipleObjects()]
-public class GameParametersEditor : Editor
+[CustomEditor(typeof(FieldParameters), true)] [CanEditMultipleObjects()]
+public class FieldParametersEditor : Editor
 {
-    private LevelParameters _parameters;
-
-    private void OnEnable()
-    {
-        _parameters = (LevelParameters)target;
-    }
+    private FieldParameters _parameters;
 
     public override void OnInspectorGUI()
     {
@@ -28,21 +23,26 @@ public class GameParametersEditor : Editor
 
     private void DrawFieldMap()
     {
-        if(_parameters.Field.Map == null)
+        if(_parameters.Map == null)
         {
             return;
         }
         EditorGUILayout.BeginHorizontal();
-        for(int i = 0; i < _parameters.Field.Map.Length; i++)
+        for(int i = 0; i < _parameters.Map.Length; i++)
         {
             EditorGUILayout.BeginVertical();
-            for(int j = _parameters.Field.Map[i].Length - 1; j >= 0; j--)
+            for(int j = _parameters.Map[i].Length - 1; j >= 0; j--)
             {
                 Undo.RecordObject(_parameters, "Change Field Map");
-                _parameters.Field.Map[i][j] = EditorGUILayout.Toggle(_parameters.Field.Map[i][j]);
+                _parameters.Map[i][j] = EditorGUILayout.Toggle(_parameters.Map[i][j]);
             }
             EditorGUILayout.EndVertical();
         }
         EditorGUILayout.EndHorizontal();
+    }
+
+    private void OnEnable()
+    {
+        _parameters = (FieldParameters)target;
     }
 }

@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-[System.Serializable]
-public class LevelLocker
+public class LevelLocker : MonoBehaviour
 {
     [SerializeField]
     private UnityEvent LevelOpen = new UnityEvent();
@@ -12,21 +11,11 @@ public class LevelLocker
     [SerializeField]
     private bool IsRequiredLevelReached;
 
-    public bool OnLevelUp(int newLevel)
+    public void OnLevelUp(int newLevel)
     {
         if(newLevel >= RequiredLevel)
         {
             IsRequiredLevelReached = true;
-            CheckCondition();
-            return true;
-        }
-        return false;
-    }
-
-    public void CheckCondition()
-    {
-        if(IsRequiredLevelReached)
-        {
             LevelOpen?.Invoke();
         }
     }

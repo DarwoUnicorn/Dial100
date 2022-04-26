@@ -10,13 +10,13 @@ public class InputFieldToTextButton : IButton
     private UnityEvent NameSet = new UnityEvent();
 
     [SerializeField]
-    private PlayerData _data;
+    private PlayerName _name;
     [SerializeField]
     private TMP_Text _text;
 
     public override void Action()
     {
-        if(_data.SetName(_text.text) == PlayerName.SetPlayerNameState.IncorrectName)
+        if(_name.SetName(_text.text) == PlayerName.SetPlayerNameState.IncorrectName)
         {
             IncorrectInput?.Invoke();
             return;

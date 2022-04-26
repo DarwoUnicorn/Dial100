@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FieldBackButton : MonoBehaviour
@@ -15,11 +13,11 @@ public class FieldBackButton : MonoBehaviour
 
     public void Back()
     {
-        if(_currentLevel.Level is FinalModeLevelParameters)
+        if(_currentLevel.Level.CompletionCondition is FullCellCompletionCondition)
         {
             _groupSelector.SetActivePage(_level);
         }
-        else if(_currentLevel.Level is InfinityModeLevelParameters)
+        else if(_currentLevel.Level.CompletionCondition is ScoreCompletionCondition)
         {
             _groupSelector.SetActivePage(_infinityLevel);
         }

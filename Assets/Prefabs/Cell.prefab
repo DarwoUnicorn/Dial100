@@ -99,7 +99,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 864
+  m_fontSize: 985.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -243,14 +243,6 @@ PrefabInstance:
     - target: {fileID: 9201061110368428279, guid: c4149182bb2d37e4fb66bca2aef394ef, type: 3}
       propertyPath: m_Name
       value: Cell
-      objectReference: {fileID: 0}
-    - target: {fileID: 9201061110368428281, guid: c4149182bb2d37e4fb66bca2aef394ef, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 31de64eb32431ec48bb180b488362b55, type: 3}
-    - target: {fileID: 9201061110368428281, guid: c4149182bb2d37e4fb66bca2aef394ef, type: 3}
-      propertyPath: m_Color.a
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4149182bb2d37e4fb66bca2aef394ef, type: 3}

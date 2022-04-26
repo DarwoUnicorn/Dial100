@@ -1,0 +1,60 @@
+using UnityEngine;
+
+public class LevelReward : MonoBehaviour
+{
+    [SerializeField]
+    private HammerAbility _hammerAbility;
+    [SerializeField]
+    private TimerRestoreAbility _timeRestoreAbility;
+    [SerializeReference]
+    private DescreaseMaxStartValueAbility _decreaseMaxStartValueAbility;
+
+    public void OnLevelUp(int level)
+    {
+        int hammerCount = 0;
+        int timeRestoreCount = 0;
+        int descreaseMaxStartValueCount = 0;
+        int count = (int)Mathf.Ceil(level / 5f);
+        if(count < 3)
+        {
+            count = 3;
+        }
+        if(count > 9)
+        {
+            count = 9;
+        }
+        for(int i = 0; i < count; i++)
+        {
+            switch(Random.Range(0, 3))
+            {
+                case 0:
+                {
+                    hammerCount++;
+                    break;
+                }
+                case 1:
+                {
+                    timeRestoreCount++;
+                    break;
+                }
+                case 2:
+                {
+                    descreaseMaxStartValueCount++;
+                    break;
+                }
+            }
+        }
+        if(hammerCount != 0)
+        {
+            _hammerAbility.IncreaseAbilityCount(hammerCount);
+        }
+        if(timeRestoreCount != 0)
+        {
+            _timeRestoreAbility.IncreaseAbilityCount(timeRestoreCount);
+        }
+        if(descreaseMaxStartValueCount != 0)
+        {
+            _decreaseMaxStartValueAbility.IncreaseAbilityCount(descreaseMaxStartValueCount);
+        }
+    }
+}

@@ -37,7 +37,7 @@ public class Field : MonoBehaviour
         {
             foreach(var cell in column)
             {
-                if(cell?.Data.IsComplete == true)
+                if(cell?.IsComplete == true)
                 {
                     fullCellCount++;
                 }
@@ -118,7 +118,7 @@ public class Field : MonoBehaviour
         {
             return false;
         }
-        if(_cells[coordIn.x][coordIn.y].Data.TryIncreaseValue(_cells[coordOut.x][coordOut.y].Data) != true)
+        if(_cells[coordIn.x][coordIn.y].TryIncreaseValue(_cells[coordOut.x][coordOut.y]) != true)
         {
             return false;
         }
@@ -141,67 +141,49 @@ public class Field : MonoBehaviour
 
     private void CheckRow(bool[,] deleteMap, int rowNumber)
     {
-        int counter = 0;
         for(int i = 0; i < _parameters.Field.Width; i++)
         {
-            if(_cells[i][rowNumber] != null && _cells[i][rowNumber].Data.IsComplete)
+            if(_cells[i][rowNumber]?.IsComplete == false)
             {
-                counter++;
-                if(i < _parameters.Field.Width - 1)
-                {
-                    continue;
-                }
+                return;
             }
-            if(counter >= _parameters.Field.FullInRow)
-            {
-                for(int k = 0; k < counter; k++)
-                {
-                    deleteMap[i - k, rowNumber] = true;
-                }
-            }
-            counter = 0;
+        }
+        for(int i = 0; i < _parameters.Field.Width; i++)
+        {
+            deleteMap[i, rowNumber] = true;
         }
     }
 
     private void CheckColumn(bool[,] deleteMap, int columnNumber)
     {
-        int counter = 0;
         for(int i = 0; i < _parameters.Field.Height; i++)
         {
-            if(_cells[columnNumber][i] != null && _cells[columnNumber][i].Data.IsComplete)
+            if(_cells[columnNumber][i]?.IsComplete == false)
             {
-                counter++;
-                if(i < _parameters.Field.Height - 1)
-                {
-                    continue;
-                }
+                return;
             }
-            if(counter >= _parameters.Field.FullInColumn)
-            {
-                for(int k = 0; k < counter; k++)
-                {
-                    deleteMap[columnNumber, i - k] = true;
-                }
-            }
-            counter = 0;
+        }
+        for(int i = 0; i < _parameters.Field.Height; i++)
+        {
+            deleteMap[columnNumber, i] = true;
         }
     }
 
     private bool CheckAround(int x, int y)
     {
-        if(IsValideCoordinate(x - 1, y) && _cells[x][y].Data.Value + _cells[x - 1][y].Data.Value <= 100)
+        if(IsValideCoordinate(x - 1, y) && _cells[x][y].Value + _cells[x - 1][y].Value <= 100)
         {
             return true;
         }
-        if(IsValideCoordinate(x + 1, y) && _cells[x][y].Data.Value + _cells[x + 1][y].Data.Value <= 100)
+        if(IsValideCoordinate(x + 1, y) && _cells[x][y].Value + _cells[x + 1][y].Value <= 100)
         {
             return true;
         }
-        if(IsValideCoordinate(x, y - 1) && _cells[x][y].Data.Value + _cells[x][y - 1].Data.Value <= 100)
+        if(IsValideCoordinate(x, y - 1) && _cells[x][y].Value + _cells[x][y - 1].Value <= 100)
         {
             return true;
         }
-        if(IsValideCoordinate(x, y + 1) && _cells[x][y].Data.Value + _cells[x][y + 1].Data.Value <= 100)
+        if(IsValideCoordinate(x, y + 1) && _cells[x][y].Value + _cells[x][y + 1].Value <= 100)
         {
             return true;
         }

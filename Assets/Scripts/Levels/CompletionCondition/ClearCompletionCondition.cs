@@ -1,4 +1,3 @@
-[System.Serializable]
 public class ClearCompletionCondition : LevelCompletionCondition
 {
     public override void CheckCondition(int value)

@@ -1,6 +1,34 @@
-public static class AdUnit
+using System.Collections;
+using UnityEngine;
+using UnityEngine.Advertisements;
+
+public abstract class AdUnit : MonoBehaviour, IUnityAdsLoadListener
 {
-    public static string _interstitial { get; private set; } = "Interstitial_Android";
-    public static string _rewarded { get; private set; } = "Rewarded_Android";
-    public static string _banner { get; private set; } = "Banner_Android";
+    [SerializeField]
+    private string _unitId;
+
+    protected string UnitId { get; }
+
+    public abstract void Load();
+
+    protected IEnumerator RetryLoad()
+    {
+        yield return new WaitForSeconds(30);
+        Load();
+    }
+
+    #region  UnityAdsHandlers
+
+    public void OnUnityAdsAdLoaded(string unitId)
+    {
+        Debug.Log($"UnityAds. Load complete: { unitId }");
+    }
+
+    public void OnUnityAdsFailedToLoad(string unitId, UnityAdsLoadError error, string message)
+    {
+        Debug.Log($"UnityAds. Load failed: { unitId }, { error }, { message }");
+        StartCoroutine(RetryLoad());
+    }
+
+    #endregion
 }

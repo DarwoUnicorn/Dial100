@@ -6,18 +6,26 @@ public class Cell : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _text;
 
+    private CellData _data;
+    
     public TextMeshProUGUI Text => _text;
     public Transform Parent => transform.parent;
-    public CellData Data { get; private set; }
+    public int Value => _data.Value;
+    public bool IsComplete => _data.IsComplete;
     public bool IsCreated { get; private set; }
+
+    public bool TryIncreaseValue(Cell other)
+    {
+        return _data.TryIncreaseValue(other._data);
+    }
 
     public void Generate()
     {
-        if(Data == null)
+        if(_data == null)
         {
-            Data = new CellData();
+            _data = new CellData();
         }
-        Data.Generate();
+        _data.Generate();
         IsCreated = true;
     }
 

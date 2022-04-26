@@ -4,7 +4,7 @@ using TMPro;
 public class TextTranslator : MonoBehaviour
 {
     [SerializeField]
-    private CurrentLanguage _language;
+    private GameLanguage _language;
     [SerializeField]
     private TMP_Text _text;
     [SerializeField]
@@ -58,6 +58,8 @@ public class TextTranslator : MonoBehaviour
 
     }
 
+    #region MonoBehaviour
+
     private void Start()
     {
         _language.LanguageChanged += OnLanguageChanged;
@@ -67,4 +69,6 @@ public class TextTranslator : MonoBehaviour
     {
         _language.LanguageChanged -= OnLanguageChanged;
     }
+
+    #endregion
 }

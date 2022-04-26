@@ -41,11 +41,11 @@ public class MoveHandler : MonoBehaviour
         {
             return;
         }
-        if(_field.Cells[elementIn.x][elementIn.y].Data.Value == 100)
+        if(_field.Cells[elementIn.x][elementIn.y].Value == 100)
         {
             Dial100?.Invoke();
         }
-        IncreasePoints?.Invoke(_field.Cells[elementIn.x][elementIn.y].Data.Value);
+        IncreasePoints?.Invoke(_field.Cells[elementIn.x][elementIn.y].Value);
         DeleteCell(elementOut);
     }
 
@@ -72,7 +72,7 @@ public class MoveHandler : MonoBehaviour
     public void DeleteCell(Vector2Int coordinate)
     {
         _field.DeleteCell(coordinate);
-        if(Parameters is InfinityModeLevelParameters || Parameters is ClearModeLevelParameters)
+        if(Parameters.CompletionCondition is ClearCompletionCondition || Parameters.CompletionCondition is ScoreCompletionCondition)
         {
             _field.DeleteCells(_field.GetDeleteMap());
         }

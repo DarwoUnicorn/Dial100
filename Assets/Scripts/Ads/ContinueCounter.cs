@@ -3,19 +3,19 @@ using UnityEngine;
 public class ContinueCounter : MonoBehaviour
 {
     [SerializeField]
-    private int MaxContinueCount;
+    private int _maxContinueCount;
     
-    private int ContinueCount;
+    private int _continueCount;
 
-    public bool HasContinue { get{ return ContinueCount < MaxContinueCount; } }
+    public bool HasContinue { get { return _continueCount < _maxContinueCount; } }
 
     public void ResetContinueCount()
     {
-        ContinueCount = 0;
+        _continueCount = 0;
     }
 
     public void IncreaseCounter()
     {
-        ContinueCount++;
+        _continueCount++;
     }
 }

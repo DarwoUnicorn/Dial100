@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[System.Serializable]
 public class ScoreCompletionCondition : LevelCompletionCondition
 {
     [SerializeField]

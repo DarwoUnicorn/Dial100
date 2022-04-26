@@ -43,7 +43,9 @@ public class AbilityCount : IPersistent
 
     public void Load()
     {
+        UnityEvent<int> temp = AbilityCountChanged;
         Saver.Load(this);
+        AbilityCountChanged = temp;
         AbilityCountChanged?.Invoke(_value);
     }
 }

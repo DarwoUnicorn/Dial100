@@ -86,7 +86,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5221983550914836357}
         m_TargetAssemblyTypeName: SoundButton, Assembly-CSharp
-        m_MethodName: ChangeSoundState
+        m_MethodName: Action
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

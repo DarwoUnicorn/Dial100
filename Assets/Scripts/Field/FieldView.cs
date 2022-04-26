@@ -29,9 +29,9 @@ public class FieldView : MonoBehaviour
                 {
                     continue;
                 }
-                if(cell.Text.text != cell.Data.Value.ToString())
+                if(cell.Text.text != cell.Value.ToString())
                 {
-                    cell.Text.text = cell.Data.Value.ToString();
+                    cell.Text.text = cell.Value.ToString();
                 }
                 if(cell.IsCreated == true)
                 {

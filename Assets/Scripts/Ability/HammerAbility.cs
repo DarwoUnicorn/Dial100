@@ -6,40 +6,38 @@ public class HammerAbility : Ability
     [SerializeField]
     private UnityEvent Deactivated = new UnityEvent();
 
-    private bool IsUsed;
+    private bool _isUsed;
+
+    public void OnClick()
+    {
+        if(_isUsed)
+        {
+            Deactivate();
+            return;
+        }
+        Use();
+    }
 
     public override void Use()
     {
-        if(IsUsed == false)
+        if(Count == 0)
         {
-            Activate();
+            AbilityOver?.Invoke();
             return;
         }
-        Deactivate();
-    }
-
-    public void Deactivate()
-    {
-        if(IsUsed == true)
-        {
-            IsUsed = false;
-            Deactivated?.Invoke();
-            _abilityCount.IncreaseAbilityCount(1);
-        }
+        _isUsed = true;
+        AbilityUsed?.Invoke();
     }
 
     public void OnUsingHammer()
     {
-        IsUsed = false;
+        Deactivate();
+        _abilityCount.OnAbilityUsed();
     }
 
-    private void Activate()
+    private void Deactivate()
     {
-        if(Count == 0)
-        {
-            return;
-        }
-        base.Use();
-        IsUsed = true;
+        _isUsed = false;
+        Deactivated?.Invoke();
     }
 }

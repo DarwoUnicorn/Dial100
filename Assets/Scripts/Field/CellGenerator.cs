@@ -6,25 +6,21 @@ public class CellGenerator : MonoBehaviour
     [SerializeField]
     private UnityEvent MaxStartCellValueReset = new UnityEvent();
 
-    private static CellGenerator _instance;
+    public static CellGenerator Instance { get; private set; }
 
     private int _minStartCellValue = 1;
     private int _maxStartCellValue = 20;
     private int _generationsBeforeReset;
 
-    public static int Generate()
+    public int Generate()
     { 
-        if(_instance == null)
+        int temp = Random.Range(_minStartCellValue, _maxStartCellValue + 1);
+        if(_generationsBeforeReset != 0)
         {
-            throw new System.NullReferenceException("There must be a CellGenerator on the scene");
-        }
-        int temp = Random.Range(_instance._minStartCellValue, _instance._maxStartCellValue + 1);
-        if(_instance._generationsBeforeReset != 0)
-        {
-            _instance._generationsBeforeReset--;
-            if(_instance._generationsBeforeReset == 0)
+            _generationsBeforeReset--;
+            if(_generationsBeforeReset == 0)
             {
-                _instance.ResetMaxStartCellValue();
+                ResetMaxStartCellValue();
             }
         }
         return temp;
@@ -32,26 +28,26 @@ public class CellGenerator : MonoBehaviour
 
     public void DescreaseMaxStartValue()
     {
-        _instance._maxStartCellValue = 10;
-        _instance._generationsBeforeReset = 10;
+        _maxStartCellValue = 10;
+        _generationsBeforeReset = 10;
     }
 
     public void ResetMaxStartCellValue()
     {
-        _instance._maxStartCellValue = 20;
-        _instance.MaxStartCellValueReset?.Invoke();
+        _maxStartCellValue = 20;
+        MaxStartCellValueReset?.Invoke();
     }
     
     #region "MonoBehaviour"
 
     private void Start()
     {
-        if(_instance == null)
+        if(Instance == null)
         {
-            _instance = this;   
+            Instance = this;   
             return;
         }
-        if(_instance != this)
+        if(Instance != this)
         {
             throw new SingletonException("There should only be one CellGenerator");
         }

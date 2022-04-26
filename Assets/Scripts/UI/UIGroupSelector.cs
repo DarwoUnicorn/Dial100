@@ -47,8 +47,7 @@ public class UIGroupSelector : MonoBehaviour
 
     private void DisableAllGroup()
     {
-        List<CanvasGroup> disabledGroup = new List<CanvasGroup>();
-        gameObject.GetComponentsInChildren<CanvasGroup>(disabledGroup);
+        List<CanvasGroup> disabledGroup = new List<CanvasGroup>(FindObjectsOfType<CanvasGroup>());
         foreach(CanvasGroup item in disabledGroup)
         {
             DisableGroup(item);

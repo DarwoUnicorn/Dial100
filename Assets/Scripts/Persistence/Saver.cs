@@ -7,6 +7,10 @@ public static class Saver
 
     public static void Save(IPersistent persitedObject)
     {
+        if(persitedObject.Id == "" || persitedObject.Id == null)
+        {
+            throw new System.ArgumentException("Object has no id");
+        }
         File.WriteAllText(_path + persitedObject.Id, JsonUtility.ToJson(persitedObject));
     }
 

@@ -16,15 +16,15 @@ public class LevelCompletionChecker : MonoBehaviour
 
     public void CheckCondition()
     {
-        if(_level is FinalModeLevelParameters)
+        if(_level.CompletionCondition is FullCellCompletionCondition)
         {
             _level.CheckCondition(_field.CountOfFullCell());
         }
-        else if(_level is InfinityModeLevelParameters)
+        else if(_level.CompletionCondition is ScoreCompletionCondition)
         {
             _level.CheckCondition(_score.Points);
         }
-        else if(_level is ClearModeLevelParameters)
+        else if(_level.CompletionCondition is ClearCompletionCondition)
         {
             return;
         }
