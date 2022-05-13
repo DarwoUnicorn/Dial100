@@ -313,7 +313,7 @@ GameObject:
   - component: {fileID: 54086183}
   - component: {fileID: 54086182}
   - component: {fileID: 54086181}
-  - component: {fileID: 54086180}
+  - component: {fileID: 54086184}
   m_Layer: 5
   m_Name: Get Reward
   m_TagString: Untagged
@@ -341,30 +341,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &54086180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 54086178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60b9ef3efc252f5408808bb168db8e59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AdsOver:
-    m_PersistentCalls:
-      m_Calls:
-      - {m_Target: {fileID: 1312263455}, m_TargetAssemblyTypeName: UIGroupSelector, Assembly-CSharp, m_MethodName: DisableActiveWindow, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-      - {m_Target: {fileID: 1542031469}, m_TargetAssemblyTypeName: HammerAbility, Assembly-CSharp, m_MethodName: Deactivate, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-    m_CallsDirty: 1
-  Displayer: {fileID: 0}
-  AdsShowComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - {m_Target: {fileID: 1977325641}, m_TargetAssemblyTypeName: Ability, Assembly-CSharp, m_MethodName: IncreaseAbilityCount, m_Mode: 3, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 1, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-    m_CallsDirty: 1
 --- !u!114 &54086181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,9 +385,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 54086180}
-        m_TargetAssemblyTypeName: AbilityRewardedAds, Assembly-CSharp
-        m_MethodName: ShowAds
+      - m_Target: {fileID: 54086184}
+        m_TargetAssemblyTypeName: AbilityRewardButton, Assembly-CSharp
+        m_MethodName: Action
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -459,6 +435,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54086178}
   m_CullTransparentMesh: 1
+--- !u!114 &54086184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54086178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4d2418cee2578d45b0ec3533e9e497e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1977325641}
+        m_TargetAssemblyTypeName: Ability, Assembly-CSharp
+        m_MethodName: IncreaseAbilityCount
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1312263455}
+        m_TargetAssemblyTypeName: UIGroupSelector, Assembly-CSharp
+        m_MethodName: DisableActiveWindow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ShowFailure:
+    m_PersistentCalls:
+      m_Calls: []
+  _adUnit: {fileID: 896813368}
 --- !u!1001 &67388444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2084,6 +2103,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1562186538}
     m_Modifications:
+    - target: {fileID: 7079555043842866249, guid: 726cbfbdaa6ecc840a8500be97943ce7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4546fc70d131135479446eb0266bfb80, type: 3}
     - target: {fileID: 7079555043870948353, guid: 726cbfbdaa6ecc840a8500be97943ce7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2642,10 +2665,10 @@ MonoBehaviour:
   MaxStartCellValueReset:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 378819567}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
+      - m_Target: {fileID: 378819568}
+        m_TargetAssemblyTypeName: DescreaseMaxStartValueAbility, Assembly-CSharp
+        m_MethodName: AbilityEnd
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -10556,6 +10579,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6410a8ce389cd984dae33c7ec327e268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Restart:
+    m_PersistentCalls:
+      m_Calls: []
+  _timer: {fileID: 0}
+  _adUnit: {fileID: 0}
 --- !u!114 &791468534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10873,6 +10901,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  Loaded:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1904863093}
+        m_TargetAssemblyTypeName: DailyReward, Assembly-CSharp
+        m_MethodName: CheckReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _id: PlayerName
   _name: 
 --- !u!114 &794817455
@@ -10890,6 +10933,42 @@ MonoBehaviour:
   _hammerAbility: {fileID: 1542031469}
   _timeRestoreAbility: {fileID: 1977325641}
   _decreaseMaxStartValueAbility: {fileID: 378819568}
+--- !u!1 &816407918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 816407919}
+  m_Layer: 5
+  m_Name: DailyReward
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &816407919
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816407918}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1613497177}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &826137459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11810,7 +11889,6 @@ GameObject:
   m_Component:
   - component: {fileID: 896813364}
   - component: {fileID: 896813363}
-  - component: {fileID: 896813369}
   - component: {fileID: 896813368}
   - component: {fileID: 896813367}
   - component: {fileID: 896813366}
@@ -11837,9 +11915,33 @@ MonoBehaviour:
   UnityAdInitialized:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 896813369}
-        m_TargetAssemblyTypeName: AdsLoader, Assembly-CSharp
-        m_MethodName: OnUnityAdsInitialized
+      - m_Target: {fileID: 896813368}
+        m_TargetAssemblyTypeName: RewardedAdUnit, Assembly-CSharp
+        m_MethodName: Load
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 896813367}
+        m_TargetAssemblyTypeName: BannerAdUnit, Assembly-CSharp
+        m_MethodName: Load
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 896813366}
+        m_TargetAssemblyTypeName: InterstitialAdUnit, Assembly-CSharp
+        m_MethodName: Load
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11918,23 +12020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unitId: Rewarded_Android
-  _continueCounter: {fileID: 0}
---- !u!114 &896813369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 896813360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c332d9bb58dc934e82bbb8c7e9ad29a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _adUnits:
-  - {fileID: 896813368}
-  - {fileID: 896813367}
-  - {fileID: 896813366}
+  _continueCounter: {fileID: 1419808765}
 --- !u!1 &897251771
 GameObject:
   m_ObjectHideFlags: 0
@@ -11947,7 +12033,7 @@ GameObject:
   - component: {fileID: 897251776}
   - component: {fileID: 897251775}
   - component: {fileID: 897251774}
-  - component: {fileID: 897251773}
+  - component: {fileID: 897251777}
   m_Layer: 5
   m_Name: Get Reward
   m_TagString: Untagged
@@ -11975,30 +12061,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &897251773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 897251771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60b9ef3efc252f5408808bb168db8e59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AdsOver:
-    m_PersistentCalls:
-      m_Calls:
-      - {m_Target: {fileID: 1312263455}, m_TargetAssemblyTypeName: UIGroupSelector, Assembly-CSharp, m_MethodName: DisableActiveWindow, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-      - {m_Target: {fileID: 1542031469}, m_TargetAssemblyTypeName: HammerAbility, Assembly-CSharp, m_MethodName: Deactivate, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-    m_CallsDirty: 1
-  Displayer: {fileID: 0}
-  AdsShowComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - {m_Target: {fileID: 1542031469}, m_TargetAssemblyTypeName: Ability, Assembly-CSharp, m_MethodName: IncreaseAbilityCount, m_Mode: 3, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 1, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-    m_CallsDirty: 1
 --- !u!114 &897251774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12043,9 +12105,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 897251773}
-        m_TargetAssemblyTypeName: AbilityRewardedAds, Assembly-CSharp
-        m_MethodName: ShowAds
+      - m_Target: {fileID: 897251777}
+        m_TargetAssemblyTypeName: AbilityRewardButton, Assembly-CSharp
+        m_MethodName: Action
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12093,6 +12155,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897251771}
   m_CullTransparentMesh: 1
+--- !u!114 &897251777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897251771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4d2418cee2578d45b0ec3533e9e497e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1542031469}
+        m_TargetAssemblyTypeName: Ability, Assembly-CSharp
+        m_MethodName: IncreaseAbilityCount
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1312263455}
+        m_TargetAssemblyTypeName: UIGroupSelector, Assembly-CSharp
+        m_MethodName: DisableActiveWindow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ShowFailure:
+    m_PersistentCalls:
+      m_Calls: []
+  _adUnit: {fileID: 896813368}
 --- !u!114 &907723132 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8947045095235714155, guid: ea464053acef3f44b924d58707a40857, type: 3}
@@ -13262,6 +13367,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6410a8ce389cd984dae33c7ec327e268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Restart:
+    m_PersistentCalls:
+      m_Calls: []
+  _timer: {fileID: 0}
+  _adUnit: {fileID: 0}
 --- !u!114 &1001125916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14815,7 +14925,6 @@ GameObject:
   - component: {fileID: 1115636368}
   - component: {fileID: 1115636367}
   - component: {fileID: 1115636366}
-  - component: {fileID: 1115636370}
   - component: {fileID: 1115636369}
   m_Layer: 5
   m_Name: Restart
@@ -14889,8 +14998,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1115636369}
-        m_TargetAssemblyTypeName: InterstitialAds, Assembly-CSharp
-        m_MethodName: ShowAds
+        m_TargetAssemblyTypeName: RestartButton, Assembly-CSharp
+        m_MethodName: Action
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14947,36 +15056,110 @@ MonoBehaviour:
   m_GameObject: {fileID: 1115636364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17eae4854114c0d4aa6371eaccab488d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AdsOver:
-    m_PersistentCalls:
-      m_Calls:
-      - {m_Target: {fileID: 1642429527}, m_TargetAssemblyTypeName: CurrentLevel, Assembly-CSharp, m_MethodName: SetHighScore, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-      - {m_Target: {fileID: 195011222}, m_TargetAssemblyTypeName: CellGenerator, Assembly-CSharp, m_MethodName: ResetMaxStartCellValue, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-      - {m_Target: {fileID: 195011221}, m_TargetAssemblyTypeName: GameLogic, Assembly-CSharp, m_MethodName: Restart, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-      - {m_Target: {fileID: 768079587}, m_TargetAssemblyTypeName: Timer, Assembly-CSharp, m_MethodName: RestoreTime, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-      - {m_Target: {fileID: 768079587}, m_TargetAssemblyTypeName: Timer, Assembly-CSharp, m_MethodName: Pause, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-      - {m_Target: {fileID: 864698400}, m_TargetAssemblyTypeName: Score, Assembly-CSharp, m_MethodName: Reset, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-      - {m_Target: {fileID: 1542031469}, m_TargetAssemblyTypeName: HammerAbility, Assembly-CSharp, m_MethodName: Deactivate, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-      - {m_Target: {fileID: 1419808763}, m_TargetAssemblyTypeName: ContinueCounter, Assembly-CSharp, m_MethodName: ResetContinueCount, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-      - {m_Target: {fileID: 1312263455}, m_TargetAssemblyTypeName: UIGroupSelector, Assembly-CSharp, m_MethodName: DisableActiveWindow, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-    m_CallsDirty: 1
-  Displayer: {fileID: 0}
-  _timer: {fileID: 0}
---- !u!114 &1115636370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1115636364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6410a8ce389cd984dae33c7ec327e268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Restart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1542031469}
+        m_TargetAssemblyTypeName: HammerAbility, Assembly-CSharp
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 195011222}
+        m_TargetAssemblyTypeName: CellGenerator, Assembly-CSharp
+        m_MethodName: ResetMaxStartCellValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1642429527}
+        m_TargetAssemblyTypeName: CurrentLevel, Assembly-CSharp
+        m_MethodName: SetHighScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 195011221}
+        m_TargetAssemblyTypeName: MoveHandler, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 768079587}
+        m_TargetAssemblyTypeName: Timer, Assembly-CSharp
+        m_MethodName: RestoreTime
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 864698400}
+        m_TargetAssemblyTypeName: Score, Assembly-CSharp
+        m_MethodName: Reset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1312263455}
+        m_TargetAssemblyTypeName: UIGroupSelector, Assembly-CSharp
+        m_MethodName: DisableActiveWindow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1419808765}
+        m_TargetAssemblyTypeName: ContinueCounter, Assembly-CSharp
+        m_MethodName: ResetContinueCount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _timer: {fileID: 896813365}
+  _adUnit: {fileID: 896813366}
 --- !u!114 &1116708292 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8947045095235714155, guid: ea464053acef3f44b924d58707a40857, type: 3}
@@ -19706,9 +19889,7 @@ GameObject:
   - component: {fileID: 1419808761}
   - component: {fileID: 1419808760}
   - component: {fileID: 1419808759}
-  - component: {fileID: 1419808764}
-  - component: {fileID: 1419808762}
-  - component: {fileID: 1419808763}
+  - component: {fileID: 1419808766}
   - component: {fileID: 1419808765}
   m_Layer: 5
   m_Name: Continue
@@ -19781,9 +19962,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1419808762}
-        m_TargetAssemblyTypeName: RewardedAds, Assembly-CSharp
-        m_MethodName: ShowAds
+      - m_Target: {fileID: 1419808766}
+        m_TargetAssemblyTypeName: ContinueButton, Assembly-CSharp
+        m_MethodName: Action
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19831,45 +20012,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1419808757}
   m_CullTransparentMesh: 1
---- !u!114 &1419808762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1419808757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da1187ca8dabf5d4eaba2d8cd7f3754b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _unitId: 
-  _continueCounter: {fileID: 1419808763}
---- !u!114 &1419808763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1419808757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f3245334fd4d54c995aea62c41840b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxContinueCount: 3
---- !u!114 &1419808764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1419808757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b39282dae59fdb04faf99cf2a0d5eea7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1419808765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19883,6 +20025,74 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxContinueCount: 3
+--- !u!114 &1419808766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419808757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cbc540ecd24cf24395be711d1848504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1312263455}
+        m_TargetAssemblyTypeName: UIGroupSelector, Assembly-CSharp
+        m_MethodName: DisableActiveWindow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 768079587}
+        m_TargetAssemblyTypeName: Timer, Assembly-CSharp
+        m_MethodName: RestoreTime
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 195011221}
+        m_TargetAssemblyTypeName: MoveHandler, Assembly-CSharp
+        m_MethodName: ClearBottom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1542031469}
+        m_TargetAssemblyTypeName: HammerAbility, Assembly-CSharp
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ShowFailure:
+    m_PersistentCalls:
+      m_Calls: []
+  _counter: {fileID: 1419808765}
+  _adUnit: {fileID: 896813368}
 --- !u!1 &1444632505
 GameObject:
   m_ObjectHideFlags: 0
@@ -22587,6 +22797,7 @@ RectTransform:
   - {fileID: 2058475639}
   - {fileID: 202707373}
   - {fileID: 1528327917}
+  - {fileID: 816407919}
   m_Father: {fileID: 1624154059}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -24110,6 +24321,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6410a8ce389cd984dae33c7ec327e268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Restart:
+    m_PersistentCalls:
+      m_Calls: []
+  _timer: {fileID: 0}
+  _adUnit: {fileID: 0}
 --- !u!114 &1680568197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25161,7 +25377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -25181,6 +25397,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
@@ -25204,6 +25424,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1915355856}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Target
+      value: 
+      objectReference: {fileID: 1419808765}
+    - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -25217,6 +25441,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
@@ -25240,6 +25468,10 @@ PrefabInstance:
       value: Back
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
+      value: ResetContinueCount
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: FieldBackButton, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -25258,6 +25490,10 @@ PrefabInstance:
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
       value: FieldBackButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName
+      value: ContinueCounter, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -25281,6 +25517,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -26651,6 +26891,56 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7796504319455987133, guid: 5f0dfbd598b3a4a4a84097ac3e43c7a1, type: 3}
   m_PrefabInstance: {fileID: 1880175264}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1904863092
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1904863094}
+  - component: {fileID: 1904863093}
+  m_Layer: 0
+  m_Name: DailyReward
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1904863093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904863092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76d3871bf341ecf4cab269f2710ab269, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hammerAbility: {fileID: 1542031469}
+  _timeRestoreAbility: {fileID: 1977325641}
+  _decreaseMaxStartValueAbility: {fileID: 378819568}
+  _id: DR
+  _day: 0
+  _previousRewardTime: 01/01/1970
+--- !u!4 &1904863094
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1904863092}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1910907149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27901,7 +28191,7 @@ GameObject:
   - component: {fileID: 1983951401}
   - component: {fileID: 1983951400}
   - component: {fileID: 1983951399}
-  - component: {fileID: 1983951398}
+  - component: {fileID: 1983951402}
   m_Layer: 5
   m_Name: Get Reward
   m_TagString: Untagged
@@ -27929,30 +28219,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1983951398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1983951396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60b9ef3efc252f5408808bb168db8e59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AdsOver:
-    m_PersistentCalls:
-      m_Calls:
-      - {m_Target: {fileID: 1312263455}, m_TargetAssemblyTypeName: UIGroupSelector, Assembly-CSharp, m_MethodName: DisableActiveWindow, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-      - {m_Target: {fileID: 1542031469}, m_TargetAssemblyTypeName: HammerAbility, Assembly-CSharp, m_MethodName: Deactivate, m_Mode: 1, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-    m_CallsDirty: 1
-  Displayer: {fileID: 0}
-  AdsShowComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - {m_Target: {fileID: 378819568}, m_TargetAssemblyTypeName: Ability, Assembly-CSharp, m_MethodName: IncreaseAbilityCount, m_Mode: 3, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 1, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
-    m_CallsDirty: 1
 --- !u!114 &1983951399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27997,9 +28263,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1983951398}
-        m_TargetAssemblyTypeName: AbilityRewardedAds, Assembly-CSharp
-        m_MethodName: ShowAds
+      - m_Target: {fileID: 1983951402}
+        m_TargetAssemblyTypeName: AbilityRewardButton, Assembly-CSharp
+        m_MethodName: Action
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28047,6 +28313,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1983951396}
   m_CullTransparentMesh: 1
+--- !u!114 &1983951402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983951396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4d2418cee2578d45b0ec3533e9e497e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 378819568}
+        m_TargetAssemblyTypeName: Ability, Assembly-CSharp
+        m_MethodName: IncreaseAbilityCount
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1312263455}
+        m_TargetAssemblyTypeName: UIGroupSelector, Assembly-CSharp
+        m_MethodName: DisableActiveWindow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  ShowFailure:
+    m_PersistentCalls:
+      m_Calls: []
+  _adUnit: {fileID: 896813368}
 --- !u!1001 &1992108095
 PrefabInstance:
   m_ObjectHideFlags: 0

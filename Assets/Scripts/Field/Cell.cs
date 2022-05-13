@@ -40,7 +40,7 @@ public class Cell : MonoBehaviour
         other.transform.SetParent(tempParent);
     }
 
-    #region "MonoBehaviour"
+    #region MonoBehaviour
 
     private void LateUpdate()
     {

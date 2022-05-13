@@ -28,7 +28,7 @@ public class InputHammerInterpreter : InputInterpreter
         }
     }
 
-    #region "MonoBehaviour"
+    #region MonoBehaviour
 
     private void Update()
     {

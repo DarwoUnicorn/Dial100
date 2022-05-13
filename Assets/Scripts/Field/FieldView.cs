@@ -51,7 +51,7 @@ public class FieldView : MonoBehaviour
         }
     }
 
-    #region "MonoBehaviour"
+    #region MonoBehaviour
 
     private void Update()
     {

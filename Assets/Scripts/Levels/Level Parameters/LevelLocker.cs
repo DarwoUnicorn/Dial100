@@ -8,14 +8,11 @@ public class LevelLocker : MonoBehaviour
 
     [SerializeField]
     private int RequiredLevel;
-    [SerializeField]
-    private bool IsRequiredLevelReached;
 
     public void OnLevelUp(int newLevel)
     {
         if(newLevel >= RequiredLevel)
         {
-            IsRequiredLevelReached = true;
             LevelOpen?.Invoke();
         }
     }

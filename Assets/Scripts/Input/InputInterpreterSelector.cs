@@ -41,7 +41,7 @@ public class InputInterpreterSelector : MonoBehaviour
         }
     }
     
-    #region "MonoBehaviour"
+    #region MonoBehaviour
 
     private void Start()
     {

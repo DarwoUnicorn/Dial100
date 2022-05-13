@@ -38,7 +38,7 @@ public class CellGenerator : MonoBehaviour
         MaxStartCellValueReset?.Invoke();
     }
     
-    #region "MonoBehaviour"
+    #region MonoBehaviour
 
     private void Start()
     {

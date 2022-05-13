@@ -30,7 +30,7 @@ public class InputSwipeInterpreter : InputInterpreter, IBeginDragHandler, IDragH
         }
     }
 
-    #region "EventSystems"
+    #region EventSystems
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -76,7 +76,7 @@ public class InputSwipeInterpreter : InputInterpreter, IBeginDragHandler, IDragH
 
     #endregion
 
-    #region "MonoBehaviour"
+    #region MonoBehaviour
 
     private void OnDisable()
     {

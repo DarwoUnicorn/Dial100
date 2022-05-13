@@ -14,6 +14,8 @@ public class PlayerName : MonoBehaviour, IPersistent
     private UnityEvent NameChanged = new UnityEvent();
     [SerializeField]
     private UnityEvent NameIsEmpty = new UnityEvent();
+    [SerializeField]
+    private UnityEvent Loaded = new UnityEvent();
 
     [SerializeField]
     private string _id;
@@ -40,7 +42,9 @@ public class PlayerName : MonoBehaviour, IPersistent
         if(_name == "")
         {
             NameIsEmpty?.Invoke();
+            return;
         }
+        Loaded?.Invoke();
     }
 
     public void Save()
@@ -50,14 +54,10 @@ public class PlayerName : MonoBehaviour, IPersistent
 
     public void Load()
     {
-        UnityEvent temp1 = NameChanged;
-        UnityEvent temp2 = NameIsEmpty;
         Saver.Load(this);
-        NameChanged = temp1;
-        NameIsEmpty = temp2;
     }
 
-    #region  "MonoBehaviour"
+    #region MonoBehaviour
 
     private void Start()
     {

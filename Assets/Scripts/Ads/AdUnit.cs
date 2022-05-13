@@ -7,7 +7,7 @@ public abstract class AdUnit : MonoBehaviour, IUnityAdsLoadListener
     [SerializeField]
     private string _unitId;
 
-    protected string UnitId { get; }
+    protected string UnitId => _unitId;
 
     public abstract void Load();
 

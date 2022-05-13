@@ -29,7 +29,7 @@ public abstract class Ability : MonoBehaviour
         _abilityCount.IncreaseAbilityCount(value);
     }
 
-    #region "MonoBehaviour"
+    #region MonoBehaviour
 
     private void Start()
     {
