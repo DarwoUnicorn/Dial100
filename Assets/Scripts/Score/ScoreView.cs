@@ -4,12 +4,10 @@ using TMPro;
 public class ScoreView : MonoBehaviour
 {
     [SerializeField]
-    private Score _score;
-    [SerializeField]
     private TextMeshProUGUI _text;
 
-    public void OnPointsChanged()
+    public void OnPointsChanged(int points)
     {
-        _text.text = _score.Points.ToString();
+        _text.text = points.ToString();
     }
 }

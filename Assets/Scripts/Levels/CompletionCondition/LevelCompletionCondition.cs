@@ -6,6 +6,9 @@ public abstract class LevelCompletionCondition : MonoBehaviour, IPersistent
     [SerializeField]
     private UnityEvent LevelComplete = new UnityEvent();
     [SerializeField]
+    private UnityEvent Loaded = new UnityEvent();
+
+    [SerializeField]
     private bool IsCompleted;
     [SerializeField]
     private LevelId _levelId;
@@ -14,6 +17,10 @@ public abstract class LevelCompletionCondition : MonoBehaviour, IPersistent
 
     protected void Complete()
     {
+        if(IsCompleted)
+        {
+            return;
+        }
         IsCompleted = true;
         LevelComplete?.Invoke();
         Save();
@@ -23,12 +30,10 @@ public abstract class LevelCompletionCondition : MonoBehaviour, IPersistent
 
     public void Load()
     {
-        UnityEvent temp = LevelComplete;
         Saver.Load(this);
-        LevelComplete = temp;
         if(IsCompleted)
         {
-            LevelComplete?.Invoke();
+            Loaded?.Invoke();
         }
     }
 

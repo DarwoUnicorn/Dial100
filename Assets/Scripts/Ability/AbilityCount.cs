@@ -5,7 +5,9 @@ using UnityEngine.Events;
 public class AbilityCount : IPersistent
 {
     [SerializeField]
-    protected UnityEvent<int> AbilityCountChanged = new UnityEvent<int>();
+    private UnityEvent<int> AbilityCountChanged = new UnityEvent<int>();
+    [SerializeField]
+    private UnityEvent AbilityUsed = new UnityEvent();
 
     [SerializeField] [Min(0)]
     private int _value;
@@ -33,6 +35,7 @@ public class AbilityCount : IPersistent
             throw new System.RankException("Ability count can't be less then 0");
         }
         AbilityCountChanged?.Invoke(--_value);
+        AbilityUsed?.Invoke();
         Save();
     }
 

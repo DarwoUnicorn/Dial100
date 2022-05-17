@@ -1,8 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Field : MonoBehaviour
 {
+    [SerializeField]
+    private UnityEvent<int> DeleteRows = new UnityEvent<int>();
+    [SerializeField]
+    private UnityEvent<int> DeleteColumns = new UnityEvent<int>();
+
     private List<List<Cell>> _cells;
     private LevelParameters _parameters;
 
@@ -128,45 +134,57 @@ public class Field : MonoBehaviour
     public bool[,] GetDeleteMap()
     {
         bool[,] deleteMap = new bool[_parameters.Field.Width, _parameters.Field.Height];
+        int rowCount = 0;
+        int columnCount = 0;
         for(int i = 0; i < _parameters.Field.Height; i++)
         {
-            CheckRow(deleteMap, i);
+            if(CheckRow(deleteMap, i))
+            {
+                rowCount++;
+            }
         }
         for(int i = 0; i < _parameters.Field.Width; i++)
         {
-            CheckColumn(deleteMap, i);
+            if(CheckColumn(deleteMap, i))
+            {
+                columnCount++;
+            }
         }
+        DeleteColumns?.Invoke(rowCount);
+        DeleteRows?.Invoke(columnCount);
         return deleteMap;
     }
 
-    private void CheckRow(bool[,] deleteMap, int rowNumber)
+    private bool CheckRow(bool[,] deleteMap, int rowNumber)
     {
         for(int i = 0; i < _parameters.Field.Width; i++)
         {
             if(_cells[i][rowNumber]?.IsComplete == false)
             {
-                return;
+                return false;
             }
         }
         for(int i = 0; i < _parameters.Field.Width; i++)
         {
             deleteMap[i, rowNumber] = true;
         }
+        return true;
     }
 
-    private void CheckColumn(bool[,] deleteMap, int columnNumber)
+    private bool CheckColumn(bool[,] deleteMap, int columnNumber)
     {
         for(int i = 0; i < _parameters.Field.Height; i++)
         {
             if(_cells[columnNumber][i]?.IsComplete == false)
             {
-                return;
+                return false;
             }
         }
         for(int i = 0; i < _parameters.Field.Height; i++)
         {
             deleteMap[columnNumber, i] = true;
         }
+        return true;
     }
 
     private bool CheckAround(int x, int y)

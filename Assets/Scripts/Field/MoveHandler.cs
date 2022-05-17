@@ -11,9 +11,13 @@ public class MoveHandler : MonoBehaviour
     private UnityEvent<int> IncreasePoints = new UnityEvent<int>();
     [SerializeField]
     private UnityEvent Dial100 = new UnityEvent();
+    [SerializeField]
+    private UnityEvent<int> Dial100s = new UnityEvent<int>();
 
     [SerializeField]
     private Field _field;
+    [SerializeField]
+    private int Count100s;
 
     public LevelParameters Parameters => _field.Parameters;
 
@@ -26,7 +30,13 @@ public class MoveHandler : MonoBehaviour
                 cell?.Generate();
             }
         }
+        Reset100s();
         FieldChanged?.Invoke();
+    }
+    
+    public void Reset100s()
+    {
+        Count100s = 0;
     }
 
     public void OnSwipe(Cell cell, Vector2Int direction)
@@ -43,6 +53,8 @@ public class MoveHandler : MonoBehaviour
         }
         if(_field.Cells[elementIn.x][elementIn.y].Value == 100)
         {
+            Count100s++;
+            Dial100s?.Invoke(Count100s);
             Dial100?.Invoke();
         }
         IncreasePoints?.Invoke(_field.Cells[elementIn.x][elementIn.y].Value);
