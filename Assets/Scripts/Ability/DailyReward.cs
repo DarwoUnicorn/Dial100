@@ -109,19 +109,19 @@ public class DailyReward : MonoBehaviour, IPersistent
         if(hammerCount != 0)
         {
             _hammerObject.SetActive(true);
-            _hammerText.text = hammerCount.ToString();
+            _hammerText.text = "x" + hammerCount.ToString();
             _hammerAbility.IncreaseAbilityCount(hammerCount);
         }
         if(timeRestoreCount != 0)
         {
             _timeRestoreObject.SetActive(true);
-            _timeRestoreText.text = timeRestoreCount.ToString();
+            _timeRestoreText.text = "x" + timeRestoreCount.ToString();
             _timeRestoreAbility.IncreaseAbilityCount(timeRestoreCount);
         }
         if(descreaseMaxStartValueCount != 0)
         {
             _decreaseMaxStartValueObject.SetActive(true);
-            _decreaseMaxStartValueText.text = descreaseMaxStartValueCount.ToString();
+            _decreaseMaxStartValueText.text = "x" + descreaseMaxStartValueCount.ToString();
             _decreaseMaxStartValueAbility.IncreaseAbilityCount(descreaseMaxStartValueCount);
         }
         IsGetReward?.Invoke();

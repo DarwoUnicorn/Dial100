@@ -17,7 +17,7 @@ public  class BannerAdUnit : AdUnit
     public  void Show()
     {
         Advertisement.Banner.Show(UnitId, _bannerOptions);
-        Load();
+        StartCoroutine(RetryLoad());
     }
 
     public void Hide()
@@ -74,11 +74,15 @@ public  class BannerAdUnit : AdUnit
 
     #region MonoBehaviour
 
+    private void Awake()
+    {
+        CreateLoadOptions();
+        CreateBannerOptions();
+    }
+
     private void Start()
     {
         Advertisement.Banner.SetPosition(_bannerPosition);
-        CreateLoadOptions();
-        CreateBannerOptions();
     }
 
     #endregion
