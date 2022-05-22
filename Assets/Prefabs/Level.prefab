@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1516682461494825556}
   - component: {fileID: 7713391391642886782}
   - component: {fileID: 3251376395111620430}
+  - component: {fileID: 1170215414997477402}
   m_Layer: 5
   m_Name: High Score
   m_TagString: Untagged
@@ -66,9 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score
-
-    0'
+  m_text: Score
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ad1e0cec453ba2e4b9091db4425975d9, type: 2}
   m_sharedMaterial: {fileID: 9113244948003766424, guid: ad1e0cec453ba2e4b9091db4425975d9, type: 2}
@@ -137,6 +136,26 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1170215414997477402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139149716232547384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0a26e32724cffe4b970cb5bca2fa030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _language: {fileID: 0}
+  _text: {fileID: 3251376395111620430}
+  _deutsch: Punktzahl
+  _french: Score
+  _russian: "\u0420\u0435\u043A\u043E\u0440\u0434"
+  _english: Score
+  _spanish: Puntaje
+  _italian: Punto
 --- !u!1 &3649990462400056989
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,9 +230,9 @@ MonoBehaviour:
   ScoreChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3251376395111620430}
-        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
-        m_MethodName: set_text
+      - m_Target: {fileID: 1170215414997477402}
+        m_TargetAssemblyTypeName: ScoreTranslator, Assembly-CSharp
+        m_MethodName: OnScoreChanged
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -290,7 +309,6 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   RequiredLevel: 0
-  IsRequiredLevelReached: 0
 --- !u!114 &1607974426305836629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,7 +604,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 138
+  m_fontSize: 10
   m_fontSizeBase: 85
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -724,7 +742,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46
+  m_fontSize: 10
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

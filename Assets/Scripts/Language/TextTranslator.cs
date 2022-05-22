@@ -4,58 +4,63 @@ using TMPro;
 public class TextTranslator : MonoBehaviour
 {
     [SerializeField]
-    private GameLanguage _language;
+    protected GameLanguage _language;
     [SerializeField]
-    private TMP_Text _text;
+    protected TMP_Text _text;
     [SerializeField]
-    private string _deutsch;
+    protected string _deutsch;
     [SerializeField]
-    private string _french;
+    protected string _french;
     [SerializeField]
-    private string _russian;
+    protected string _russian;
     [SerializeField]
-    private string _english;
+    protected string _english;
     [SerializeField]
-    private string _spanish;
+    protected string _spanish;
     [SerializeField]
-    private string _italian;
+    protected string _italian;
 
-    private void OnLanguageChanged()
+    protected void OnLanguageChanged()
     {
         switch(_language.Language)
         {
             case Language.Deutsch:
             {
-                _text.text = _deutsch;
+                SetText(_deutsch);
                 break;
             }
             case Language.French:
             {
-                _text.text = _french;
+                SetText(_french);
                 break;
             }
             case Language.Russian:
             {
-                _text.text = _russian;
+                SetText(_russian);
                 break;
             }
             case Language.English:
             {
-                _text.text = _english;
+                SetText(_english);
                 break;
             }
             case Language.Spanish:
             {
-                _text.text = _spanish;
+                SetText(_spanish);
                 break;
             }
             case Language.Italian:
             {
-                _text.text = _italian;
+                SetText(_italian);
                 break;
             }
         }
 
+    }
+
+    protected virtual void SetText(string text)
+    {
+        _text.text = text;
     }
 
     #region MonoBehaviour
@@ -63,6 +68,11 @@ public class TextTranslator : MonoBehaviour
     private void Start()
     {
         _language.LanguageChanged += OnLanguageChanged;
+    }
+
+    private void OnEnable()
+    {
+        OnLanguageChanged();
     }
 
     private void OnDestroy()

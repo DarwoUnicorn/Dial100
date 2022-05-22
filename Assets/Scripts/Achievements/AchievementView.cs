@@ -19,7 +19,12 @@ public class AchievementView : MonoBehaviour
     public void OnPointsChanged(float fillPercent)
     {
         _filler.localScale = new Vector3(fillPercent, 1, 1);
-        _text.text = $"{ _achievement.Points }/{ _achievement.Conditions[_achievement.Level] }";
+        int level = _achievement.Level;
+        if(_achievement.Level == _achievement.MaxLevel)
+        {
+            level--;
+        }
+        _text.text = $"{ _achievement.Points }/{ _achievement.Conditions[level] }";
     }
 
     public void OnLevelChanged(int level)
@@ -28,6 +33,10 @@ public class AchievementView : MonoBehaviour
         {
             _levels[i].sprite = _filledStar;
         }
-        _text.text = $"{ _achievement.Points }/{ _achievement.Conditions[_achievement.Level] }";
+        if(level == _achievement.MaxLevel)
+        {
+            level--;
+        }
+        _text.text = $"{ _achievement.Points }/{ _achievement.Conditions[level] }";
     }
 }

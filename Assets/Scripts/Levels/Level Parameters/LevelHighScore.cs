@@ -4,7 +4,7 @@ using UnityEngine.Events;
 public class LevelHighScore : MonoBehaviour, IPersistent
 {
     [SerializeField]
-    private UnityEvent<string> ScoreChanged = new UnityEvent<string>();
+    private UnityEvent<int> ScoreChanged = new UnityEvent<int>();
 
     [SerializeField]
     private LevelId _levelId;
@@ -27,7 +27,7 @@ public class LevelHighScore : MonoBehaviour, IPersistent
 
     public void UpdateScore()
     {   
-        ScoreChanged?.Invoke($"Score\n{_value}");
+        ScoreChanged?.Invoke(_value);
     }
 
     public void Load()

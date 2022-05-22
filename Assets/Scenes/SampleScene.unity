@@ -1228,6 +1228,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &67388445 stripped
@@ -2597,7 +2601,7 @@ MonoBehaviour:
   m_ChildAlignment: 2
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 50, y: 50}
+  m_CellSize: {x: 48, y: 54}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 2
   m_ConstraintCount: 1
@@ -3775,6 +3779,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &159646510 stripped
@@ -4842,6 +4850,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3640389923673780008, guid: 5f0dfbd598b3a4a4a84097ac3e43c7a1, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     - target: {fileID: 6853281416704522404, guid: 5f0dfbd598b3a4a4a84097ac3e43c7a1, type: 3}
       propertyPath: _maxTime
       value: 22
@@ -5447,6 +5459,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 44
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &212561431 stripped
@@ -6036,6 +6052,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &221508367 stripped
@@ -6980,6 +7000,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 68
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &248776568 stripped
@@ -8022,6 +8046,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 3640389923673780008, guid: 5f0dfbd598b3a4a4a84097ac3e43c7a1, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     - target: {fileID: 6853281416704522404, guid: 5f0dfbd598b3a4a4a84097ac3e43c7a1, type: 3}
       propertyPath: _maxTime
       value: 10
@@ -8240,6 +8268,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 70
       objectReference: {fileID: 0}
+    - target: {fileID: 3640389923673780008, guid: 5f0dfbd598b3a4a4a84097ac3e43c7a1, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     - target: {fileID: 6853281416704522404, guid: 5f0dfbd598b3a4a4a84097ac3e43c7a1, type: 3}
       propertyPath: _maxTime
       value: 22
@@ -9684,6 +9716,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &437581824 stripped
@@ -10016,6 +10052,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &441565320 stripped
@@ -10598,6 +10638,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 36
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &468140754 stripped
@@ -10997,6 +11041,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 3640389923673780008, guid: 5f0dfbd598b3a4a4a84097ac3e43c7a1, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     - target: {fileID: 6853281416704522404, guid: 5f0dfbd598b3a4a4a84097ac3e43c7a1, type: 3}
       propertyPath: _maxTime
       value: 22
@@ -11414,7 +11462,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90.4
+  m_fontSize: 86.55
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11867,6 +11915,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3640389923673780008, guid: 5f0dfbd598b3a4a4a84097ac3e43c7a1, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     - target: {fileID: 6853281416704522404, guid: 5f0dfbd598b3a4a4a84097ac3e43c7a1, type: 3}
       propertyPath: _maxTime
       value: 22
@@ -12200,7 +12252,7 @@ MonoBehaviour:
   m_ChildAlignment: 2
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 50, y: 50}
+  m_CellSize: {x: 48, y: 54}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 2
   m_ConstraintCount: 1
@@ -12499,7 +12551,7 @@ MonoBehaviour:
   m_ChildAlignment: 2
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 50, y: 50}
+  m_CellSize: {x: 48, y: 54}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 2
   m_ConstraintCount: 1
@@ -14030,7 +14082,7 @@ MonoBehaviour:
   m_ChildAlignment: 2
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 50, y: 50}
+  m_CellSize: {x: 48, y: 54}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 2
   m_ConstraintCount: 1
@@ -14592,7 +14644,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
+  m_fontSize: 98.45
   m_fontSizeBase: 90
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -14958,12 +15010,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _language: {fileID: 2063471865}
   _text: {fileID: 732930904}
-  _deutsch: "T\xE4gliche belohnung"
-  _french: "R\xE9compense quotidienne"
-  _russian: "\u0418\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F"
-  _english: Information
-  _spanish: Recompensa diaria
-  _italian: Ricompensa giornaliera
+  _deutsch: Spielanleitung
+  _french: Comment jouer
+  _russian: "\u041A\u0430\u043A \u0438\u0433\u0440\u0430\u0442\u044C"
+  _english: How to play
+  _spanish: "C\xF3mo jugar"
+  _italian: Come giocare
 --- !u!114 &732930904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14984,7 +15036,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Information
+  m_text: How to play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ad1e0cec453ba2e4b9091db4425975d9, type: 2}
   m_sharedMaterial: {fileID: 9113244948003766424, guid: ad1e0cec453ba2e4b9091db4425975d9, type: 2}
@@ -15011,7 +15063,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90.4
+  m_fontSize: 86.55
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -15392,6 +15444,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 76
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &734167018 stripped
@@ -15693,7 +15749,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90.4
+  m_fontSize: 86.55
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -16302,6 +16358,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &758166235 stripped
@@ -17694,6 +17754,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 42
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &826137460 stripped
@@ -17763,7 +17827,7 @@ MonoBehaviour:
   m_ChildAlignment: 2
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 50, y: 50}
+  m_CellSize: {x: 48, y: 54}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 2
   m_ConstraintCount: 1
@@ -19702,6 +19766,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 70
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &911280996 stripped
@@ -19835,7 +19903,7 @@ MonoBehaviour:
   m_ChildAlignment: 2
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 50, y: 50}
+  m_CellSize: {x: 48, y: 54}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 2
   m_ConstraintCount: 1
@@ -20054,6 +20122,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 48
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &928219802 stripped
@@ -20426,6 +20498,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3640389923673780008, guid: 5f0dfbd598b3a4a4a84097ac3e43c7a1, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     - target: {fileID: 6853281416704522404, guid: 5f0dfbd598b3a4a4a84097ac3e43c7a1, type: 3}
       propertyPath: _maxTime
       value: 22
@@ -21668,6 +21744,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 66
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1003863339 stripped
@@ -22495,6 +22575,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 3640389923673780008, guid: 5f0dfbd598b3a4a4a84097ac3e43c7a1, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     - target: {fileID: 6853281416704522404, guid: 5f0dfbd598b3a4a4a84097ac3e43c7a1, type: 3}
       propertyPath: _maxTime
       value: 25
@@ -23333,6 +23417,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 64
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1113472240 stripped
@@ -23576,6 +23664,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1419808765}
         m_TargetAssemblyTypeName: ContinueCounter, Assembly-CSharp
         m_MethodName: ResetContinueCount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 195011222}
+        m_TargetAssemblyTypeName: CellGenerator, Assembly-CSharp
+        m_MethodName: ResetMaxStartCellValue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23949,6 +24049,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1125193005 stripped
@@ -24420,6 +24524,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 58
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1140959492 stripped
@@ -24813,6 +24921,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 34
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1147069598 stripped
@@ -25789,6 +25901,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1184246417 stripped
@@ -26295,7 +26411,7 @@ MonoBehaviour:
   m_ChildAlignment: 2
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 50, y: 50}
+  m_CellSize: {x: 48, y: 54}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 2
   m_ConstraintCount: 1
@@ -26740,6 +26856,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 38
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1290493573 stripped
@@ -27260,6 +27380,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1302156781 stripped
@@ -28089,6 +28213,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 32
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1344225642 stripped
@@ -28376,6 +28504,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1361589700 stripped
@@ -28949,6 +29081,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1378574978 stripped
@@ -29706,6 +29842,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 52
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1402209600 stripped
@@ -30407,6 +30547,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 78
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1416847262 stripped
@@ -30713,6 +30857,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 26
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1418683169 stripped
@@ -31880,6 +32028,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 74
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1473011481 stripped
@@ -32567,6 +32719,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 54
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1512197009 stripped
@@ -32792,7 +32948,7 @@ MonoBehaviour:
   m_ChildAlignment: 2
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 50, y: 50}
+  m_CellSize: {x: 48, y: 54}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 2
   m_ConstraintCount: 1
@@ -34506,7 +34662,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 61.9
+  m_fontSize: 58.8
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -34839,6 +34995,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1583341446 stripped
@@ -35943,6 +36103,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 3640389923673780008, guid: 5f0dfbd598b3a4a4a84097ac3e43c7a1, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     - target: {fileID: 6853281416704522404, guid: 5f0dfbd598b3a4a4a84097ac3e43c7a1, type: 3}
       propertyPath: _maxTime
       value: 25
@@ -36978,7 +37142,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90.4
+  m_fontSize: 86.55
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -37272,6 +37436,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1666235116 stripped
@@ -38667,6 +38835,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 28
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1732643162 stripped
@@ -39430,7 +39602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -39458,7 +39630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -39487,7 +39659,7 @@ PrefabInstance:
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
       value: 
-      objectReference: {fileID: 1866204349}
+      objectReference: {fileID: 195011222}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -39538,7 +39710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
-      value: SetPoints
+      value: ResetMaxStartCellValue
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -39566,7 +39738,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
-      value: Achievement, Assembly-CSharp
+      value: CellGenerator, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -40179,6 +40351,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1805638888 stripped
@@ -40978,6 +41154,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 3640389923673780008, guid: 5f0dfbd598b3a4a4a84097ac3e43c7a1, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     - target: {fileID: 6853281416704522404, guid: 5f0dfbd598b3a4a4a84097ac3e43c7a1, type: 3}
       propertyPath: _maxTime
       value: 22
@@ -41697,6 +41877,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 3640389923673780008, guid: 5f0dfbd598b3a4a4a84097ac3e43c7a1, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     - target: {fileID: 6853281416704522404, guid: 5f0dfbd598b3a4a4a84097ac3e43c7a1, type: 3}
       propertyPath: _maxTime
       value: 25
@@ -42604,6 +42788,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1910907150 stripped
@@ -42857,7 +43045,7 @@ MonoBehaviour:
   m_ChildAlignment: 2
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 50, y: 50}
+  m_CellSize: {x: 48, y: 54}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 2
   m_ConstraintCount: 1
@@ -43754,7 +43942,7 @@ MonoBehaviour:
   m_ChildAlignment: 2
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 50, y: 50}
+  m_CellSize: {x: 48, y: 54}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 2
   m_ConstraintCount: 1
@@ -44137,7 +44325,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90.4
+  m_fontSize: 86.55
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -44918,6 +45106,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1992108096 stripped
@@ -45264,6 +45456,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 56
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &1997229097 stripped
@@ -45591,7 +45787,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90.4
+  m_fontSize: 86.55
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -46289,6 +46485,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 72
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &2022718556 stripped
@@ -46434,7 +46634,7 @@ MonoBehaviour:
   m_ChildAlignment: 2
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 50, y: 50}
+  m_CellSize: {x: 48, y: 54}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 2
   m_ConstraintCount: 1
@@ -46772,7 +46972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7079555043870948353, guid: 726cbfbdaa6ecc840a8500be97943ce7, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.9
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 7079555043870948353, guid: 726cbfbdaa6ecc840a8500be97943ce7, type: 3}
       propertyPath: m_AnchorMax.y
@@ -46780,7 +46980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7079555043870948353, guid: 726cbfbdaa6ecc840a8500be97943ce7, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.1
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 7079555043870948353, guid: 726cbfbdaa6ecc840a8500be97943ce7, type: 3}
       propertyPath: m_AnchorMin.y
@@ -47368,6 +47568,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 62
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &2095721941 stripped
@@ -47694,7 +47898,7 @@ MonoBehaviour:
         m_CallState: 2
   _maxLevel: 5
   _level: 0
-  _conditions: 64000000fa000000e80300008813000010270000
+  _conditions: 0100000003000000060000000800000009000000
   _points: 0
   _id: Achievement1
 --- !u!1 &2112794213
@@ -48164,6 +48368,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 24
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &2117170386 stripped
@@ -48647,6 +48855,10 @@ PrefabInstance:
       propertyPath: RequiredLevel
       value: 46
       objectReference: {fileID: 0}
+    - target: {fileID: 8811176795898356260, guid: ea464053acef3f44b924d58707a40857, type: 3}
+      propertyPath: _language
+      value: 
+      objectReference: {fileID: 2063471865}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea464053acef3f44b924d58707a40857, type: 3}
 --- !u!224 &2145722665 stripped

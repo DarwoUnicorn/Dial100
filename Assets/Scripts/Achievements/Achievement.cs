@@ -23,6 +23,7 @@ public class Achievement : MonoBehaviour, IPersistent
     public string Id => _id;
     public int Points => _points;
     public int Level => _level;
+    public int MaxLevel => _maxLevel;
     public IReadOnlyList<int> Conditions => _conditions;
 
     public void IncreasePoints(int points)
@@ -32,6 +33,10 @@ public class Achievement : MonoBehaviour, IPersistent
             return;
         }
         _points += points;
+        if(_points > _conditions[_maxLevel - 1])
+        {
+            _points = _conditions[_maxLevel - 1];
+        }
         CheckPoints();
         CallPointChanged();
         Save();
@@ -48,6 +53,10 @@ public class Achievement : MonoBehaviour, IPersistent
             return;
         }
         _points = points;
+        if(_points > _conditions[_maxLevel - 1])
+        {
+            _points = _conditions[_maxLevel - 1];
+        }
         CheckPoints();
         CallPointChanged();
         Save();
@@ -74,9 +83,9 @@ public class Achievement : MonoBehaviour, IPersistent
 
     public void CallPointChanged()
     {
-        int condition = _conditions[_level];
+        int condition = _level == _maxLevel ? _conditions[_level - 1] : _conditions[_level];
         int points = _points;
-        if(_level > 0)
+        if(_level > 0 && _level != _maxLevel)
         {
             condition -= _conditions[_level - 1];
             points -= _conditions[_level - 1];
