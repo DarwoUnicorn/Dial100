@@ -13,7 +13,7 @@ public abstract class AdUnit : MonoBehaviour, IUnityAdsLoadListener
 
     protected IEnumerator RetryLoad()
     {
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(10);
         Load();
     }
 

@@ -62,7 +62,6 @@ public  class BannerAdUnit : AdUnit
     private void OnBannerShown()
     {
         Debug.Log($"UnityAds. { UnitId } - shown");
-        StartCoroutine(RetryLoad());
     }
 
     private void OnBannerHiden()

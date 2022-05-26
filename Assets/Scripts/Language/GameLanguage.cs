@@ -27,7 +27,12 @@ public class GameLanguage : MonoBehaviour, IPersistent
 
     public void Load()
     {
-        Saver.Load(this);
+        GameLanguage temp = gameObject.AddComponent<GameLanguage>();
+        if(Saver.Load(temp, _id))
+        {
+            _language = temp.Language;
+        }
+        Destroy(temp);
         LanguageChanged?.Invoke();
     }
 

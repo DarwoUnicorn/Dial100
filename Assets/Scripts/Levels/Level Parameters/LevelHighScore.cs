@@ -32,7 +32,12 @@ public class LevelHighScore : MonoBehaviour, IPersistent
 
     public void Load()
     {
-        Saver.Load(this);
+        LevelHighScore temp = gameObject.AddComponent<LevelHighScore>();
+        if(Saver.Load(temp, Id))
+        {
+            _value = temp.Value;
+        }
+        Destroy(temp);
         UpdateScore();
     }
 

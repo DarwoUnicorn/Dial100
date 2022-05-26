@@ -64,7 +64,13 @@ public class Achievement : MonoBehaviour, IPersistent
 
     public void Load()
     {
-        Saver.Load(this);
+        Achievement temp = gameObject.AddComponent<Achievement>();
+        if(Saver.Load(temp, _id))
+        {
+            _points = temp.Points;
+            _level = temp.Level;
+        }
+        Destroy(temp);
     }
 
     public void Save()

@@ -30,7 +30,12 @@ public abstract class LevelCompletionCondition : MonoBehaviour, IPersistent
 
     public void Load()
     {
-        Saver.Load(this);
+        LevelCompletionCondition temp = (LevelCompletionCondition)gameObject.AddComponent(this.GetType());
+        if(Saver.Load(temp, Id))
+        {
+            IsCompleted = temp.IsCompleted;
+        }
+        Destroy(temp);
         if(IsCompleted)
         {
             Loaded?.Invoke();

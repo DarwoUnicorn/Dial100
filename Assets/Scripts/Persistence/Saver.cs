@@ -14,11 +14,13 @@ public static class Saver
         File.WriteAllText(_path + persitedObject.Id, JsonUtility.ToJson(persitedObject));
     }
 
-    public static void Load(IPersistent persitedObject) 
+    public static bool Load(IPersistent persitedObject, string id) 
     {
-        if(File.Exists(_path + persitedObject.Id))
+        if(File.Exists(_path + id))
         {
-            JsonUtility.FromJsonOverwrite(File.ReadAllText(_path + persitedObject.Id), persitedObject);
+            JsonUtility.FromJsonOverwrite(File.ReadAllText(_path + id), persitedObject);
+            return true;
         }
+        return false;
     }
 }

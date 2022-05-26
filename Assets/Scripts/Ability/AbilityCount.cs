@@ -46,7 +46,11 @@ public class AbilityCount : IPersistent
 
     public void Load()
     {
-        Saver.Load(this);
+        AbilityCount temp = new AbilityCount();
+        if(Saver.Load(temp, _id))
+        {
+            _value = temp.Value;
+        }
         AbilityCountChanged?.Invoke(_value);
     }
 }

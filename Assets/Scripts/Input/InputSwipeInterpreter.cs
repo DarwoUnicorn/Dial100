@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class InputSwipeInterpreter : InputInterpreter, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class InputSwipeInterpreter : InputInterpreter, IInitializePotentialDragHandler, IDragHandler, IEndDragHandler
 {
     [SerializeField]
     private UnityEvent<Cell, Vector2Int> HasSwipe = new UnityEvent<Cell, Vector2Int>();
@@ -32,7 +32,7 @@ public class InputSwipeInterpreter : InputInterpreter, IBeginDragHandler, IDragH
 
     #region EventSystems
 
-    public void OnBeginDrag(PointerEventData eventData)
+    public void OnInitializePotentialDrag(PointerEventData eventData)
     {
         if(IsActive == false)
         {

@@ -48,7 +48,13 @@ public class PlayerLevel : MonoBehaviour, IPersistent
 
     public void Load()
     {
-        Saver.Load(this);
+        PlayerLevel temp = gameObject.AddComponent<PlayerLevel>();
+        if(Saver.Load(temp, _id))
+        {
+            _level = temp.Level;
+            _experience = temp.Experience;
+        }
+        Destroy(temp);
         LevelChanged?.Invoke(_level);
         ExperienceChanged?.Invoke();
     }

@@ -54,7 +54,12 @@ public class PlayerName : MonoBehaviour, IPersistent
 
     public void Load()
     {
-        Saver.Load(this);
+        PlayerName temp = gameObject.AddComponent<PlayerName>();
+        if(Saver.Load(temp, _id))
+        {
+            _name = temp.Name;
+        }
+        Destroy(temp);
     }
 
     #region MonoBehaviour

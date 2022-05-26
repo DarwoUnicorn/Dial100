@@ -34,6 +34,8 @@ public class DailyReward : MonoBehaviour, IPersistent
     private string _previousRewardTime;
 
     public string Id => _id;
+    public int Day => _day;
+    public string PreviousRewardTime => _previousRewardTime;
 
     public void CheckReward()
     {
@@ -59,7 +61,13 @@ public class DailyReward : MonoBehaviour, IPersistent
     
     public void Load()
     {
-        Saver.Load(this);
+        DailyReward temp = gameObject.AddComponent<DailyReward>();
+        if(Saver.Load(temp, _id))
+        {
+            _day = temp.Day;
+            _previousRewardTime = temp.PreviousRewardTime;
+        }
+        Destroy(temp);
     }
 
     public void Save()
