@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public class ContinueCounter : MonoBehaviour
 {
+    public event Action Reset;
+
     [SerializeField]
     private int _maxContinueCount;
     
@@ -12,6 +15,7 @@ public class ContinueCounter : MonoBehaviour
     public void ResetContinueCount()
     {
         _continueCount = 0;
+        Reset?.Invoke();
     }
 
     public void IncreaseCounter()

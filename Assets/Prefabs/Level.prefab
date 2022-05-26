@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1516682461494825556}
   - component: {fileID: 7713391391642886782}
   - component: {fileID: 3251376395111620430}
-  - component: {fileID: 1170215414997477402}
   m_Layer: 5
   m_Name: High Score
   m_TagString: Untagged
@@ -94,7 +93,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.25
+  m_fontSize: 10
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -136,26 +135,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &1170215414997477402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 139149716232547384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0a26e32724cffe4b970cb5bca2fa030, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _language: {fileID: 0}
-  _text: {fileID: 3251376395111620430}
-  _deutsch: Punktzahl
-  _french: Score
-  _russian: "\u0420\u0435\u043A\u043E\u0440\u0434"
-  _english: Score
-  _spanish: Puntaje
-  _italian: Punto
 --- !u!1 &3649990462400056989
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +209,7 @@ MonoBehaviour:
   ScoreChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1170215414997477402}
+      - m_Target: {fileID: 8257579317546600695}
         m_TargetAssemblyTypeName: ScoreTranslator, Assembly-CSharp
         m_MethodName: OnScoreChanged
         m_Mode: 0
@@ -351,6 +330,7 @@ GameObject:
   - component: {fileID: 5659490636648792719}
   - component: {fileID: 5659490636648792714}
   - component: {fileID: 5659490636648792712}
+  - component: {fileID: 8257579317546600695}
   m_Layer: 5
   m_Name: Level
   m_TagString: Untagged
@@ -435,6 +415,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5659490636648792718}
   m_CullTransparentMesh: 1
+--- !u!114 &8257579317546600695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5659490636648792718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0a26e32724cffe4b970cb5bca2fa030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _language: {fileID: 0}
+  _text: {fileID: 3251376395111620430}
+  _deutsch: Punktzahl
+  _french: Score
+  _russian: "\u0420\u0435\u043A\u043E\u0440\u0434"
+  _english: Score
+  _spanish: Puntaje
+  _italian: Punto
 --- !u!1 &5659490636786256871
 GameObject:
   m_ObjectHideFlags: 0

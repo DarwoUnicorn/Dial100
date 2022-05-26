@@ -4,6 +4,7 @@ using UnityEngine.Advertisements;
 
 public abstract class AdUnit : MonoBehaviour, IUnityAdsLoadListener
 {
+
     [SerializeField]
     private string _unitId;
 
@@ -19,7 +20,7 @@ public abstract class AdUnit : MonoBehaviour, IUnityAdsLoadListener
 
     #region  UnityAdsHandlers
 
-    public void OnUnityAdsAdLoaded(string unitId)
+    public virtual void OnUnityAdsAdLoaded(string unitId)
     {
         Debug.Log($"UnityAds. Load complete: { unitId }");
     }
