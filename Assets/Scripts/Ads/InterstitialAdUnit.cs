@@ -4,6 +4,11 @@ public class InterstitialAdUnit : AdUnit
 {
     public override void Load()
     {
+        if(IsLoading)
+        {
+            return;
+        }
+        IsLoading = true;
         Advertisement.Load(UnitId, this);
     }
 

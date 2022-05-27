@@ -7,17 +7,17 @@ public class TextTranslator : MonoBehaviour
     protected GameLanguage _language;
     [SerializeField]
     protected TMP_Text _text;
-    [SerializeField]
+    [SerializeField] [TextArea]
     protected string _deutsch;
-    [SerializeField]
+    [SerializeField] [TextArea]
     protected string _french;
-    [SerializeField]
+    [SerializeField] [TextArea]
     protected string _russian;
-    [SerializeField]
+    [SerializeField] [TextArea]
     protected string _english;
-    [SerializeField]
+    [SerializeField] [TextArea]
     protected string _spanish;
-    [SerializeField]
+    [SerializeField] [TextArea]
     protected string _italian;
 
     protected void OnLanguageChanged()

@@ -14,6 +14,11 @@ public class RewardedAdUnit : AdUnit
 
     public override void Load()
     {
+        if(IsLoading)
+        {
+            return;
+        }
+        IsLoading = true;
         Advertisement.Load(UnitId, this);
     }
 
@@ -28,5 +33,11 @@ public class RewardedAdUnit : AdUnit
     {
         base.OnUnityAdsAdLoaded(unitId);
         AdLoaded?.Invoke();
+    }
+
+    public override void OnUnityAdsFailedToLoad(string unitId, UnityAdsLoadError error, string message)
+    {
+        base.OnUnityAdsFailedToLoad(unitId, error, message);
+        AdNotLoaded?.Invoke();
     }
 }

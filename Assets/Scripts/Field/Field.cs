@@ -8,6 +8,8 @@ public class Field : MonoBehaviour
     private UnityEvent<int> DeleteRows = new UnityEvent<int>();
     [SerializeField]
     private UnityEvent<int> DeleteColumns = new UnityEvent<int>();
+    [SerializeField]
+    private UnityEvent<Cell, Cell> Move = new UnityEvent<Cell, Cell>();
 
     private List<List<Cell>> _cells;
     private LevelParameters _parameters;
@@ -124,11 +126,13 @@ public class Field : MonoBehaviour
         {
             return false;
         }
-        if(_cells[coordIn.x][coordIn.y].TryIncreaseValue(_cells[coordOut.x][coordOut.y]) != true)
+        if(_cells[coordIn.x][coordIn.y].Value + _cells[coordOut.x][coordOut.y].Value <= 100)
         {
-            return false;
+            Move?.Invoke(_cells[coordOut.x][coordOut.y], _cells[coordIn.x][coordIn.y]);
+            _cells[coordIn.x][coordIn.y].TryIncreaseValue(_cells[coordOut.x][coordOut.y]);
+            return true;
         }
-        return true;
+        return false;
     }
 
     public bool[,] GetDeleteMap()
@@ -150,8 +154,8 @@ public class Field : MonoBehaviour
                 columnCount++;
             }
         }
-        DeleteColumns?.Invoke(rowCount);
-        DeleteRows?.Invoke(columnCount);
+        DeleteColumns?.Invoke(columnCount);
+        DeleteRows?.Invoke(rowCount);
         return deleteMap;
     }
 

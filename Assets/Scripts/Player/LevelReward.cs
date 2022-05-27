@@ -15,13 +15,13 @@ public class LevelReward : MonoBehaviour
         int timeRestoreCount = 0;
         int descreaseMaxStartValueCount = 0;
         int count = (int)Mathf.Ceil(level / 5f);
-        if(count < 3)
+        if(count < 2)
         {
-            count = 3;
+            count = 2;
         }
-        if(count > 9)
+        if(count > 6)
         {
-            count = 9;
+            count = 6;
         }
         for(int i = 0; i < count; i++)
         {

@@ -4,9 +4,10 @@ using UnityEngine.Advertisements;
 
 public abstract class AdUnit : MonoBehaviour, IUnityAdsLoadListener
 {
-
     [SerializeField]
     private string _unitId;
+
+    protected bool IsLoading;
 
     protected string UnitId => _unitId;
 
@@ -23,9 +24,10 @@ public abstract class AdUnit : MonoBehaviour, IUnityAdsLoadListener
     public virtual void OnUnityAdsAdLoaded(string unitId)
     {
         Debug.Log($"UnityAds. Load complete: { unitId }");
+        IsLoading = false;
     }
 
-    public void OnUnityAdsFailedToLoad(string unitId, UnityAdsLoadError error, string message)
+    public virtual void OnUnityAdsFailedToLoad(string unitId, UnityAdsLoadError error, string message)
     {
         Debug.Log($"UnityAds. Load failed: { unitId }, { error }, { message }");
         StartCoroutine(RetryLoad());

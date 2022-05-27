@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class CellResizer : GridResizer
 {
+    [SerializeField]
+    private RectTransform _tempCell;
+
     private FieldParameters _parameters;
     private int _space = 25;
 
@@ -22,6 +25,8 @@ public class CellResizer : GridResizer
         float cellSize = Mathf.Min(horizontalSize, verticalSize);
         GridGroup.constraintCount = _parameters.Width;
         GridGroup.cellSize = new Vector2(cellSize, cellSize);
+        _tempCell.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, cellSize);
+        _tempCell.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, cellSize);
     }
 
     #region "MonoBehaviour"
