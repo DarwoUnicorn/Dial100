@@ -28,7 +28,7 @@ public class SwipedCell : MonoBehaviour
         }
         if(_cellText.alpha != 0)
         {
-            _cellText.alpha -= 0.1f;
+            _cellText.alpha -= 0.2f;
         }
     }
 }

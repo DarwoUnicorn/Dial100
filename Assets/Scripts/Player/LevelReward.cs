@@ -8,6 +8,8 @@ public class LevelReward : MonoBehaviour
     private TimerRestoreAbility _timeRestoreAbility;
     [SerializeReference]
     private DescreaseMaxStartValueAbility _decreaseMaxStartValueAbility;
+    [SerializeField]
+    private Notification _notification;
 
     public void OnLevelUp(int level)
     {
@@ -46,14 +48,17 @@ public class LevelReward : MonoBehaviour
         }
         if(hammerCount != 0)
         {
+            _notification.SetHammerCount(hammerCount);
             _hammerAbility.IncreaseAbilityCount(hammerCount);
         }
         if(timeRestoreCount != 0)
         {
+            _notification.SetTimeRestorerCount(timeRestoreCount);
             _timeRestoreAbility.IncreaseAbilityCount(timeRestoreCount);
         }
         if(descreaseMaxStartValueCount != 0)
         {
+            _notification.SetDecreaserCount(descreaseMaxStartValueCount);
             _decreaseMaxStartValueAbility.IncreaseAbilityCount(descreaseMaxStartValueCount);
         }
     }
