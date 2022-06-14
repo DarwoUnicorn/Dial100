@@ -32,10 +32,11 @@ public class SoundButton : IButton, IPersistent
 
     public void Load()
     {
-        SoundButton temp = new SoundButton();
+        SoundButton temp = gameObject.AddComponent<SoundButton>();
         Saver.Load(temp, Id);
         _isActive = temp._isActive;
         CheckIsActive();
+        Destroy(temp);
     }
 
     public void Save()

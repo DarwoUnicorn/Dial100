@@ -3471,7 +3471,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 67.2
+  m_fontSize: 70.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4553,7 +4553,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 96
+  m_fontSize: 100
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -8262,7 +8262,7 @@ VideoPlayer:
   m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 1
-  m_WaitForFirstFrame: 1
+  m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
 --- !u!114 &329260324
@@ -9151,7 +9151,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6440031157889872200, guid: 9cf937fba333d5b4697b21b4d44f94d4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -3.999939
+      value: -3.999878
       objectReference: {fileID: 0}
     - target: {fileID: 6440031157889872201, guid: 9cf937fba333d5b4697b21b4d44f94d4, type: 3}
       propertyPath: m_sharedMaterial
@@ -12215,7 +12215,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 76.8
+  m_fontSize: 87.6
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -13614,7 +13614,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6440031157889872200, guid: 9cf937fba333d5b4697b21b4d44f94d4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -3.999939
+      value: -3.999878
       objectReference: {fileID: 0}
     - target: {fileID: 6440031157889872201, guid: 9cf937fba333d5b4697b21b4d44f94d4, type: 3}
       propertyPath: m_fontSize
@@ -16158,7 +16158,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 87.35
+  m_fontSize: 99.65
   m_fontSizeBase: 90
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -17161,7 +17161,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 76.8
+  m_fontSize: 87.6
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -17222,6 +17222,7 @@ GameObject:
   - component: {fileID: 749623329}
   - component: {fileID: 749623331}
   - component: {fileID: 749623330}
+  - component: {fileID: 749623332}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -17296,7 +17297,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.75
+  m_fontSize: 38.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -17346,6 +17347,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 749623328}
   m_CullTransparentMesh: 1
+--- !u!114 &749623332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749623328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0be2745d15c97fa4aad11d542a770aee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _language: {fileID: 2063471865}
+  _text: {fileID: 749623330}
+  _deutsch: "\rZiel"
+  _french: "\rCible"
+  _russian: "\u0426\u0435\u043B\u044C"
+  _english: Target
+  _spanish: Objetivo
+  _italian: "\rObbiettivo"
 --- !u!1001 &749962547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20809,7 +20830,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _testMode: 1
+  _testMode: 0
 --- !u!4 &896813364
 Transform:
   m_ObjectHideFlags: 0
@@ -24455,7 +24476,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48
+  m_fontSize: 52.55
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -26909,7 +26930,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5158349411278367238, guid: c16a380cdf580a24a97ab8123f578bc0, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 96951238e5fa9fb4594eec0f555f6703, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a3218a2449a958e40871852478df503d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -27005,11 +27026,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 7834555334079685261, guid: c16a380cdf580a24a97ab8123f578bc0, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d03bc805997adfa42ba0d1b585179dd9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -28389,7 +28410,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6440031157889872200, guid: 9cf937fba333d5b4697b21b4d44f94d4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -3.999939
+      value: -3.999878
       objectReference: {fileID: 0}
     - target: {fileID: 6440031157889872201, guid: 9cf937fba333d5b4697b21b4d44f94d4, type: 3}
       propertyPath: m_sharedMaterial
@@ -30288,7 +30309,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38.4
+  m_fontSize: 43.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -39990,7 +40011,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51
+  m_fontSize: 59.7
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -42214,7 +42235,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _swipeThreshold: 25
+  _swipeThreshold: 17
 --- !u!114 &1642429524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42679,7 +42700,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 76.8
+  m_fontSize: 87.6
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -43150,7 +43171,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 69.1
+  m_fontSize: 73.4
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -43229,7 +43250,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6440031157889872200, guid: 9cf937fba333d5b4697b21b4d44f94d4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -3.999939
+      value: -3.999878
       objectReference: {fileID: 0}
     - target: {fileID: 6440031157889872201, guid: 9cf937fba333d5b4697b21b4d44f94d4, type: 3}
       propertyPath: m_sharedMaterial
@@ -45715,7 +45736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -45743,6 +45764,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
@@ -45774,6 +45799,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 195011222}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Target
+      value: 
+      objectReference: {fileID: 1542031469}
+    - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -45795,6 +45824,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
@@ -45826,6 +45859,10 @@ PrefabInstance:
       value: ResetMaxStartCellValue
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_MethodName
+      value: Deactivate
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: FieldBackButton, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -45852,6 +45889,10 @@ PrefabInstance:
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_TargetAssemblyTypeName
       value: CellGenerator, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_TargetAssemblyTypeName
+      value: HammerAbility, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -45883,6 +45924,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507649618183464413, guid: 8c7cfbd695938ef45aea4585d8782ca4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -46644,7 +46689,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38.4
+  m_fontSize: 38.85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -49826,6 +49871,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 329260323}
+        m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _name: {fileID: 794817454}
   _text: {fileID: 476764523}
 --- !u!1 &1945447732
@@ -50679,7 +50736,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 76.8
+  m_fontSize: 87.6
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -52237,7 +52294,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 76.8
+  m_fontSize: 87.6
   m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -52404,7 +52461,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55.2
+  m_fontSize: 62.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -53392,7 +53449,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6440031157889872200, guid: 9cf937fba333d5b4697b21b4d44f94d4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -3.999939
+      value: -3.999878
       objectReference: {fileID: 0}
     - target: {fileID: 6440031157889872201, guid: 9cf937fba333d5b4697b21b4d44f94d4, type: 3}
       propertyPath: m_fontSize
@@ -56106,7 +56163,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6440031157889872200, guid: 9cf937fba333d5b4697b21b4d44f94d4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -3.999939
+      value: -3.999878
       objectReference: {fileID: 0}
     - target: {fileID: 6440031157889872201, guid: 9cf937fba333d5b4697b21b4d44f94d4, type: 3}
       propertyPath: m_fontSize
