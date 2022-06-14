@@ -16,11 +16,11 @@ public class CompletionView : MonoBehaviour
 
     public void SetCompletionStar(int stars)
     {
-        for(int i = 0; i <= stars; i++)
+        for(int i = 0; i < stars; i++)
         {
             _stars[i].sprite = _completedStar;
         }
-        if(stars == 2)
+        if(stars == 3)
         {
             _button.sprite = _completedButton;
         }

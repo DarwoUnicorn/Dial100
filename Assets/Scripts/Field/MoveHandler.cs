@@ -64,13 +64,9 @@ public class MoveHandler : MonoBehaviour
     public void ClearBottom()
     {
         bool[,] deleteMap = new bool[Parameters.Field.Width, Parameters.Field.Height];
-        int rowCount = Parameters.Field.Height < 4 ? 1 : 2;
         for(int i = 0; i < Parameters.Field.Width; i++)
         {
-            for(int j = 0; j < rowCount; j++)
-            {
-                deleteMap[i, j] = true;
-            }
+            deleteMap[i, 0] = true;
         }
         _field.DeleteCells(deleteMap);
         FieldChanged?.Invoke();

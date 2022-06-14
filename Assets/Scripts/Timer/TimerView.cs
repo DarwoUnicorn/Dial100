@@ -14,7 +14,7 @@ public class TimerView : MonoBehaviour
 
     #region "MonoBehaviour"
 
-    private void Update()
+    private void LateUpdate()
     {
         if(_timer.RemainingTime / _timer.MaxTime == _filler.localScale.x)
         {

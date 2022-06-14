@@ -19,7 +19,6 @@ public class FullCellCompletionCondition : LevelCompletionCondition
             }
             stars++;
         }
-        Complete();
-        CompletionView.SetCompletionStar(stars);
+        Complete(stars);
     }
 }

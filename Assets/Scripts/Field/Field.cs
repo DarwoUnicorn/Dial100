@@ -102,21 +102,15 @@ public class Field : MonoBehaviour
 
     public void DeleteCells(bool[,] deleteMap)
     {
-        bool HasDeleted = false;
         for(int i = deleteMap.GetLength(0) - 1; i >= 0; i--)
         {
             for(int j = deleteMap.GetLength(1) - 1; j >= 0; j--)
             {
                 if(deleteMap[i, j] == true)
                 {
-                    HasDeleted = true;
                     DeleteCell(new Vector2Int(i, j));
                 }
             }
-        }
-        if(HasDeleted)
-        {
-            DeleteCells(GetDeleteMap());
         }
     }
 

@@ -19,7 +19,6 @@ public class ScoreCompletionCondition : LevelCompletionCondition
             }
             stars++;
         }
-        Complete();
-        CompletionView.SetCompletionStar(stars);
+        Complete(stars);
     }
 }

@@ -4,7 +4,7 @@ public class ClearCompletionCondition : LevelCompletionCondition
     {
         if(value > 0)
         {
-            Complete();
+            Complete(1);
         }
     }
 }

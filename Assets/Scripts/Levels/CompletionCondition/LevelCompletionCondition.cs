@@ -5,27 +5,29 @@ public abstract class LevelCompletionCondition : MonoBehaviour, IPersistent
 {
     [SerializeField]
     private UnityEvent LevelComplete = new UnityEvent();
-    [SerializeField]
-    private UnityEvent Loaded = new UnityEvent();
 
     [SerializeField]
     protected CompletionView CompletionView;
     
     [SerializeField]
-    private bool IsCompleted;
+    private int _stars;
     [SerializeField]
     private LevelId _levelId;
 
     public string Id => _levelId.Id + "CompletionCondition";
 
-    protected void Complete()
+    protected void Complete(int stars)
     {
-        if(IsCompleted)
+        if(_stars >= stars)
         {
             return;
         }
-        IsCompleted = true;
-        LevelComplete?.Invoke();
+        if(_stars == 0)
+        {
+            LevelComplete?.Invoke();
+        }
+        _stars = stars;
+        CompletionView.SetCompletionStar(stars);
         Save();
     }
 
@@ -36,13 +38,10 @@ public abstract class LevelCompletionCondition : MonoBehaviour, IPersistent
         LevelCompletionCondition temp = (LevelCompletionCondition)gameObject.AddComponent(this.GetType());
         if(Saver.Load(temp, Id))
         {
-            IsCompleted = temp.IsCompleted;
+            _stars = temp._stars;
+            CompletionView.SetCompletionStar(_stars);
         }
         Destroy(temp);
-        if(IsCompleted)
-        {
-            Loaded?.Invoke();
-        }
     }
 
     public void Save()

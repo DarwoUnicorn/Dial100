@@ -133,15 +133,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b492a09c4bf87a4488e808722a2d51ef, type: 3}
---- !u!114 &2661744594843632095 stripped
+--- !u!114 &4089348311486329415 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5659490636786256865, guid: b492a09c4bf87a4488e808722a2d51ef, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5961269177272481913, guid: b492a09c4bf87a4488e808722a2d51ef, type: 3}
   m_PrefabInstance: {fileID: 7672697961586084414}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6403477484214977699}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Script: {fileID: 11500000, guid: b2e578a53c531f7449f4250969a3371e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &4268096394220362035 stripped
@@ -174,34 +174,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelComplete:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2661744594843632095}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-        m_MethodName: set_sprite
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 21300000, guid: e6f64a325e4279444b2e7a3eea3cf1d4, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   Loaded:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2661744594843632095}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-        m_MethodName: set_sprite
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 21300000, guid: e6f64a325e4279444b2e7a3eea3cf1d4, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  CompletionView: {fileID: 4089348311486329415}
   IsCompleted: 0
   _levelId: {fileID: 4268096394220362035}
-  _requiredFullCells: 0
+  _requiredFullCells: 
