@@ -1,17 +1,25 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ScoreCompletionCondition : LevelCompletionCondition
 {
     [SerializeField]
-    private int _requiredScore;
+    private List<int> _requiredScore;
 
-    public int RequiredLevel => _requiredScore;
+    public List<int> RequiredScore => _requiredScore;
 
     public override void CheckCondition(int value)
     {
-        if(_requiredScore <= value)
+        int stars = 0;
+        for(int i = 0; i < _requiredScore.Count; i++)
         {
-            Complete();
+            if(_requiredScore[i] <= value)
+            {
+                break;
+            }
+            stars++;
         }
+        Complete();
+        CompletionView.SetCompletionStar(stars);
     }
 }

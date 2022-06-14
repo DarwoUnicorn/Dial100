@@ -9,6 +9,9 @@ public abstract class LevelCompletionCondition : MonoBehaviour, IPersistent
     private UnityEvent Loaded = new UnityEvent();
 
     [SerializeField]
+    protected CompletionView CompletionView;
+    
+    [SerializeField]
     private bool IsCompleted;
     [SerializeField]
     private LevelId _levelId;

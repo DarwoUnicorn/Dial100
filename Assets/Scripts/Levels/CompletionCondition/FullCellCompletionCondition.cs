@@ -1,17 +1,25 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FullCellCompletionCondition : LevelCompletionCondition
 {
     [SerializeField]
-    private int _requiredFullCells;
+    private List<int> _requiredFullCells;
 
-    public int RequiredFullCells => _requiredFullCells;
+    public List<int> RequiredFullCells => _requiredFullCells;
 
     public override void CheckCondition(int value)
     {
-        if(_requiredFullCells <= value)
+        int stars = 0;
+        for(int i = 0; i < _requiredFullCells.Count; i++)
         {
-            Complete();
+            if(_requiredFullCells[i] > value)
+            {
+                break;
+            }
+            stars++;
         }
+        Complete();
+        CompletionView.SetCompletionStar(stars);
     }
 }
