@@ -111,6 +111,34 @@ PrefabInstance:
       propertyPath: _id
       value: InfinityLevel
       objectReference: {fileID: 0}
+    - target: {fileID: 7386684075353084909, guid: b492a09c4bf87a4488e808722a2d51ef, type: 3}
+      propertyPath: ScoreChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7386684075353084909, guid: b492a09c4bf87a4488e808722a2d51ef, type: 3}
+      propertyPath: ScoreChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7386684075353084909, guid: b492a09c4bf87a4488e808722a2d51ef, type: 3}
+      propertyPath: ScoreChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 9078484664819527027}
+    - target: {fileID: 7386684075353084909, guid: b492a09c4bf87a4488e808722a2d51ef, type: 3}
+      propertyPath: ScoreChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7386684075353084909, guid: b492a09c4bf87a4488e808722a2d51ef, type: 3}
+      propertyPath: ScoreChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CheckCondition
+      objectReference: {fileID: 0}
+    - target: {fileID: 7386684075353084909, guid: b492a09c4bf87a4488e808722a2d51ef, type: 3}
+      propertyPath: ScoreChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ScoreCompletionCondition, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7386684075353084909, guid: b492a09c4bf87a4488e808722a2d51ef, type: 3}
+      propertyPath: ScoreChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b492a09c4bf87a4488e808722a2d51ef, type: 3}
 --- !u!1 &1161767204183312815 stripped
@@ -133,11 +161,8 @@ MonoBehaviour:
   LevelComplete:
     m_PersistentCalls:
       m_Calls: []
-  Loaded:
-    m_PersistentCalls:
-      m_Calls: []
   CompletionView: {fileID: 8071186495633850187}
-  IsCompleted: 0
+  _stars: 0
   _levelId: {fileID: 8356858790207968319}
   _requiredScore: 
 --- !u!114 &8071186495633850187 stripped

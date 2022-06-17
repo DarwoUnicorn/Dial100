@@ -12,7 +12,7 @@ public class Cell : MonoBehaviour
     public Transform Parent => transform.parent;
     public int Value => _data.Value;
     public bool IsComplete => _data.IsComplete;
-    public bool IsCreated { get; private set; }
+    public bool IsCreated { get; set; }
 
     public bool TryIncreaseValue(Cell other)
     {
@@ -39,16 +39,4 @@ public class Cell : MonoBehaviour
         transform.SetParent(other.Parent);
         other.transform.SetParent(tempParent);
     }
-
-    #region MonoBehaviour
-
-    private void LateUpdate()
-    {
-        if(IsCreated == true)
-        {
-            IsCreated = false;
-        }
-    }
-
-    #endregion
 }

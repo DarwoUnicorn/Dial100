@@ -106,7 +106,7 @@ public class Field : MonoBehaviour
         {
             for(int j = deleteMap.GetLength(1) - 1; j >= 0; j--)
             {
-                if(deleteMap[i, j] == true)
+                if(deleteMap[i, j] && _cells[i][j] != null)
                 {
                     DeleteCell(new Vector2Int(i, j));
                 }

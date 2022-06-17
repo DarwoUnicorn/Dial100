@@ -13,9 +13,9 @@ public abstract class AdUnit : MonoBehaviour, IUnityAdsLoadListener
 
     public abstract void Load();
 
-    protected IEnumerator RetryLoad()
+    protected IEnumerator RetryLoad(float time)
     {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(time);
         Load();
     }
 
@@ -30,7 +30,7 @@ public abstract class AdUnit : MonoBehaviour, IUnityAdsLoadListener
     public virtual void OnUnityAdsFailedToLoad(string unitId, UnityAdsLoadError error, string message)
     {
         Debug.Log($"UnityAds. Load failed: { unitId }, { error }, { message }");
-        StartCoroutine(RetryLoad());
+        StartCoroutine(RetryLoad(10));
     }
 
     #endregion

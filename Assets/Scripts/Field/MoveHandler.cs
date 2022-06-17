@@ -66,7 +66,15 @@ public class MoveHandler : MonoBehaviour
         bool[,] deleteMap = new bool[Parameters.Field.Width, Parameters.Field.Height];
         for(int i = 0; i < Parameters.Field.Width; i++)
         {
-            deleteMap[i, 0] = true;
+            for(int j = 0; j < Parameters.Field.Height; j++)
+            {
+                if(_field.Cells[i][j] == null)
+                {
+                    continue;
+                }
+                deleteMap[i, j] = true;
+                break;
+            }
         }
         _field.DeleteCells(deleteMap);
         FieldChanged?.Invoke();

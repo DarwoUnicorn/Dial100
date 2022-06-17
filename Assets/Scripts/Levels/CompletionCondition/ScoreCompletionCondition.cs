@@ -13,7 +13,7 @@ public class ScoreCompletionCondition : LevelCompletionCondition
         int stars = 0;
         for(int i = 0; i < _requiredScore.Count; i++)
         {
-            if(_requiredScore[i] <= value)
+            if(_requiredScore[i] > value)
             {
                 break;
             }

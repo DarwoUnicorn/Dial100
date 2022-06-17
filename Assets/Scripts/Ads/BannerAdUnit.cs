@@ -17,7 +17,7 @@ public  class BannerAdUnit : AdUnit
     public  void Show()
     {
         Advertisement.Banner.Show(UnitId, _bannerOptions);
-        StartCoroutine(RetryLoad());
+        StartCoroutine(RetryLoad(300));
     }
 
     public void Hide()
@@ -51,7 +51,7 @@ public  class BannerAdUnit : AdUnit
     private void OnBannerLoadFailed(string message)
     {
         Debug.Log($"UnityAds. { UnitId } - load failed: { message }");
-        StartCoroutine(RetryLoad());
+        StartCoroutine(RetryLoad(30));
     }
 
     private void OnBannerClicked()

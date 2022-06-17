@@ -29,13 +29,11 @@ public class FieldView : MonoBehaviour
                 {
                     continue;
                 }
-                if(cell.Text.text != cell.Value.ToString())
-                {
-                    cell.Text.text = cell.Value.ToString();
-                }
+                cell.Text.text = cell.Value.ToString();
                 if(cell.IsCreated == true)
                 {
                     newCellsCount++;
+                    cell.IsCreated = false;
                     cell.transform.position = cellParents[i][cellParents[i].Count - 1].transform.position + 
                         Vector3.up * (distanceBetweenCells * newCellsCount);
                 }

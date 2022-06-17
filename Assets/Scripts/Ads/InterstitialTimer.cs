@@ -16,6 +16,11 @@ public class InterstitialTimer : MonoBehaviour
 
     #region MonoBehaviour
 
+    private void Start()
+    {
+        _remainingTime = _timeBetweenAd * 1.5f;
+    }
+
     private void Update()
     {
         if(_remainingTime > 0)
