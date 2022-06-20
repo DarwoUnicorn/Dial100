@@ -24,11 +24,11 @@ public class PlayerLevel : MonoBehaviour, IPersistent
     {
         get
         {
-            if(5 + 3 * _level < 75)
+            if(5 + 3 * _level < 60)
             {
-                return 5 + 5 * _level;
+                return 5 + 3 * _level;
             }
-            return 75;
+            return 60;
         }
     }
 

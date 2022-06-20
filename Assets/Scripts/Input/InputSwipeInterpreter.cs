@@ -14,6 +14,12 @@ public class InputSwipeInterpreter : InputInterpreter, IInitializePotentialDragH
     private Vector2 _startSwipePosition;
     private Cell _cell;
 
+    public void Reset()
+    {
+        _startSwipePosition = Vector2.zero;
+        _cell = null;
+    }
+
     private Vector2Int GetDirection(Vector2 vector)
     {
         if(vector == Vector2.zero)

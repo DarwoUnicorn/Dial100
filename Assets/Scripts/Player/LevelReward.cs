@@ -21,10 +21,6 @@ public class LevelReward : MonoBehaviour
         {
             count = 2;
         }
-        if(count > 6)
-        {
-            count = 6;
-        }
         for(int i = 0; i < count; i++)
         {
             switch(Random.Range(0, 3))
